@@ -1,0 +1,4 @@
+baseURL = "https://unindented.org/"
+languageCode = "en-us"
+title = "Unindented"
+theme = "wavey"
