@@ -14,7 +14,7 @@
   {{ if .NextInSection }}<link rel="next" href="{{ .NextInSection.Permalink | safeURL }}" />{{ end }}
 
   {{ range (.Site.GetPage "/").AlternativeOutputFormats }}
-    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .Permalink | safeURL }}" />
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .RelPermalink | safeURL }}" />
   {{ end }}
 
   {{ partial "meta.html" . }}
