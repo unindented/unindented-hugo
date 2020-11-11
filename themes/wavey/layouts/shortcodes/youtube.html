@@ -1,0 +1,17 @@
+{{- $config := .Page.Site.Config.Privacy.YouTube -}}
+{{- if not $config.Disable -}}
+  {{- $host := cond $config.PrivacyEnhanced  "www.youtube-nocookie.com" "www.youtube.com" -}}
+  {{- $id := .Get "id" | default (.Get 0) -}}
+  {{- $autoplay := cond (eq (.Get "autoplay") "true") "1" "0" -}}
+  {{- $title := .Get "title" | default "YouTube video" -}}
+
+  <div class="iframe-wrapper">
+    <iframe
+      src="https://{{ $host }}/embed/{{ $id }}?autoplay={{ $autoplay }}"
+      loading="lazy"
+      allow="autoplay; fullscreen"
+      frameborder="0"
+      title="{{ $title }}"
+    ></iframe>
+  </div>
+{{- end -}}

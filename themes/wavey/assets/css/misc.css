@@ -1,0 +1,301 @@
+/* Skip navigation
+   ========================================================================== */
+
+.skip-navigation__link:focus {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  padding: var(--space-s) var(--space-m);
+  position: absolute;
+  left: var(--space-s);
+  top: var(--space-s);
+}
+
+/* Grid content
+   ========================================================================== */
+
+.grid-content {
+  margin: var(--space-xl) 0;
+}
+.grid-content > * {
+  margin: var(--space-s) 0;
+}
+.grid-content > :first-child {
+  margin-top: 0;
+}
+
+/**
+ * Headings.
+ */
+
+.grid-content > h2,
+.grid-content > h3,
+.grid-content > h4,
+.grid-content > h5,
+.grid-content > h6 {
+  margin: var(--space-l) 0 var(--space-s);
+}
+
+/**
+ * Code.
+ */
+
+.grid-content pre:not([class]),
+.grid-content .highlight {
+  background-color: var(--color-subtle-background);
+  display: inherit;
+  grid-column: full;
+  grid-template-columns: inherit;
+  grid-template-rows: min-content;
+  overflow-x: auto;
+}
+.grid-content pre:not([class]) > code,
+.grid-content .highlight pre.chroma {
+  grid-column: main;
+  margin: var(--space-m) 0;
+}
+
+/* Body header
+   ========================================================================== */
+
+.body-header {
+  color: var(--color-accent-foreground);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.body-header__nav {
+  align-items: baseline;
+  align-self: flex-start;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.body-header__heading {
+  font-size: var(--font-scale-base);
+  font-weight: 400;
+  margin: 0;
+}
+
+.body-header__items {
+  list-style: none;
+  margin: 0 calc(var(--space-s) * -1);
+  padding: 0;
+}
+
+.body-header__item {
+  display: inline-block;
+  padding: 0 var(--space-s);
+}
+
+.body-header__link {
+  color: var(--color-accent-link);
+  display: inline-block;
+  font-weight: 700;
+  margin: var(--space-m) 0 var(--space-s);
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.body-header__link:focus,
+.body-header__link:hover,
+.body-header__link.body-header__link--active {
+  border-bottom: var(--border-width-l) solid;
+  color: var(--color-accent-link);
+}
+
+/* Body footer
+   ========================================================================== */
+
+.body-footer {
+  background-image: var(--color-accent-background);
+  color: var(--color-accent-foreground);
+  text-align: center;
+}
+
+.body-footer a {
+  color: var(--color-accent-link);
+}
+.body-footer a:focus,
+.body-footer a:hover {
+  color: var(--color-accent-link-hover);
+}
+
+/* Terms list
+   ========================================================================== */
+
+.terms-list__items {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.terms-list__item {
+  display: inline-block;
+  margin: 0 var(--space-s) 0;
+  text-transform: lowercase;
+}
+
+.terms-list__link {
+  display: block;
+  font-weight: bolder;
+  line-height: 1.05;
+  margin-bottom: var(--space-s);
+  text-decoration: none;
+}
+
+/* Article list
+   ========================================================================== */
+
+.article-list__items {
+  list-style: none;
+  padding: 0;
+}
+
+.article-list__item {
+  display: block;
+  margin: var(--space-l) 0;
+  text-transform: lowercase;
+}
+.article-list__item:first-child {
+  margin-top: var(--space-s);
+}
+.article-list__item:last-child {
+  margin-bottom: 0;
+}
+
+.article-list__link {
+  display: block;
+  font-size: calc(var(--font-scale-2) * 1rem);
+  font-weight: bolder;
+  line-height: 1.05;
+  margin-bottom: var(--space-s);
+  text-decoration: none;
+}
+
+/* Article header
+   ========================================================================== */
+
+.article-header {
+  background-image: var(--color-accent-background);
+  color: var(--color-accent-foreground);
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.article-header__heading {
+  align-items: flex-end;
+  display: flex;
+  font-size: calc(var(--font-scale-hero) * 1rem);
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  justify-content: center;
+  line-height: 1.05;
+  margin: var(--space-xxl) 0 var(--space-m);
+}
+
+/* Article footer
+   ========================================================================== */
+
+.article-footer {
+  margin-bottom: var(--space-xl);
+}
+
+.article-footer__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.article-footer__image {
+  border: 0.125rem solid var(--color-border);
+  border-radius: 50%;
+  height: auto;
+  margin-right: var(--space-m);
+  width: 3rem;
+}
+
+.article-footer__meta {
+  flex: 1;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Article headings
+   ========================================================================== */
+
+.article-heading__permalink {
+  opacity: 0;
+  will-change: opacity;
+  margin: 0 var(--space-s);
+  text-decoration: none;
+}
+.article-heading:focus > .article-heading__permalink,
+.article-heading:hover > .article-heading__permalink {
+  opacity: 1;
+}
+
+/* Article sections
+   ========================================================================== */
+
+.article-related,
+.article-resources {
+  display: inherit;
+  margin: 0;
+}
+
+.article-related > *,
+.article-resources > * {
+  margin: var(--space-s) 0;
+}
+
+/* Full-width wrapper
+   ========================================================================== */
+
+.full-width-wrapper {
+  background-color: var(--color-subtle-background);
+  grid-column: full;
+  grid-template-columns: none;
+  overflow-x: auto;
+}
+.full-width-wrapper > * {
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+}
+
+/* Katex wrapper
+   ========================================================================== */
+
+.katex-wrapper {
+  background-color: var(--color-subtle-background);
+  display: inherit;
+  grid-column: full;
+  grid-template-columns: inherit;
+  overflow-x: auto;
+}
+.katex-wrapper > * {
+  grid-column: main;
+}
+
+/* Dividers
+   ========================================================================== */
+
+.divider-header {
+  background-color: var(--color-background);
+  -webkit-clip-path: url(#divider-header-clip);
+  clip-path: url(#divider-header-clip);
+  height: var(--space-xl);
+  margin: -1px 0;
+}
+
+.divider-footer {
+  background-color: var(--color-background);
+  -webkit-clip-path: url(#divider-footer-clip);
+  clip-path: url(#divider-footer-clip);
+  height: var(--space-xl);
+  margin: -1px 0;
+}

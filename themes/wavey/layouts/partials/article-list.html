@@ -1,0 +1,8 @@
+<ul class="article-list__items">
+  {{ range . }}
+    <li class="article-list__item">
+      <a class="article-list__link" href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+      {{ partial "utils/time.html" .Date }}{{ if eq .Section "blog" }} &middot; {{ partial "utils/length.html" .Content }}{{ end }}
+    </li>
+  {{ end }}
+</ul>

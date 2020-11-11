@@ -1,0 +1,833 @@
+# ######################################################################
+# # CROSS-ORIGIN                                                       #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Cross-origin requests                                              |
+# ----------------------------------------------------------------------
+
+# Allow cross-origin requests.
+#
+# https://enable-cors.org/
+# https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS
+# https://www.w3.org/TR/cors/
+
+# <IfModule mod_headers.c>
+#     Header set Access-Control-Allow-Origin "*"
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | Cross-origin images                                                |
+# ----------------------------------------------------------------------
+
+# Send the CORS header for images when browsers request it.
+#
+# https://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
+# https://developer.mozilla.org/docs/Web/HTML/CORS_enabled_image
+
+# <IfModule mod_setenvif.c>
+#     <IfModule mod_headers.c>
+#         <FilesMatch "\.(avif|bmp|cur|gif|ico|jpe?g|a?png|svgz?|webp)$">
+#             SetEnvIf Origin ":" IS_CORS
+#             Header set Access-Control-Allow-Origin "*" env=IS_CORS
+#         </FilesMatch>
+#     </IfModule>
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | Cross-origin resource timing                                       |
+# ----------------------------------------------------------------------
+
+# Allow cross-origin access to the timing information for all resources.
+#
+# https://www.stevesouders.com/blog/2014/08/21/resource-timing-practical-tips/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Timing-Allow-Origin
+# https://www.w3.org/TR/resource-timing/
+
+# <IfModule mod_headers.c>
+#     Header set Timing-Allow-Origin "*"
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | Cross-origin opener policy (COOP)                                  |
+# ----------------------------------------------------------------------
+
+# Ensure a top-level document does not share a browsing context group
+# with cross-origin documents.
+#
+# https://web.dev/coop-coep/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy
+
+<IfModule mod_headers.c>
+    Header always set Cross-Origin-Opener-Policy "same-origin" "expr=%{CONTENT_TYPE} =~ m#text\/html#i"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Cross-origin embedder policy (COEP)                                |
+# ----------------------------------------------------------------------
+
+# Prevent a document from loading any cross-origin resources that don't
+# explicitly grant the document permission.
+#
+# https://web.dev/coop-coep/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy
+
+# <IfModule mod_headers.c>
+#     Header always set Cross-Origin-Embedder-Policy "require-corp" "expr=%{CONTENT_TYPE} =~ m#text\/html#i"
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | Cross-origin resource policy (CORP)                                |
+# ----------------------------------------------------------------------
+
+# Block no-cors cross-origin/cross-site requests.
+#
+# https://web.dev/coop-coep/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy
+
+# <IfModule mod_headers.c>
+#     Header always set Cross-Origin-Resource-Policy "same-origin"
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | Referrer Policy                                                    |
+# ----------------------------------------------------------------------
+
+# Mitigate information leakage.
+#
+# https://scotthelme.co.uk/a-new-security-header-referrer-policy/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy
+
+<IfModule mod_headers.c>
+    Header always set Referrer-Policy "strict-origin-when-cross-origin" "expr=%{CONTENT_TYPE} =~ m#text\/(css|html|javascript)|application\/pdf|xml#i"
+</IfModule>
+
+# ######################################################################
+# # ERRORS                                                             #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Custom error messages/pages                                        |
+# ----------------------------------------------------------------------
+
+# Customize what Apache returns to the client in case of an error.
+#
+# https://httpd.apache.org/docs/current/mod/core.html#errordocument
+
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------------
+# | Error prevention                                                   |
+# ----------------------------------------------------------------------
+
+# Disable pattern matching based on filenames.
+#
+# This setting prevents Apache from returning a 404 error as the result
+# of a rewrite when the directory with the same name does not exist.
+#
+# https://httpd.apache.org/docs/current/content-negotiation.html#multiviews
+
+Options -MultiViews
+
+# ######################################################################
+# # MEDIA TYPES AND CHARACTER ENCODINGS                                #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Media types                                                        |
+# ----------------------------------------------------------------------
+
+# Serve resources with the proper media types (f.k.a. MIME types).
+#
+# https://www.iana.org/assignments/media-types/media-types.xhtml
+# https://httpd.apache.org/docs/current/mod/mod_mime.html#addtype
+
+<IfModule mod_mime.c>
+
+  # Data interchange
+
+    AddType application/atom+xml                        atom
+    AddType application/json                            json map topojson
+    AddType application/ld+json                         jsonld
+    AddType application/rss+xml                         rss
+    AddType application/geo+json                        geojson
+    AddType application/rdf+xml                         rdf
+    AddType application/xml                             xml
+
+  # JavaScript
+
+    # Servers should use text/javascript for JavaScript resources.
+    # https://html.spec.whatwg.org/multipage/scripting.html#scriptingLanguages
+
+    AddType text/javascript                             js mjs
+
+  # Manifest files
+
+    AddType application/manifest+json                   webmanifest
+    AddType application/x-web-app-manifest+json         webapp
+    AddType text/cache-manifest                         appcache
+
+  # Media files
+
+    AddType audio/mp4                                   f4a f4b m4a
+    AddType audio/ogg                                   oga ogg opus
+    AddType image/bmp                                   bmp
+    AddType image/svg+xml                               svg svgz
+    AddType image/avif                                  avif
+    AddType image/webp                                  webp
+    AddType video/mp4                                   f4v f4p m4v mp4
+    AddType video/ogg                                   ogv
+    AddType video/webm                                  webm
+    AddType video/x-flv                                 flv
+
+    # Serving `.ico` image files with a different media type prevents
+    # Internet Explorer from displaying them as images:
+
+    AddType image/x-icon                                cur ico
+
+  # WebAssembly
+
+    AddType application/wasm                            wasm
+
+  # Web fonts
+
+    AddType font/woff                                   woff
+    AddType font/woff2                                  woff2
+    AddType application/vnd.ms-fontobject               eot
+    AddType font/ttf                                    ttf
+    AddType font/collection                             ttc
+    AddType font/otf                                    otf
+
+  # Other
+
+    AddType application/octet-stream                    safariextz
+    AddType application/x-bb-appworld                   bbaw
+    AddType application/x-chrome-extension              crx
+    AddType application/x-opera-extension               oex
+    AddType application/x-xpinstall                     xpi
+    AddType text/calendar                               ics
+    AddType text/markdown                               markdown md
+    AddType text/vcard                                  vcard vcf
+    AddType text/vnd.rim.location.xloc                  xloc
+    AddType text/vtt                                    vtt
+    AddType text/x-component                            htc
+
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Character encodings                                                |
+# ----------------------------------------------------------------------
+
+# Serve all resources labeled as `text/html` or `text/plain` with the
+# media type `charset` parameter set to `UTF-8`.
+#
+# https://httpd.apache.org/docs/current/mod/core.html#adddefaultcharset
+
+AddDefaultCharset utf-8
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Serve the following file types with the media type `charset`
+# parameter set to `UTF-8`.
+#
+# https://httpd.apache.org/docs/current/mod/mod_mime.html#addcharset
+
+<IfModule mod_mime.c>
+    AddCharset utf-8 .appcache \
+                     .bbaw \
+                     .css \
+                     .htc \
+                     .ics \
+                     .js \
+                     .json \
+                     .manifest \
+                     .map \
+                     .markdown \
+                     .md \
+                     .mjs \
+                     .topojson \
+                     .vtt \
+                     .vcard \
+                     .vcf \
+                     .webmanifest \
+                     .xloc
+</IfModule>
+
+# ######################################################################
+# # SECURITY                                                           #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Frame Options                                                      |
+# ----------------------------------------------------------------------
+
+# Protect website against clickjacking.
+#
+# https://blogs.msdn.microsoft.com/ieinternals/2010/03/30/combating-clickjacking-with-x-frame-options/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options
+# https://www.owasp.org/index.php/Clickjacking
+# https://tools.ietf.org/html/rfc7034
+
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "DENY" "expr=%{CONTENT_TYPE} =~ m#text/html#i"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Content Security Policy (CSP)                                      |
+# ----------------------------------------------------------------------
+
+# Mitigate the risk of cross-site scripting and other content-injection
+# attacks.
+#
+# https://csp-evaluator.withgoogle.com
+# https://csp.withgoogle.com/docs/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy
+# https://www.w3.org/TR/CSP/
+
+<IfModule mod_headers.c>
+    Header always set Content-Security-Policy "default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self'; manifest-src 'self'; media-src 'self'; script-src 'self'; style-src 'self'; worker-src 'self'; block-all-mixed-content; upgrade-insecure-requests" "expr=%{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Permissions Policy                                                 |
+# ----------------------------------------------------------------------
+
+# Control which features and APIs can be used in the browser.
+#
+# https://scotthelme.co.uk/goodbye-feature-policy-and-hello-permissions-policy/
+# https://www.w3.org/TR/permissions-policy-1/
+
+<IfModule mod_headers.c>
+    Header always set Permissions-Policy "fullscreen=(self)" "expr=%{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | File access                                                        |
+# ----------------------------------------------------------------------
+
+# Block access to directories without a default document.
+#
+# You should leave the following uncommented, as you shouldn't allow anyone to
+# surf through every directory on your server (which may include rather
+# private places such as the CMS's directories).
+
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to all hidden files and directories except for the
+# visible content from within the `/.well-known/` hidden directory.
+#
+# https://www.mnot.net/blog/2010/04/07/well-known
+# https://tools.ietf.org/html/rfc5785
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Block access to files that can expose sensitive information.
+#
+# https://feross.org/cmsploit/
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | HTTP Strict Transport Security (HSTS)                              |
+# ----------------------------------------------------------------------
+
+# Force client-side TLS (Transport Layer Security) redirection.
+#
+# https://hstspreload.org/
+# https://blogs.msdn.microsoft.com/ieinternals/2014/08/18/strict-transport-security/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security
+# https://tools.ietf.org/html/rfc6797#section-6.1
+
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" "expr=%{HTTPS} == 'on'"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Content Type Options                                               |
+# ----------------------------------------------------------------------
+
+# Prevent some browsers from MIME-sniffing the response.
+#
+# https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Content-Type-Options
+# https://mimesniff.spec.whatwg.org/
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Cross-Site Scripting (XSS) Protection                              |
+# ----------------------------------------------------------------------
+
+# Protect website reflected Cross-Site Scripting (XSS) attacks.
+#
+# https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-iv-the-xss-filter/
+# https://blogs.msdn.microsoft.com/ieinternals/2011/01/31/controlling-the-xss-filter/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection
+# https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
+
+# <IfModule mod_headers.c>
+#     Header always set X-XSS-Protection "1; mode=block" "expr=%{CONTENT_TYPE} =~ m#text/html#i"
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | Disable TRACE HTTP Method                                          |
+# ----------------------------------------------------------------------
+
+# Prevent Apache from responding to `TRACE` HTTP request.
+#
+# https://www.owasp.org/index.php/Cross_Site_Tracing
+# https://www.owasp.org/index.php/Test_HTTP_Methods_(OTG-CONFIG-006)
+# https://tools.ietf.org/html/rfc7231#section-4.3.8
+# https://httpd.apache.org/docs/current/mod/core.html#traceenable
+
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{REQUEST_METHOD} ^TRACE [NC]
+#     RewriteRule .* - [R=405,L]
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | Server-side technology information                                 |
+# ----------------------------------------------------------------------
+
+# Remove the `X-Powered-By` response header.
+#
+# https://php.net/manual/en/ini.core.php#ini.expose-php
+
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Server software information                                        |
+# ----------------------------------------------------------------------
+
+# Prevent Apache from adding a trailing footer line containing info
+# about the server.
+#
+# https://httpd.apache.org/docs/current/mod/core.html#serversignature
+
+ServerSignature Off
+
+# ######################################################################
+# # WEB PERFORMANCE                                                    #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Compression                                                        |
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+
+    # Force compression for mangled `Accept-Encoding` request headers.
+    #
+    # https://calendar.perfplanet.com/2010/pushing-beyond-gzipping/
+    # https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding
+
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Compress all output labeled with one of the following media types.
+    #
+    # https://httpd.apache.org/docs/current/mod/mod_filter.html#addoutputfilterbytype
+
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE "application/atom+xml" \
+                                      "application/javascript" \
+                                      "application/json" \
+                                      "application/ld+json" \
+                                      "application/manifest+json" \
+                                      "application/rdf+xml" \
+                                      "application/rss+xml" \
+                                      "application/schema+json" \
+                                      "application/geo+json" \
+                                      "application/vnd.ms-fontobject" \
+                                      "application/wasm" \
+                                      "application/x-font-ttf" \
+                                      "application/x-javascript" \
+                                      "application/x-web-app-manifest+json" \
+                                      "application/xhtml+xml" \
+                                      "application/xml" \
+                                      "font/eot" \
+                                      "font/opentype" \
+                                      "font/otf" \
+                                      "font/ttf" \
+                                      "image/bmp" \
+                                      "image/svg+xml" \
+                                      "image/vnd.microsoft.icon" \
+                                      "text/cache-manifest" \
+                                      "text/calendar" \
+                                      "text/css" \
+                                      "text/html" \
+                                      "text/javascript" \
+                                      "text/plain" \
+                                      "text/markdown" \
+                                      "text/vcard" \
+                                      "text/vnd.rim.location.xloc" \
+                                      "text/vtt" \
+                                      "text/x-component" \
+                                      "text/x-cross-domain-policy" \
+                                      "text/xml"
+
+    </IfModule>
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Map the following filename extensions to the specified encoding
+    # type.
+    #
+    # https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding
+    # https://httpd.apache.org/docs/current/mod/mod_mime.html#addencoding
+
+    <IfModule mod_mime.c>
+        AddEncoding gzip              svgz
+    </IfModule>
+
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Brotli pre-compressed content                                      |
+# ----------------------------------------------------------------------
+
+# Serve brotli-compressed files if they exist.
+#
+# Note that some clients (e.g. browsers) require a secure connection to
+# request brotli-compressed resources.
+# https://www.chromestatus.com/feature/5420797577396224
+#
+# https://httpd.apache.org/docs/current/mod/mod_brotli.html#precompressed
+
+<IfModule mod_headers.c>
+
+    RewriteCond %{HTTP:Accept-Encoding} br
+    RewriteCond %{REQUEST_FILENAME}\.br -f
+    RewriteRule \.(css|ics|js|mjs|json|html|svg|webmanifest)$ %{REQUEST_URI}.br [L]
+
+    # Prevent mod_deflate double gzip
+    RewriteRule \.br$ - [E=no-gzip:1]
+
+    <FilesMatch "\.br$">
+
+        <IfModule mod_mime.c>
+            # Serve correct content types
+            AddType text/css                  css.br
+            AddType text/calendar             ics.br
+            AddType text/javascript           js.br
+            AddType text/javascript           mjs.br
+            AddType application/json          json.br
+            AddType text/html                 html.br
+            AddType image/svg+xml             svg.br
+            AddType application/manifest+json webmanifest.br
+
+            # Serve correct content charset
+            AddCharset utf-8 .css.br \
+                             .ics.br \
+                             .js.br \
+                             .mjs.br \
+                             .json.br \
+                             .svg.br \
+                             .webmanifest.br
+        </IfModule>
+
+        # Force proxies to cache separately
+        Header append Vary Accept-Encoding
+
+    </FilesMatch>
+
+    # Serve correct encoding type
+    AddEncoding br .br
+
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | GZip pre-compressed content                                        |
+# ----------------------------------------------------------------------
+
+# Serve gzip-compressed files if they exist.
+#
+# https://httpd.apache.org/docs/current/mod/mod_deflate.html#precompressed
+
+<IfModule mod_headers.c>
+
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -f
+    RewriteRule \.(css|ics|js|mjs|json|html|svg|webmanifest|xml)$ %{REQUEST_URI}.gz [L]
+
+    # Prevent mod_deflate double gzip
+    RewriteRule \.gz$ - [E=no-gzip:1]
+
+    <FilesMatch "\.gz$">
+
+        <IfModule mod_mime.c>
+            RemoveType gz
+
+            # Serve correct content types
+            AddType text/css                  css.gz
+            AddType text/calendar             ics.gz
+            AddType text/javascript           js.gz
+            AddType text/javascript           mjs.gz
+            AddType application/json          json.gz
+            AddType text/html                 html.gz
+            AddType image/svg+xml             svg.gz
+            AddType application/manifest+json webmanifest.gz
+
+            # Serve correct content charset
+            AddCharset utf-8 .css.gz \
+                             .ics.gz \
+                             .js.gz \
+                             .mjs.gz \
+                             .json.gz \
+                             .svg.gz \
+                             .webmanifest.gz
+        </IfModule>
+
+        # Force proxies to cache separately
+        Header append Vary Accept-Encoding
+
+    </FilesMatch>
+
+    # Serve correct encoding type
+    AddEncoding gzip .gz
+
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Content transformation                                             |
+# ----------------------------------------------------------------------
+
+# Prevent intermediate caches or proxies (such as those used by mobile
+# network providers) and browsers data-saving features from modifying
+# the website's content.
+#
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control
+# https://tools.ietf.org/html/rfc7234#section-5.2.2.4
+
+# <IfModule mod_headers.c>
+#     Header merge Cache-Control "no-transform"
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | ETags                                                              |
+# ----------------------------------------------------------------------
+
+# Remove `ETags` as resources are sent with far-future expires headers.
+#
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag
+# https://developer.yahoo.com/performance/rules.html#etags
+# https://tools.ietf.org/html/rfc7232#section-2.3
+
+# `FileETag None` doesn't work in all cases.
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+
+FileETag None
+
+# ----------------------------------------------------------------------
+# | Cache expiration                                                   |
+# ----------------------------------------------------------------------
+
+# Serve resources with a far-future expiration date.
+#
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Expires
+# https://httpd.apache.org/docs/current/mod/mod_expires.html
+
+<IfModule mod_expires.c>
+
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 month"
+
+  # CSS
+
+    ExpiresByType text/css                              "access plus 1 month"
+
+  # Data interchange
+
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rdf+xml                   "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/ld+json                   "access plus 0 seconds"
+    ExpiresByType application/schema+json               "access plus 0 seconds"
+    ExpiresByType application/geo+json                  "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/calendar                         "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+  # Favicon (cannot be renamed!) and cursor images
+
+    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+  # HTML
+
+    ExpiresByType text/html                             "access plus 0 seconds"
+
+  # JavaScript
+
+    ExpiresByType application/javascript                "access plus 1 month"
+    ExpiresByType application/x-javascript              "access plus 1 month"
+    ExpiresByType text/javascript                       "access plus 1 month"
+
+  # Manifest files
+
+    ExpiresByType application/manifest+json             "access plus 1 week"
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+  # Markdown
+
+    ExpiresByType text/markdown                         "access plus 0 seconds"
+
+  # Media files
+
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/apng                            "access plus 1 month"
+    ExpiresByType image/bmp                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+    ExpiresByType image/avif                            "access plus 1 month"
+    ExpiresByType image/webp                            "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+  # WebAssembly
+
+    ExpiresByType application/wasm                      "access plus 1 month"
+
+  # Web fonts
+
+    # Collection
+    ExpiresByType font/collection                       "access plus 1 month"
+
+    # Embedded OpenType (EOT)
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+    ExpiresByType font/eot                              "access plus 1 month"
+
+    # OpenType
+    ExpiresByType font/opentype                         "access plus 1 month"
+    ExpiresByType font/otf                              "access plus 1 month"
+
+    # TrueType
+    ExpiresByType application/x-font-ttf                "access plus 1 month"
+    ExpiresByType font/ttf                              "access plus 1 month"
+
+    # Web Open Font Format (WOFF) 1.0
+    ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/x-font-woff               "access plus 1 month"
+    ExpiresByType font/woff                             "access plus 1 month"
+
+    # Web Open Font Format (WOFF) 2.0
+    ExpiresByType application/font-woff2                "access plus 1 month"
+    ExpiresByType font/woff2                            "access plus 1 month"
+
+  # Other
+
+    ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
+
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | File concatenation                                                 |
+# ----------------------------------------------------------------------
+
+# Allow concatenation from within specific files.
+#
+# If you have the following lines in a file called, for example,
+# `main.combined.js`:
+#
+#     <!--#include file="js/jquery.js" -->
+#     <!--#include file="js/jquery.timer.js" -->
+#
+# Apache will replace those lines with the content of the specified files.
+
+# <IfModule mod_include.c>
+#
+#     <FilesMatch "\.combined\.js$">
+#         Options +Includes
+#         AddOutputFilterByType INCLUDES application/javascript \
+#                                        application/x-javascript \
+#                                        text/javascript
+#         SetOutputFilter INCLUDES
+#     </FilesMatch>
+#
+#     <FilesMatch "\.combined\.css$">
+#         Options +Includes
+#         AddOutputFilterByType INCLUDES text/css
+#         SetOutputFilter INCLUDES
+#     </FilesMatch>
+#
+# </IfModule>
+
+# ----------------------------------------------------------------------
+# | Filename-based cache busting                                       |
+# ----------------------------------------------------------------------
+
+# If you're not using a build process to manage your filename version
+# revving, you might want to consider enabling the following directives.
+#
+# https://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/
+
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteRule ^(.+)\.(\w+)\.(avif|bmp|css|cur|gif|ico|jpe?g|m?js|a?png|svgz?|webp|webmanifest)$ $1.$3 [L]
+# </IfModule>
+
+# ######################################################################
+# # CUSTOM STUFF                                                       #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Service worker                                                     |
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    <FilesMatch "service-worker\.js$">
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Expires "Thu, 1 Jan 1970 00:00:00 GMT"
+        Header set Pragma "no-cache"
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Outdated routes                                                    |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^articles/([a-z].*)$                /blog/$1 [R=301,L]
+    RewriteRule ^experiments/([a-z].*)$             /playground/$1 [R=301,L]
+    RewriteRule ^articles/\d{4}/\d{2}/([a-z].*)$    /blog/$1 [R=301,L]
+    RewriteRule ^experiments/\d{4}/\d{2}/([a-z].*)$ /playground/$1 [R=301,L]
+</IfModule>

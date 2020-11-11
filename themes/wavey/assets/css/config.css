@@ -1,0 +1,84 @@
+/* Config
+   ========================================================================== */
+
+:root {
+  /**
+   * Font families.
+   */
+
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-code: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /**
+   * Font scales (major-third).
+   */
+  --font-scale-base: 1;
+  --font-scale-hero: 1 * 5/4 * 5/4 * 5/4 * 5/4 * 5/4 * 5/4;
+  --font-scale-1: 1 * 5/4 * 5/4 * 5/4 * 5/4 * 5/4;
+  --font-scale-2: 1 * 5/4 * 5/4 * 5/4;
+  --font-scale-3: 1 * 5/4 * 5/4;
+  --font-scale-4: 1 * 5/4;
+  --font-scale-5: 1;
+  --font-scale-6: 1 * 4/5;
+
+  /**
+   * Fluid typography ranges.
+   */
+
+  --fluid-min-font-size: 16;
+  --fluid-max-font-size: calc(var(--fluid-min-font-size) * 5 / 4 * 5 / 4);
+
+  --fluid-min-screen-size: 480;
+  --fluid-max-screen-size: 1600;
+
+  /**
+   * Grid.
+   */
+
+  --grid-max-content-width: 40em;
+
+  /**
+   * Spacing.
+   */
+
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 4rem;
+
+  /**
+   * Borders.
+   */
+
+  --border-radius: 0.25rem;
+
+  --border-width-s: 0.125rem;
+  --border-width-l: 0.25rem;
+}
+
+/**
+ * Make typography fluid for bigger displays.
+ * https://www.smashingmagazine.com/2016/05/fluid-typography/
+ */
+
+:root {
+  --font-size: calc(var(--fluid-min-font-size) * 1px);
+}
+
+@media (min-width: 480px) {
+  :root {
+    --font-size: calc(
+      (var(--fluid-min-font-size) * 1px) + (var(--fluid-max-font-size) - var(--fluid-min-font-size)) *
+        (100vw - (var(--fluid-min-screen-size) * 1px)) / (var(--fluid-max-screen-size) - var(--fluid-min-screen-size))
+    );
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --font-size: calc(var(--fluid-max-font-size) * 1px);
+  }
+}

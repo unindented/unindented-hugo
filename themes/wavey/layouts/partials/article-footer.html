@@ -1,0 +1,48 @@
+{{ if and .Params.authors .Params.date }}
+  {{ $authorsData := .Site.Data.authors }}
+
+  {{ $firstAuthor := (index $authorsData (index .Params.authors 0)) }}
+  {{ $authorThumb := $firstAuthor.thumbnail }}
+  {{ $authorThumbExt := $authorThumb | path.Ext }}
+  {{ $authorTwitter := $firstAuthor.social.twitter }}
+  {{ $authorEmail := $firstAuthor.email }}
+
+  {{ $authorNames := slice }}
+  {{ range .Params.authors }}
+    {{ $authorNames = $authorNames | append (index $authorsData .).displayName }}
+  {{ end }}
+  {{ $authorNames = delimit $authorNames ", " " and " }}
+
+  {{ $tags := .GetTerms "tags" }}
+  {{ $tagLinks := delimit (apply $tags "partial" "utils/tag.html" ".") ", " " and " }}
+
+  <footer class="article-footer grid-main">
+    <div class="article-footer__container">
+      <picture>
+        {{- partial "utils/sources.html" (dict "ext" $authorThumbExt "srcset" $authorThumb) -}}
+        <img
+          class="article-footer__image"
+          alt=""
+          src="{{ $authorThumb }}"
+          loading="lazy"
+        />
+      </picture>
+      <p class="article-footer__meta">
+        Posted on {{ partial "utils/time" .Date }}
+        {{ if $tagLinks }}under {{ $tagLinks }}{{ end }}
+        by {{ $authorNames }}.
+        Got any comments or suggestions? Send a
+        <a
+          href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via={{ $authorTwitter }}"
+          target="_blank"
+          rel="noreferrer"
+        >tweet</a>
+        or an
+        <a
+          href="mailto:{{ $authorEmail }}?subject={{ .Title }}"
+          target="_blank"
+          rel="noreferrer"
+        >email</a>.</p>
+    </div>
+  </footer>
+{{ end }}

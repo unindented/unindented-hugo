@@ -1,0 +1,242 @@
+/* Box reset
+   ========================================================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Typography
+   ========================================================================== */
+
+html {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size);
+  line-height: 1.5;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--font-family-code);
+}
+
+/* Base styles
+   ========================================================================== */
+
+/**
+ * Root.
+ */
+
+html {
+  background-color: var(--color-black);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+/**
+ * Elements.
+ */
+
+a {
+  color: var(--color-link);
+  transition: color 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+a:focus,
+a:hover {
+  color: var(--color-link-hover);
+}
+
+blockquote {
+  border-left: var(--border-width-l) solid var(--color-border);
+  border-right: 0;
+  font-style: italic;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: calc(var(--space-l) - var(--space-xs));
+  padding-right: 0;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+canvas {
+  border: var(--border-width-s) solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: block;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+code,
+samp {
+  background-color: var(--color-subtle-background);
+  border-radius: var(--border-radius);
+  display: inline-block;
+  padding: 0 var(--space-xs);
+}
+
+dt {
+  font-weight: bolder;
+}
+dd {
+  margin-left: var(--space-l);
+  margin-right: 0;
+}
+
+figure {
+  position: relative;
+}
+figcaption {
+  background-color: var(--color-overlay);
+  font-size: calc(var(--font-scale-6) * 1rem);
+  font-style: italic;
+  padding: var(--space-s);
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: calc(var(--font-scale-1) * 1rem);
+  margin: var(--space-xl) 0;
+}
+h2 {
+  font-size: calc(var(--font-scale-2) * 1rem);
+}
+h3 {
+  font-size: calc(var(--font-scale-3) * 1rem);
+}
+h4 {
+  font-size: calc(var(--font-scale-4) * 1rem);
+}
+h5 {
+  font-size: calc(var(--font-scale-5) * 1rem);
+}
+h6 {
+  font-size: calc(var(--font-scale-6) * 1rem);
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: var(--space-l) 0 var(--space-s);
+}
+
+hr {
+  border: 0;
+  color: var(--color-border);
+  height: 1.5rem;
+  text-align: center;
+}
+hr::after {
+  content: "***";
+  letter-spacing: 1rem;
+  vertical-align: middle;
+}
+
+.iframe-wrapper {
+  border: var(--border-width-s) solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+img {
+  border: var(--border-width-s) solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: block;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+kbd {
+  background-color: var(--color-subtle-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 1px var(--color-foreground), 0 0 0 2px var(--color-background) inset;
+  display: inline-block;
+  padding: 0 var(--space-s);
+  white-space: nowrap;
+}
+
+mark {
+  background-color: var(--color-accent-background-1);
+  color: var(--color-accent-foreground);
+}
+
+ol,
+ul {
+  padding-left: var(--space-l);
+  padding-right: 0;
+}
+li > * {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+pre > code {
+  background-color: transparent;
+  display: block;
+  padding: 0;
+}
+
+.table-wrapper {
+  border: var(--border-width-s) solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+th,
+td {
+  padding: 0 var(--space-s);
+  text-align: center;
+  white-space: nowrap;
+}
+thead {
+  border-bottom: var(--border-width-s) solid var(--color-border);
+}
+tfoot {
+  border-top: var(--border-width-s) solid var(--color-border);
+}
+thead th,
+tfoot td {
+  font-weight: bolder;
+  line-height: 2.25rem;
+}
+tbody tr:nth-child(2n + 1) {
+  background-color: var(--color-subtle-background);
+}

@@ -1,0 +1,22 @@
+<header class="body-header grid-full">
+  <nav class="body-header__nav grid-main">
+    <h1 class="body-header__heading">
+      <a
+        href="/"
+        class="body-header__link"
+      >{{ .Site.Title }}</a>
+    </h1>
+    <ul class="body-header__items">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+        <li class="body-header__item">
+          <a
+            href="{{ .URL }}"
+            class="body-header__link {{ if $isActive }}body-header__link--active{{ end }}"
+          >{{ .Name }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

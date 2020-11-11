@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+  {{ partial "head.html" . }}
+  <body class="grid-root">
+    {{ partial "skip-navigation.html" . }}
+    {{ partial "body-header.html" . }}
+    <main id="main" class="grid-full">
+      <article class="grid-full">
+        {{ partial "article-header.html" . }}
+        <div class="grid-full grid-content">
+          {{ block "main" . }}{{ end }}
         </div>
-        {{- partial "footer.html" . -}}
-    </body>
+        {{ block "footer" . }}{{ end }}
+      </article>
+    </main>
+    {{ partial "body-footer.html" . }}
+    {{ partial "scripts.html" . }}
+  </body>
 </html>

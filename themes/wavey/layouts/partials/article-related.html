@@ -1,0 +1,15 @@
+{{ $articleRelatedCount := .Site.Params.articleRelatedCount | default 5 }}
+{{ $related := .Site.RegularPages.Related . | first $articleRelatedCount }}
+
+{{ with $related }}
+  <section class="article-related">
+    <h2 class="article-related__heading">See also</h2>
+    <ul class="article-related__items">
+      {{ range . }}
+        <li class="article-related__item">
+          <a class="article-related__link" href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

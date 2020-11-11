@@ -1,4 +1,84 @@
-baseURL = "https://unindented.org/"
+baseURL = "https://dev.unindented.org/"
 languageCode = "en-us"
+sectionPagesMenu = "main"
 title = "Unindented"
+copyright = "All content by <a href=\"/about/\">Daniel Perez Alvarez</a> unless otherwise noted. <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noreferrer\">Some rights reserved</a>."
 theme = "wavey"
+
+enableRobotsTXT = true
+ignoreFiles = ["README.md", "LICENSE"]
+
+[params]
+description = "Home of Daniel Perez Alvarez"
+themeColor = "#1d1f24"
+backgroundColor = "#1d1f24"
+articleListCount = 25
+articleRelatedCount = 5
+
+[author]
+name = "Daniel Perez Alvarez"
+email = "daniel@unindented.org"
+
+[social]
+facebook = "unindented"
+github = "unindented"
+twitter = "unindented"
+
+# Other stuff
+
+[markup.highlight]
+noClasses = false
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[mediaTypes."application/manifest+json"]
+suffixes = ["webmanifest", "json"]
+
+[outputFormats.manifest]
+mediaType = "application/manifest+json"
+baseName = "manifest"
+isPlainText = true
+rel = "manifest"
+
+[outputFormats.rss]
+baseName = "rss"
+
+[outputs]
+home = ["html", "manifest", "rss"]
+page = ["html"]
+section = ["html"]
+taxonomy = ["html"]
+term = ["html"]
+
+[privacy.disqus]
+disable = true
+
+[privacy.googleAnalytics]
+disable = true
+
+[privacy.instagram]
+simple = false
+
+[privacy.twitter]
+enableDNT = true
+simple = false
+
+[privacy.vimeo]
+enableDNT = true
+simple = false
+
+[privacy.youtube]
+privacyEnhanced = true
+
+[related]
+includeNewer = true
+threshold = 80
+toLower = false
+
+[[related.indices]]
+name = "tags"
+weight = 100
+
+[taxonomies]
+tag = "tags"

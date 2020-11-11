@@ -1,0 +1,21 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ if .IsHome }}{{ .Site.Title }} - {{ .Site.Params.description }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+
+  {{ partial "styles.html" . }}
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="/images/logo-maskable-192.png" />
+
+  <link rel="canonical" href="{{ .Permalink | safeURL }}" />
+  {{ if .PrevInSection }}<link rel="prev" href="{{ .PrevInSection.Permalink | safeURL }}" />{{ end }}
+  {{ if .NextInSection }}<link rel="next" href="{{ .NextInSection.Permalink | safeURL }}" />{{ end }}
+
+  {{ range (.Site.GetPage "/").AlternativeOutputFormats }}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .Permalink | safeURL }}" />
+  {{ end }}
+
+  {{ partial "meta.html" . }}
+</head>

@@ -1,0 +1,19 @@
+{{ $resources := slice }}
+{{ range .Resources }}
+  {{ if ne .ResourceType "image" }}
+    {{ $resources = append . $resources }}
+  {{ end }}
+{{ end }}
+
+{{ with $resources }}
+  <section class="article-resources">
+    <p>Check out the resources used on this page:</p>
+    <ul class="article-resources__items">
+      {{ range . }}
+        <li class="article-resources__item">
+          <a class="article-resources__link" href="{{ .RelPermalink }}"><code>{{ .Title }}</code></a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

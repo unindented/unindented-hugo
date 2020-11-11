@@ -1,0 +1,53 @@
+{{- $img := .img.Filter (images.Gamma 1) -}}
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class -}}
+
+{{- $ext := $src | path.Ext | replaceRE "^\\." "" -}}
+{{- $density := $src | replaceRE "^.+@(\\d+)x\\.[a-z]+$" "$1" | float -}}
+{{- $width := div $img.Width $density -}}
+{{- $height := div $img.Height $density -}}
+
+{{- $minFontSize := 16 -}}
+{{- $maxFontSize := (mul $minFontSize (mul (div 5.0 4.0) (div 5.0 4.0))) -}}
+{{- $minScreenSize := 480 -}}
+{{- $maxScreenSize := 1600 -}}
+
+{{- $maxContentWidth := 40 -}}
+
+{{- $srcsetBreakpoints := slice 480 640 960 1280 1920 -}}
+{{- $sizesBreakpoints := slice 1600 1280 960 640 480 -}}
+
+{{- $srcset := slice -}}
+{{- range $srcsetBreakpoints -}}
+  {{- if lt (mul 1.25 .) $img.Width -}}
+    {{- $thumb := $img.Resize (printf "%dx" .) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $thumb.RelPermalink .) -}}
+  {{- end -}}
+{{- end -}}
+{{- if lt (len $srcset) (len $srcsetBreakpoints) -}}
+  {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+{{- end -}}
+{{- $srcset = delimit $srcset ", " -}}
+
+{{- $sizes := slice -}}
+{{- range $sizesBreakpoints -}}
+  {{- $size := (int (mul $maxContentWidth (add $minFontSize (mul (sub $maxFontSize $minFontSize) (div (sub . $minScreenSize) (float (sub $maxScreenSize $minScreenSize))))))) }}
+  {{- $sizes = $sizes | append (printf "(min-width: %dpx) %dpx" . $size) -}}
+{{- end -}}
+{{- $sizes = $sizes | append "calc(100w - 2em)" -}}
+{{- $sizes = delimit $sizes ", " -}}
+
+<picture>
+  {{- partial "utils/sources.html" (dict "ext" $ext "srcset" $srcset "sizes" $sizes) -}}
+  <img
+    class="{{ $class }}"
+    width="{{ $width }}"
+    height="{{ $height }}"
+    alt="{{ $alt }}"
+    src="{{ $img.RelPermalink }}"
+    {{- printf " srcset=\"%s\"" $srcset | safeHTMLAttr -}}
+    {{- printf " sizes=\"%s\"" $sizes | safeHTMLAttr -}}
+    loading="lazy"
+  />
+</picture>
