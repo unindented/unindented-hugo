@@ -43,7 +43,7 @@ jobs:
 
       - name: Install cavif
         if: steps.cache-cavif.outputs.cache-hit != 'true'
-        run: cargo install cavif
+        run: cargo install -f cavif
 
       - name: Install Hugo
         env:
