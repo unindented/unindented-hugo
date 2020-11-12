@@ -17,5 +17,10 @@
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .RelPermalink | safeURL }}" />
   {{ end }}
 
+  {{ with .Site.Social.github }}<link rel="me" href="https://github.com/{{ . }}" />{{ end }}
+  {{ with .Site.Social.twitter }}<link rel="me" href="https://twitter.com/{{ . }}" />{{ end }}
+  {{ with .Site.Author.email }}<link rel="me" href="mailto:{{ . }}" />{{ end }}
+  <link rel="pgpkey" href="/pgpkey.pub" />
+
   {{ partial "meta.html" . }}
 </head>
