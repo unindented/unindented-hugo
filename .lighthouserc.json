@@ -1,0 +1,54 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./public",
+      "url": ["/", "/about/", "/blog/", "/playground/", "/blog/github-ribbon-using-css-transforms/"]
+    },
+    "assert": {
+      "assertMatrix": [
+        {
+          "matchingUrlPattern": "^http://localhost:\\d+/((about|blog|playground)/)?$",
+          "preset": "lighthouse:recommended",
+          "assertions": {
+            "canonical": "off",
+            "unminified-css": "off",
+            "render-blocking-resources": ["error", { "maxLength": 1 }],
+            "first-contentful-paint": ["error", { "maxNumericValue": 1000 }],
+            "speed-index": ["error", { "maxNumericValue": 1000 }],
+            "largest-contentful-paint": ["error", { "maxNumericValue": 1000 }],
+            "interactive": ["error", { "maxNumericValue": 1000 }],
+            "total-blocking-time": ["error", { "maxNumericValue": 0 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
+            "resource-summary:document:size": ["error", { "maxNumericValue": 2500 }],
+            "resource-summary:script:size": ["error", { "maxNumericValue": 1000 }],
+            "resource-summary:total:size": ["error", { "maxNumericValue": 12500 }]
+          }
+        },
+        {
+          "matchingUrlPattern": "^http://localhost:\\d+/blog/.+$",
+          "preset": "lighthouse:recommended",
+          "assertions": {
+            "canonical": "off",
+            "color-contrast": "off",
+            "tap-targets": "off",
+            "unminified-css": "off",
+            "unsized-images": "off",
+            "render-blocking-resources": ["error", { "maxLength": 1 }],
+            "first-contentful-paint": ["error", { "maxNumericValue": 1000 }],
+            "speed-index": ["error", { "maxNumericValue": 1000 }],
+            "largest-contentful-paint": ["error", { "maxNumericValue": 1000 }],
+            "interactive": ["error", { "maxNumericValue": 1000 }],
+            "total-blocking-time": ["error", { "maxNumericValue": 0 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
+            "resource-summary:document:size": ["error", { "maxNumericValue": 6000 }],
+            "resource-summary:script:size": ["error", { "maxNumericValue": 1000 }],
+            "resource-summary:total:size": ["error", { "maxNumericValue": 40000 }]
+          }
+        }
+      ]
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

@@ -16,9 +16,6 @@ jobs:
         with:
           submodules: true
 
-      - name: Install Brotli
-        run: sudo apt-get install brotli
-
       - name: Install WebP
         run: sudo apt-get install brotli webp
 
@@ -69,5 +66,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ env.cache-name }}-
 
-      - name: Build site
+      - name: Build site with Hugo
         run: make build-dev
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+
+      - name: Run Lighthouse
+        env:
+          LHCI_VERSION: "0.6.x"
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        run: |
+          npm install -g @lhci/cli@${LHCI_VERSION}
+          lhci autorun
