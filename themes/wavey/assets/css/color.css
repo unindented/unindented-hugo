@@ -160,8 +160,8 @@
   );
   --color-accent-foreground: var(--color-white);
 
-  --color-subtle-background: var(--color-gray-10);
-  --color-subtle-foreground: var(--color-black);
+  --color-subtle-background: var(--color-gray-20);
+  --color-subtle-foreground: var(--color-gray-80);
 
   --color-link: var(--color-blue-80);
   --color-link-hover: var(--color-blue-60);
@@ -207,8 +207,8 @@
     );
     --color-accent-foreground: var(--color-black);
 
-    --color-subtle-background: var(--color-gray-90);
-    --color-subtle-foreground: var(--color-white);
+    --color-subtle-background: var(--color-gray-100);
+    --color-subtle-foreground: var(--color-gray-40);
 
     --color-link: var(--color-blue-20);
     --color-link-hover: var(--color-blue-40);
