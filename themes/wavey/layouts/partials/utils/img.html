@@ -39,7 +39,7 @@
 {{- $sizes = delimit $sizes ", " -}}
 
 <picture>
-  {{- partial "utils/sources.html" (dict "ext" $ext "srcset" $srcset "sizes" $sizes) -}}
+  {{- partial "utils/sources" (dict "ext" $ext "srcset" $srcset "sizes" $sizes) -}}
   <img
     class="{{ $class }}"
     width="{{ $width }}"

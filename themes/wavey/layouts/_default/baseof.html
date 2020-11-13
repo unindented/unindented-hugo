@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en-us" }}">
-  {{ partial "head.html" . }}
+  {{ partial "head" . }}
   <body class="grid-root">
-    {{ partial "skip-navigation.html" . }}
-    {{ partial "body-header.html" . }}
+    {{ partial "skip-navigation" . }}
+    {{ partial "body-header" . }}
     <main id="main" class="grid-full">
       <article class="{{ cond .IsPage "h-entry " "" }}grid-full">
-        {{ partial "article-header.html" . }}
+        {{ partial "article-header" . }}
         <div class="{{ cond .IsPage "e-content " "" }}grid-full grid-content">
           {{ block "main" . }}{{ end }}
         </div>
         {{ block "footer" . }}{{ end }}
       </article>
     </main>
-    {{ partial "body-footer.html" . }}
-    {{ partial "scripts.html" . }}
+    {{ partial "body-footer" . }}
+    {{ partial "scripts" . }}
   </body>
 </html>
