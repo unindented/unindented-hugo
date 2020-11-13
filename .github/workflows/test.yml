@@ -7,8 +7,8 @@ on:
     branches: [master]
 
 jobs:
-  test:
-    name: Test
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -68,6 +68,25 @@ jobs:
 
       - name: Build site with Hugo
         run: make build-dev
+
+      - name: Upload site
+        uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: |
+            public
+            .lighthouserc.json
+
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download site
+        uses: actions/download-artifact@v2
+        with:
+          name: site
+          path: .
 
       - name: Set up Node
         uses: actions/setup-node@v1
