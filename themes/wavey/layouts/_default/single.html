@@ -1,10 +1,10 @@
 {{ define "main" }}
   {{ .Content }}
 
-  {{ partial "article-resources.html" . }}
-  {{ partial "article-related.html" . }}
+  {{ partial "article-resources" . }}
+  {{ partial "article-related" . }}
 {{ end }}
 
 {{ define "footer" }}
-  {{ partial "article-footer.html" . }}
+  {{ partial "article-footer" . }}
 {{ end }}

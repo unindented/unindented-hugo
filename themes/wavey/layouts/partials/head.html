@@ -4,7 +4,7 @@
 
   <title>{{ if .IsHome }}{{ .Site.Title }} - {{ .Site.Params.description }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
 
-  {{ partial "styles.html" . }}
+  {{ partial "styles" . }}
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" type="image/png" href="/images/logo-maskable-192.png" />
@@ -22,5 +22,5 @@
   {{ with .Site.Author.email }}<link rel="me" href="mailto:{{ . }}" />{{ end }}
   <link rel="pgpkey" href="/pgpkey.pub" />
 
-  {{ partial "meta.html" . }}
+  {{ partial "meta" . }}
 </head>

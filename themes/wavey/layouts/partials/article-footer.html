@@ -7,13 +7,13 @@
   {{ $authorTwitter := $firstAuthor.social.twitter }}
   {{ $authorEmail := $firstAuthor.email }}
 
-  {{ $tagLinks := partial "utils/tags.html" . }}
-  {{ $authorLinks := partial "utils/authors.html" . }}
+  {{ $tagLinks := partial "utils/tags" . }}
+  {{ $authorLinks := partial "utils/authors" . }}
 
   <footer class="article-footer grid-main">
     <div class="article-footer__container">
       <picture>
-        {{- partial "utils/sources.html" (dict "ext" $authorThumbExt "srcset" $authorThumb) -}}
+        {{- partial "utils/sources" (dict "ext" $authorThumbExt "srcset" $authorThumb) -}}
         <img
           class="article-footer__image"
           alt=""
@@ -28,7 +28,7 @@
           href="{{ .RelPermalink }}"
         >{{ partial "utils/time" .Date }}</a>
         {{ if $tagLinks }}under {{ $tagLinks }}{{ end }}
-        by {{ partial "utils/authors.html" . }}.
+        by {{ partial "utils/authors" . }}.
         Got any comments or suggestions? Send a
         <a
           href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via={{ $authorTwitter }}"
