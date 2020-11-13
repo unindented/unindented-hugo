@@ -11,6 +11,7 @@
           "preset": "lighthouse:recommended",
           "assertions": {
             "canonical": "off",
+            "color-contrast": "off",
             "unminified-css": "off",
             "render-blocking-resources": ["error", { "maxLength": 1 }],
             "first-contentful-paint": ["error", { "maxNumericValue": 1000 }],
