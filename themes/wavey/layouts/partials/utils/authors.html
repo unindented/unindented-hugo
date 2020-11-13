@@ -1,0 +1,2 @@
+{{- $authors := .Params.authors -}}
+{{ return delimit (apply $authors "partial" "utils/author.html" ".") ", " " and " }}

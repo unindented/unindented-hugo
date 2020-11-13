@@ -7,14 +7,8 @@
   {{ $authorTwitter := $firstAuthor.social.twitter }}
   {{ $authorEmail := $firstAuthor.email }}
 
-  {{ $authorNames := slice }}
-  {{ range .Params.authors }}
-    {{ $authorNames = $authorNames | append (index $authorsData .).displayName }}
-  {{ end }}
-  {{ $authorNames = delimit $authorNames ", " " and " }}
-
-  {{ $tags := .GetTerms "tags" }}
-  {{ $tagLinks := delimit (apply $tags "partial" "utils/tag.html" ".") ", " " and " }}
+  {{ $tagLinks := partial "utils/tags.html" . }}
+  {{ $authorLinks := partial "utils/authors.html" . }}
 
   <footer class="article-footer grid-main">
     <div class="article-footer__container">
@@ -28,9 +22,13 @@
         />
       </picture>
       <p class="article-footer__meta">
-        Posted on {{ partial "utils/time" .Date }}
+        Posted on
+        <a
+          class="u-url u-uid"
+          href="{{ .RelPermalink }}"
+        >{{ partial "utils/time" .Date }}</a>
         {{ if $tagLinks }}under {{ $tagLinks }}{{ end }}
-        by {{ $authorNames }}.
+        by {{ partial "utils/authors.html" . }}.
         Got any comments or suggestions? Send a
         <a
           href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via={{ $authorTwitter }}"

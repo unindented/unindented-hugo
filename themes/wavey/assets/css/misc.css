@@ -137,7 +137,6 @@
 .terms-list__item {
   display: inline-block;
   margin: 0 var(--space-s) 0;
-  text-transform: lowercase;
 }
 
 .terms-list__link {
@@ -146,6 +145,7 @@
   line-height: 1.05;
   margin-bottom: var(--space-s);
   text-decoration: none;
+  text-transform: lowercase;
 }
 
 /* Article list
@@ -159,7 +159,6 @@
 .article-list__item {
   display: block;
   margin: var(--space-l) 0;
-  text-transform: lowercase;
 }
 .article-list__item:first-child {
   margin-top: var(--space-s);
@@ -175,6 +174,14 @@
   line-height: 1.05;
   margin-bottom: var(--space-s);
   text-decoration: none;
+  text-transform: lowercase;
+}
+
+.article-list__meta {
+  color: var(--color-subtle-foreground);
+  font-size: calc(var(--font-scale-6) * 1rem);
+  margin-bottom: var(--space-s);
+  text-transform: lowercase;
 }
 
 /* Article header
