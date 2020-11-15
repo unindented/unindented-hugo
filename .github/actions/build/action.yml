@@ -1,0 +1,42 @@
+name: "Build site"
+description: 'Install required dependencies and build site'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install WebP
+      shell: bash
+      run: sudo apt-get install webp
+
+    - name: Install Nasm
+      env:
+        LINK: http://debian-archive.trafficmanager.net/debian/pool/main/n/nasm
+        NASM_VERSION: "2.15.05-1"
+        NASM_SHA256: >-
+          c860caec653b865d5b83359452d97b11f1b3ba5b18b07cac554cf72550b3bfc9
+      shell: bash
+      run: |
+        curl -OL "$LINK/nasm_${NASM_VERSION}_amd64.deb"
+        echo "$NASM_SHA256 nasm_${NASM_VERSION}_amd64.deb" | sha256sum --check
+        sudo dpkg -i "nasm_${NASM_VERSION}_amd64.deb"
+
+    - name: Install cavif
+      shell: bash
+      run: |
+        if [ ! -f ~/.cargo/bin/cavif ]; then cargo install cavif; fi
+
+    - name: Install Hugo
+      env:
+        LINK: https://github.com/gohugoio/hugo/releases/download
+        HUGO_VERSION: "0.78.1"
+        HUGO_SHA256: >-
+          5640a2ff09f6ac6c860059f1fcf76d8e91575f81fdd94d8be3be8fc88be7a158
+      shell: bash
+      run: |
+        curl -OL "$LINK/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb"
+        echo "$HUGO_SHA256 hugo_extended_${HUGO_VERSION}_Linux-64bit.deb" | sha256sum --check
+        sudo dpkg -i "hugo_extended_${HUGO_VERSION}_Linux-64bit.deb"
+
+    - name: Build site with Hugo
+      shell: bash
+      run: make build-dev
