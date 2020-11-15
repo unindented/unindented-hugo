@@ -1,0 +1,13 @@
+name: "Test site"
+description: 'Install required dependencies and test site'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run Lighthouse
+      env:
+        LHCI_VERSION: "0.6.x"
+      shell: bash
+      run: |
+        npm install -g @lhci/cli@${LHCI_VERSION}
+        lhci autorun
