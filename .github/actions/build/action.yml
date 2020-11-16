@@ -1,5 +1,5 @@
 name: "Build site"
-description: 'Install required dependencies and build site'
+description: "Install required dependencies and build site"
 
 runs:
   using: "composite"

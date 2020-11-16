@@ -1,9 +1,18 @@
 name: "Test site"
-description: 'Install required dependencies and test site'
+description: "Install required dependencies and test site"
 
 runs:
   using: "composite"
   steps:
+    - name: Run Playwright
+      env:
+        PLAYWRIGHT_VERSION: "1.6.x"
+      shell: bash
+      run: |
+        cd tests
+        npm install playwright@${PLAYWRIGHT_VERSION}
+        node index.mjs
+
     - name: Run Lighthouse
       env:
         LHCI_VERSION: "0.6.x"
