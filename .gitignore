@@ -1,3 +1,7 @@
 /.lighthouseci/
 /public/
 /resources/_gen/
+/tests/node_modules/
+/tests/screenshots/*
+!/tests/screenshots/.keep
+/tests/package-lock.json
