@@ -1,0 +1,26 @@
+name: Rsync
+description: "Rsync files to a destination server over SSH"
+
+inputs:
+  options:
+    description: 'Rsync flags'
+    required: true
+    default: '-avzr --delete'
+  source:
+    description: 'Local folder to be synced'
+    required: true
+  target:
+    description: 'Remote server and path. i.e user@server.com:/var/www/server.com/'
+    required: true
+
+outputs:
+  status:
+    description: 'Status of the command'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.options }}
+    - ${{ inputs.source }}
+    - ${{ inputs.target }}

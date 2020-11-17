@@ -1,8 +1,6 @@
-name: Test
+name: Pull request
 
 on:
-  push:
-    branches: [master]
   pull_request:
     branches: [master]
 
@@ -82,3 +80,30 @@ jobs:
           name: screenshots
           path: |
             tests/screenshots
+
+  deploy:
+    name: Deploy to staging
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Download site
+        uses: actions/download-artifact@v2
+        with:
+          name: site
+          path: .
+
+      - name: Deploy via rsync
+        uses: ./.github/actions/rsync
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_USERNAME: ${{secrets.SSH_USERNAME}}
+          SSH_HOSTNAME: ${{secrets.SSH_HOSTNAME}}
+        with:
+          options: --archive --delete --exclude-from .rsyncignore
+          source: public/
+          target: ~/dev.unindented.org/
