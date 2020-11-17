@@ -6,6 +6,14 @@ on:
   pull_request:
     branches: [master]
 
+env:
+  NASM_VERSION: "2.15.05-1"
+  NASM_SHA256: c860caec653b865d5b83359452d97b11f1b3ba5b18b07cac554cf72550b3bfc9
+  HUGO_VERSION: "0.78.1"
+  HUGO_SHA256: 5640a2ff09f6ac6c860059f1fcf76d8e91575f81fdd94d8be3be8fc88be7a158
+  PLAYWRIGHT_VERSION: "1.6.1"
+  LHCI_VERSION: "0.6.1"
+
 jobs:
   build:
     name: Build

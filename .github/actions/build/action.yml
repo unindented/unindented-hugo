@@ -11,9 +11,6 @@ runs:
     - name: Install Nasm
       env:
         LINK: http://debian-archive.trafficmanager.net/debian/pool/main/n/nasm
-        NASM_VERSION: "2.15.05-1"
-        NASM_SHA256: >-
-          c860caec653b865d5b83359452d97b11f1b3ba5b18b07cac554cf72550b3bfc9
       shell: bash
       run: |
         curl -OL "$LINK/nasm_${NASM_VERSION}_amd64.deb"
@@ -28,9 +25,6 @@ runs:
     - name: Install Hugo
       env:
         LINK: https://github.com/gohugoio/hugo/releases/download
-        HUGO_VERSION: "0.78.1"
-        HUGO_SHA256: >-
-          5640a2ff09f6ac6c860059f1fcf76d8e91575f81fdd94d8be3be8fc88be7a158
       shell: bash
       run: |
         curl -OL "$LINK/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb"

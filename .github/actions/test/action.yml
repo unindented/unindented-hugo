@@ -5,8 +5,6 @@ runs:
   using: "composite"
   steps:
     - name: Run Playwright
-      env:
-        PLAYWRIGHT_VERSION: "1.6.x"
       shell: bash
       run: |
         cd tests
@@ -14,8 +12,6 @@ runs:
         node index.mjs
 
     - name: Run Lighthouse
-      env:
-        LHCI_VERSION: "0.6.x"
       shell: bash
       run: |
         npm install -g @lhci/cli@${LHCI_VERSION}
