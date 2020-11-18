@@ -12,6 +12,7 @@
           "assertions": {
             "canonical": "off",
             "color-contrast": "off",
+            "is-crawlable": "off",
             "unminified-css": "off",
             "render-blocking-resources": ["error", { "maxLength": 1 }],
             "first-contentful-paint": ["error", { "maxNumericValue": 1500 }],
@@ -31,6 +32,7 @@
           "assertions": {
             "canonical": "off",
             "color-contrast": "off",
+            "is-crawlable": "off",
             "tap-targets": "off",
             "unminified-css": "off",
             "unsized-images": "off",
