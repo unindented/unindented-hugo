@@ -45,8 +45,8 @@ jobs:
             public
             .lighthouserc.json
 
-  deploy:
-    name: Deploy
+  test:
+    name: Test
     needs: build
     runs-on: ubuntu-latest
     steps:
