@@ -1,4 +1,4 @@
-baseURL = "https://www.unindented.org/"
+baseURL = "https://dev.unindented.org"
 languageCode = "en-us"
 sectionPagesMenu = "main"
 title = "Unindented"

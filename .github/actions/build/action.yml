@@ -1,6 +1,12 @@
 name: "Build site"
 description: "Install required dependencies and build site"
 
+inputs:
+  environment:
+    description: 'Target environment'
+    required: true
+    default: 'prod'
+
 runs:
   using: "composite"
   steps:
@@ -39,4 +45,4 @@ runs:
 
     - name: Build site with Hugo
       shell: bash
-      run: make build-dev
+      run: make build-${{ inputs.environment }}
