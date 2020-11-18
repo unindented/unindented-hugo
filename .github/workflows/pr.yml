@@ -36,6 +36,8 @@ jobs:
 
       - name: Build site
         uses: ./.github/actions/build
+        with:
+          environment: dev
 
       - name: Upload site
         uses: actions/upload-artifact@v2
@@ -100,10 +102,8 @@ jobs:
       - name: Deploy via rsync
         uses: ./.github/actions/rsync
         env:
-          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-          SSH_USERNAME: ${{secrets.SSH_USERNAME}}
-          SSH_HOSTNAME: ${{secrets.SSH_HOSTNAME}}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         with:
           options: --archive --delete --exclude-from .rsyncignore
           source: public/
-          target: ~/dev.unindented.org/
+          target: ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOSTNAME }}:~/dev.unindented.org/
