@@ -1,0 +1,2 @@
+User-agent: *
+{{ if ne .Site.BaseURL "https://www.unindented.org" }}Disallow: /{{ end }}
