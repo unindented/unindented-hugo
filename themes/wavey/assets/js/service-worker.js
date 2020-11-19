@@ -30,6 +30,8 @@ const stashInCache = async (cacheName, request, response) => {
   cache.put(request, response);
 };
 
+const readCaches = (request) => caches.match(request, { ignoreVary: true });
+
 const trimCache = async (cacheName, maxItems) => {
   const cache = await caches.open(cacheName);
   const keys = await cache.keys();
@@ -57,6 +59,19 @@ const isRequestForStaticAsset = (request) => {
   return staticAssets.includes(pathname);
 };
 
+const getCacheNameForRequest = (request) => {
+  if (isRequestForOfflinePage(request) || isRequestForStaticAsset(request)) {
+    return staticCacheName;
+  }
+  if (isRequestOfType(request, "text/html")) {
+    return pagesCacheName;
+  }
+  if (isRequestOfType(request, "image")) {
+    return imagesCacheName;
+  }
+  return assetsCacheName;
+};
+
 self.addEventListener("install", (event) => {
   event.waitUntil(updateStaticCache().then(() => self.skipWaiting()));
 });
@@ -81,34 +96,16 @@ self.addEventListener("fetch", (event) => {
 
   const onNetworkResolve = (response) => {
     const cacheCopy = response.clone();
-
-    if (isRequestOfType(request, "text/html")) {
-      if (isRequestForOfflinePage(request)) {
-        stashInCache(staticCacheName, request, cacheCopy);
-      } else {
-        stashInCache(pagesCacheName, request, cacheCopy);
-      }
-    } else if (isRequestOfType(request, "image")) {
-      if (isRequestForStaticAsset(request)) {
-        stashInCache(staticCacheName, request, cacheCopy);
-      } else {
-        stashInCache(imagesCacheName, request, cacheCopy);
-      }
-    } else {
-      if (isRequestForStaticAsset(request)) {
-        stashInCache(staticCacheName, request, cacheCopy);
-      } else {
-        stashInCache(assetsCacheName, request, cacheCopy);
-      }
-    }
+    const cacheName = getCacheNameForRequest(request);
+    stashInCache(cacheName, request, cacheCopy);
 
     return response;
   };
 
   const onNetworkReject = async () => {
     if (isRequestOfType(request, "text/html")) {
-      const cachedResponse = await caches.match(request);
-      return cachedResponse || caches.match("/offline.html");
+      const cachedResponse = await readCaches(request);
+      return cachedResponse || readCaches("/offline.html");
     }
     if (isRequestOfType(request, "image")) {
       return new Response(`{{ $offlineImage }}`, { headers: { "Content-Type": "image/svg+xml" } });
@@ -132,7 +129,7 @@ self.addEventListener("fetch", (event) => {
   };
 
   const cacheOrFetchFromNetworkOrFallback = async () => {
-    const cachedResponse = await caches.match(request);
+    const cachedResponse = await readCaches(request);
     return cachedResponse || fetchFromNetworkOrFallback();
   };
 
