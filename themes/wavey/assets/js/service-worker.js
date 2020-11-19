@@ -52,6 +52,11 @@ const isRequestForOfflinePage = (request) => {
   return offlinePages.includes(pathname) || offlinePages.includes(`${pathname}/`);
 };
 
+const isRequestForStaticAsset = (request) => {
+  const { pathname } = new URL(request.url);
+  return staticAssets.includes(pathname);
+};
+
 self.addEventListener("install", (event) => {
   event.waitUntil(updateStaticCache().then(() => self.skipWaiting()));
 });
@@ -84,9 +89,17 @@ self.addEventListener("fetch", (event) => {
         stashInCache(pagesCacheName, request, cacheCopy);
       }
     } else if (isRequestOfType(request, "image")) {
-      stashInCache(imagesCacheName, request, cacheCopy);
+      if (isRequestForStaticAsset(request)) {
+        stashInCache(staticCacheName, request, cacheCopy);
+      } else {
+        stashInCache(imagesCacheName, request, cacheCopy);
+      }
     } else {
-      stashInCache(assetsCacheName, request, cacheCopy);
+      if (isRequestForStaticAsset(request)) {
+        stashInCache(staticCacheName, request, cacheCopy);
+      } else {
+        stashInCache(assetsCacheName, request, cacheCopy);
+      }
     }
 
     return response;
