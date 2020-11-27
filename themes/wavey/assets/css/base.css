@@ -58,19 +58,19 @@ a:hover {
 }
 
 blockquote {
-  border-left: var(--border-width-l) solid var(--color-border);
-  border-right: 0;
+  border-inline-start: var(--border-width-l) solid var(--color-border);
+  border-inline-end: 0;
   font-style: italic;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: calc(var(--space-l) - var(--space-xs));
-  padding-right: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: calc(var(--space-l) - var(--space-xs));
+  padding-inline-end: 0;
 }
 blockquote > :first-child {
-  margin-top: 0;
+  margin-block-start: 0;
 }
 blockquote > :last-child {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 canvas {
@@ -78,9 +78,9 @@ canvas {
   border-radius: var(--border-radius);
   display: block;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 100%;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
   overflow: hidden;
 }
 
@@ -96,8 +96,8 @@ dt {
   font-weight: bolder;
 }
 dd {
-  margin-left: var(--space-l);
-  margin-right: 0;
+  margin-inline-start: var(--space-l);
+  margin-inline-end: 0;
 }
 
 figure {
@@ -110,9 +110,9 @@ figcaption {
   padding: var(--space-s);
   opacity: 1;
   pointer-events: none;
+  text-align: center;
   position: absolute;
   bottom: 0;
-  text-align: center;
 }
 
 h1 {
@@ -158,15 +158,15 @@ hr::after {
   border: var(--border-width-s) solid var(--color-border);
   border-radius: var(--border-radius);
   overflow: hidden;
-  padding-bottom: 56.25%;
+  padding-block-end: 56.25%;
   position: relative;
 }
 iframe {
   height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
   width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 img {
@@ -174,9 +174,9 @@ img {
   border-radius: var(--border-radius);
   display: block;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 100%;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
   overflow: hidden;
 }
 
@@ -196,12 +196,12 @@ mark {
 
 ol,
 ul {
-  padding-left: var(--space-l);
-  padding-right: 0;
+  padding-inline-start: var(--space-l);
+  padding-inline-end: 0;
 }
 li > * {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 pre > code {
@@ -239,4 +239,9 @@ tfoot td {
 }
 tbody tr:nth-child(2n + 1) {
   background-color: var(--color-subtle-background);
+}
+
+::selection {
+  background-color: var(--color-accent-background-1);
+  color: var(--color-accent-foreground);
 }
