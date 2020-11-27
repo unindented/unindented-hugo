@@ -14,20 +14,20 @@
 }
 /* LineTableTD */
 .chroma .lntd {
-  vertical-align: top;
-  padding: 0;
-  margin: 0;
   border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
 }
 /* LineTable */
 .chroma .lntable {
   border-spacing: 0;
-  padding: 0;
-  margin: 0;
   border: 0;
-  width: auto;
-  overflow: auto;
   display: block;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  width: auto;
 }
 /* LineHighlight */
 .chroma .hl {
@@ -36,20 +36,18 @@
 .chroma .hl::before {
   color: var(--color-code-comment);
   content: "=>";
-  left: -2rem;
   position: absolute;
+  left: calc(var(--space-xl) * -1);
 }
 /* LineNumbersTable */
 .chroma .lnt {
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
-  color: #7f7f7f;
+  color: var(--color-code-comment);
+  margin-inline-end: var(--space-m);
 }
 /* LineNumbers */
 .chroma .ln {
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
-  color: #7f7f7f;
+  color: var(--color-code-comment);
+  margin-inline-end: var(--space-m);
 }
 /* Keyword */
 .chroma .k {
@@ -303,11 +301,11 @@
 }
 /* GenericError */
 .chroma .gr {
-  color: #aa0000;
+  color: var(--color-code-error);
 }
 /* GenericHeading */
 .chroma .gh {
-  color: #999999;
+  color: var(--color-code-meta);
 }
 /* GenericInserted */
 .chroma .gi {
