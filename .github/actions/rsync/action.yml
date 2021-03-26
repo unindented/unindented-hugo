@@ -3,23 +3,23 @@ description: "Rsync files to a destination server over SSH"
 
 inputs:
   options:
-    description: 'Options'
+    description: "Options"
     required: true
-    default: '--archive --delete'
+    default: "--archive --delete"
   source:
-    description: 'Source'
+    description: "Source"
     required: true
   target:
-    description: 'Target'
+    description: "Target"
     required: true
 
 outputs:
   status:
-    description: 'Status of the command'
+    description: "Status of the command"
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.options }}
     - ${{ inputs.source }}
