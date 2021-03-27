@@ -5,7 +5,8 @@
 {{ $utils := resources.Get "css/utils.css" }}
 {{ $syntax := resources.Get "css/syntax.css" }}
 {{ $misc := resources.Get "css/misc.css" }}
-{{ $styles := slice $normalize $config $color $base $utils $syntax $misc | resources.Concat "css/styles.css" }}
+{{ $fonts := resources.Get "css/fonts.css" }}
+{{ $styles := slice $normalize $config $color $base $utils $syntax $misc $fonts | resources.Concat "css/styles.css" }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 
 {{ if .Params.katex }}<link rel="stylesheet" href="/js/katex@0.12.0/katex.css" />{{ end }}
