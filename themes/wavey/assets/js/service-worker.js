@@ -47,7 +47,10 @@ const clearOldCaches = async () => {
   return Promise.all(keysToDelete.map((key) => caches.delete(key)));
 };
 
-const isRequestOfType = (request, type) => request.headers.get("Accept").indexOf(type) != -1;
+const isRequestOfType = (request, type) => {
+  const accept = request.headers.get("accept") || "text/html";
+  return accept.indexOf(type) != -1;
+};
 
 const isRequestForOfflinePage = (request) => {
   const { pathname } = new URL(request.url);
@@ -108,22 +111,15 @@ self.addEventListener("fetch", (event) => {
       return cachedResponse || readCaches("/offline.html");
     }
     if (isRequestOfType(request, "image")) {
-      return new Response(`{{ $offlineImage }}`, { headers: { "Content-Type": "image/svg+xml" } });
+      return new Response(`{{ $offlineImage }}`, { headers: { "content-type": "image/svg+xml" } });
     }
   };
 
   const fetchFromNetworkOrFallback = async () => {
-    // DevTools opening will trigger these `only-if-cached` requests, which the ServiceWorker can't handle.
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=823392
-    if (request.cache === "only-if-cached" && request.mode !== "same-origin") {
-      return;
-    }
-
     try {
       const response = await fetch(request);
       return onNetworkResolve(response);
     } catch (err) {
-      console.error(err);
       return onNetworkReject();
     }
   };
