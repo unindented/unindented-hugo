@@ -1,7 +1,7 @@
-name = "Wavey"
+name = "Custom"
 license = "MIT"
 licenselink = "https://github.com/unindented/unindented-hugo/blob/master/LICENSE"
-description = "Wavey theme for my site."
+description = "Custom theme for my site."
 homepage = "https://www.unindented.org/"
 tags = []
 features = []
