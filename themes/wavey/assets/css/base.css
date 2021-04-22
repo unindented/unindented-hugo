@@ -189,6 +189,63 @@ kbd {
   white-space: nowrap;
 }
 
+button,
+input,
+label,
+output,
+select,
+textarea {
+  color: var(--color-foreground);
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  width: 100%;
+}
+button,
+input,
+output,
+select,
+textarea {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+  border: var(--border-width-s) solid var(--color-border);
+  margin-block-end: var(--space-m);
+  padding: var(--space-s);
+}
+input[disabled],
+input[readonly],
+output,
+textarea[disabled],
+textarea[readonly] {
+  color: var(--color-subtle-foreground);
+}
+input[disabled],
+textarea[disabled] {
+  background-color: var(--color-subtle-background);
+}
+fieldset {
+  border: var(--border-width-s) solid var(--color-border);
+  border-radius: var(--border-radius);
+  margin-block-end: var(--space-m);
+}
+button,
+input[type="checkbox"],
+input[type="checkbox"] + label,
+input[type="radio"],
+input[type="radio"] + label,
+input[type="reset"],
+input[type="submit"] {
+  display: inline-block;
+  width: auto;
+}
+label {
+  margin-block-end: var(--space-s);
+}
+textarea {
+  resize: vertical;
+}
+
 mark {
   background-color: var(--color-accent-background-1);
   color: var(--color-accent-foreground);
@@ -239,6 +296,11 @@ tfoot td {
 }
 tbody tr:nth-child(2n + 1) {
   background-color: var(--color-subtle-background);
+}
+
+::placeholder {
+  color: var(--color-subtle-foreground);
+  opacity: 1;
 }
 
 ::selection {
