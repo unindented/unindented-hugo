@@ -3,7 +3,7 @@ languageCode = "en-us"
 sectionPagesMenu = "main"
 title = "Unindented"
 copyright = "All content by <a class=\"h-card\" rel=\"me\" href=\"https://www.unindented.org/\">Daniel Perez Alvarez</a> unless otherwise noted. <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noreferrer\">Some rights reserved</a>."
-theme = "wavey"
+theme = "custom"
 
 enableRobotsTXT = true
 ignoreFiles = ["README.md", "LICENSE"]
