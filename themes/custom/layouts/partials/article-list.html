@@ -7,7 +7,7 @@
       </p>
       <p class="article-list__meta">
         {{ partial "utils/time" .Date }}
-        {{ if eq .Section "blog" }} &middot; {{ partial "utils/length" .Content }}{{ end }}
+        {{ if eq .Section "blog" }} - {{ partial "utils/length" .Content }}{{ end }}
       </p>
       <p class="p-summary article-list__summary">
         {{ .Summary | plainify | safeHTML }}
