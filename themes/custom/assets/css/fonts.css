@@ -2,7 +2,8 @@
    ========================================================================== */
 
 @font-face {
-  src: url(/fonts/xkcd-script.woff2) format("woff2"), url(/fonts/xkcd-script.woff) format("woff"),
+  src: url(/fonts/xkcd-script.woff2) format("woff2"),
+    url(/fonts/xkcd-script.woff) format("woff"),
     url(/fonts/xkcd-script.ttf) format("truetype");
   font-family: "xkcd Script";
   font-display: swap;
