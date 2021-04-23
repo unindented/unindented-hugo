@@ -20,10 +20,10 @@
             "largest-contentful-paint": ["error", { "maxNumericValue": 1500 }],
             "interactive": ["error", { "maxNumericValue": 1500 }],
             "total-blocking-time": ["error", { "maxNumericValue": 0 }],
-            "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
             "resource-summary:document:size": ["error", { "maxNumericValue": 5500 }],
             "resource-summary:script:size": ["error", { "maxNumericValue": 1000 }],
-            "resource-summary:total:size": ["error", { "maxNumericValue": 13500 }]
+            "resource-summary:total:size": ["error", { "maxNumericValue": 50000 }]
           }
         },
         {
@@ -42,10 +42,10 @@
             "largest-contentful-paint": ["error", { "maxNumericValue": 1500 }],
             "interactive": ["error", { "maxNumericValue": 1500 }],
             "total-blocking-time": ["error", { "maxNumericValue": 0 }],
-            "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
             "resource-summary:document:size": ["error", { "maxNumericValue": 6500 }],
             "resource-summary:script:size": ["error", { "maxNumericValue": 1000 }],
-            "resource-summary:total:size": ["error", { "maxNumericValue": 40000 }]
+            "resource-summary:total:size": ["error", { "maxNumericValue": 75000 }]
           }
         }
       ]
