@@ -3,8 +3,8 @@ familyName = "Perez Alvarez"
 displayName = "Daniel Perez Alvarez"
 thumbnail = "/authors/daniel-192.png"
 image = "/authors/daniel-512.png"
-shortBio = "I’m Daniel Perez Alvarez, a software engineer currently working at Microsoft."
-bio = "I’m Daniel Perez Alvarez, a software engineer currently working at Microsoft. I’m originally from Madrid, I lived in London for a while, and now I’m based in Seattle."
+shortBio = "I’m Daniel Perez Alvarez, a software engineer currently working at Twitter."
+bio = "I’m Daniel Perez Alvarez, a software engineer currently working at Twitter. I’m originally from Madrid, I lived in London for a while, and now I’m based in Seattle."
 email = "daniel@unindented.org"
 
 [social]
