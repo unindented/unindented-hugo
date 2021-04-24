@@ -285,7 +285,7 @@ AddDefaultCharset utf-8
 # https://www.w3.org/TR/CSP/
 
 <IfModule mod_headers.c>
-    Header always set Content-Security-Policy "default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self'; manifest-src 'self'; media-src 'self'; script-src 'self'; style-src 'self'; worker-src 'self'; block-all-mixed-content; upgrade-insecure-requests" "expr=%{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
+    Header always set Content-Security-Policy "default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com; img-src data: 'self'; manifest-src 'self'; media-src 'self'; script-src 'self'; style-src 'self'; worker-src 'self'; block-all-mixed-content; upgrade-insecure-requests" "expr=%{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
 </IfModule>
 
 # ----------------------------------------------------------------------
