@@ -21,6 +21,14 @@ COMPRESSABLE_FILES := $(shell find $(COMPRESSABLE_INCLUDE_DIR) -type f \( $(COMP
 COMPRESSABLE_FILES_BROTLI := $(addsuffix .br, $(COMPRESSABLE_FILES))
 COMPRESSABLE_FILES_GZIP := $(addsuffix .gz, $(COMPRESSABLE_FILES))
 
+CONTENT_INDEX_COVER_TEMPLATE := themes/custom/static/images/cover-template.png
+CONTENT_INDEX_INCLUDE_DIR := $(CONTENT_DIR)
+
+CONTENT_INDEX_FILES := $(shell find $(CONTENT_INDEX_INCLUDE_DIR) -type f -name index.md 2> /dev/null)
+CONTENT_INDEX_FILES_COVER := $(addsuffix _cover@2x.png, $(dir $(CONTENT_INDEX_FILES)))
+
+TWITTER_HANDLE := $(shell sed -n 's/twitter = "\(.*\)"/\1/p' config.toml)
+
 .PHONY: all
 all: build
 
@@ -34,7 +42,7 @@ server:
 	@hugo server
 
 .PHONY: build
-build:
+build: covers
 	@hugo --cleanDestinationDir --minify
 # Restart make to force reevaluation of find commands at the top.
 	@$(MAKE) --no-print-directory optimize
@@ -88,6 +96,10 @@ compress-gzip: $(COMPRESSABLE_FILES_GZIP)
 	@echo
 	@echo "Finished compressing files with Gzip!"
 
+covers: $(CONTENT_INDEX_FILES_COVER)
+	@echo
+	@echo "Finished generating cover files!"
+
 $(CONVERTIBLE_INCLUDE_DIR)/%.avif: $(CONVERTIBLE_CACHE_DIR)/%.avif
 	@cp $< $@
 
@@ -117,4 +129,28 @@ $(COMPRESSABLE_INCLUDE_DIR)/%.br: $(COMPRESSABLE_INCLUDE_DIR)/%
 $(COMPRESSABLE_INCLUDE_DIR)/%.gz: $(COMPRESSABLE_INCLUDE_DIR)/%
 	@gzip -f -k $<
 	@touch $@
+	@printf "."
+
+$(CONTENT_INDEX_INCLUDE_DIR)/%/_cover@2x.png: $(CONTENT_INDEX_INCLUDE_DIR)/%/index.md $(CONTENT_INDEX_COVER_TEMPLATE)
+	$(eval $@_TITLE := $(shell sed -n 's/title = "\(.*\)"/\1/p' $<))
+	@convert $(CONTENT_INDEX_COVER_TEMPLATE) \
+	  \( -size 280x64 \
+	     -background none \
+	     -fill white \
+	     -font 'xkcdScript' \
+	     -gravity center \
+	     label:'@$(TWITTER_HANDLE)' \) \
+	  -gravity northwest \
+	  -geometry +76+432 \
+	  -composite \
+	  \( -size 696x480 \
+	     -background none \
+	     -fill white \
+	     -font 'xkcdScript' \
+	     -gravity center \
+	     caption:'$($@_TITLE)' \) \
+	  -gravity northwest \
+	  -geometry +432+76 \
+	  -composite \
+	  $@
 	@printf "."

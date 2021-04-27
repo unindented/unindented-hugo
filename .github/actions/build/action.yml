@@ -10,6 +10,24 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Install ImageMagick
+      shell: bash
+      run: sudo apt-get install imagemagick
+
+    - name: Configure ImageMagick fonts
+      env:
+        LINK: https://imagemagick.org/Usage/scripts
+        SCRIPT_NAME: imagick_type_gen
+        SCRIPT_SHA256: >-
+          d680e9ce3e0458911efd0f4413a040f2285c711443d056092082625f195df4bb
+      shell: bash
+      run: |
+        curl -OL "$LINK/$SCRIPT_NAME"
+        echo "$SCRIPT_SHA256 $SCRIPT_NAME" | sha256sum --check
+        chmod +x "$SCRIPT_NAME"
+        mkdir ~/.magick
+        find "$GITHUB_WORKSPACE" -type f -name '*.ttf' | "./$SCRIPT_NAME" -f - > ~/.magick/type.xml
+
     - name: Install WebP
       shell: bash
       run: sudo apt-get install webp
