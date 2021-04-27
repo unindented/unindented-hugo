@@ -10,8 +10,9 @@ The contents themselves are versioned separately as a submodule. You can find th
 - [GNU Make](https://www.gnu.org/software/make/) - `brew install make`
 - [Gzip](https://www.gnu.org/software/gzip/) - `brew install gzip`
 - [Brotli](https://github.com/google/brotli) - `brew install brotli`
+- [ImageMagick](https://imagemagick.org/) - `brew install imagemagick`
 - [WebP](https://developers.google.com/speed/webp) - `brew install webp`
-- [cavif](https://github.com/kornelski/cavif-rs) - `cargo install cavif`
+- [cavif](https://github.com/kornelski/cavif-rs) - `brew install nasm && cargo install cavif`
 
 ## Develop
 
@@ -60,4 +61,4 @@ Daniel Perez Alvarez ([daniel@unindented.org](mailto:daniel@unindented.org))
 
 ## License
 
-Copyright (c) 2020 Daniel Perez Alvarez ([unindented.org](https://www.unindented.org/)). This is free software, and may be redistributed under the terms specified in the LICENSE file.
+Copyright (c) 2021 Daniel Perez Alvarez ([unindented.org](https://www.unindented.org/)). This is free software, and may be redistributed under the terms specified in the LICENSE file.
