@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: unindented.org
+Token: ed133d1f60219fa168dee81938c275182ef9d9ed792ced65af95099947514c61

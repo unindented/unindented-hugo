@@ -826,7 +826,8 @@ FileETag None
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteRule ^.well-known/(openpgpkey/.*)$       /well-known/$1 [L]
+    RewriteCond %{REQUEST_URI} !^.well-known/acme-challenge/*$
+    RewriteRule ^.well-known/(.*)$                  /well-known/$1 [L]
     RewriteRule ^articles/([a-z].*)$                /blog/$1 [R=301,L]
     RewriteRule ^experiments/([a-z].*)$             /playground/$1 [R=301,L]
     RewriteRule ^articles/\d{4}/\d{2}/([a-z].*)$    /blog/$1 [R=301,L]
