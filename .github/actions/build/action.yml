@@ -52,9 +52,9 @@ runs:
     - name: Install Hugo
       env:
         LINK: https://github.com/gohugoio/hugo/releases/download
-        HUGO_VERSION: "0.88.1"
+        HUGO_VERSION: "0.91.0"
         HUGO_SHA256: >-
-          865ab9a930e0a9e4957e7dbfdf91c32847324f022e33271b5661d5717600bc2b
+          aa7ec4717554770800218209eee4db52621e922b9a6db27b236ef58e8c4b029d
       shell: bash
       run: |
         curl -OL "$LINK/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb"
