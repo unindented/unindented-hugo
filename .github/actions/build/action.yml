@@ -61,6 +61,14 @@ runs:
         echo "$HUGO_SHA256 hugo_extended_${HUGO_VERSION}_Linux-64bit.deb" | sha256sum --check
         sudo dpkg -i "hugo_extended_${HUGO_VERSION}_Linux-64bit.deb"
 
+    - name: Install Node dependencies
+      env:
+        POSTCSS_CLI_VERSION: "10.0.x"
+      shell: bash
+      run: |
+        npm install -g postcss-cli@${POSTCSS_CLI_VERSION}
+        npm ci
+
     - name: Build site with Hugo
       shell: bash
       run: make build-${{ inputs.environment }}

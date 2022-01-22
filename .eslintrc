@@ -1,0 +1,14 @@
+{
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "node": true
+  },
+  "globals": {
+    "p5": true
+  },
+  "extends": "eslint:recommended"
+}

@@ -1,10 +1,13 @@
 KATEX_VERSION := 0.16.0
 P5_VERSION := 1.4.1
 
+AUTHOR_NAME := $(shell sed -n 's/name = "\(.*\)"/\1/p' config.toml | head -n1)
+AUTHOR_HANDLE := $(shell sed -n 's/twitter = "\(.*\)"/\1/p' config.toml | head -n1)
+
 CONTENT_DIR := content
 PUBLIC_DIR := public
 CACHE_DIR := resources/_gen
-STATIC_JS_DIR := themes/custom/static/js
+STATIC_JS_DIR := static/js
 
 CONVERTIBLE_EXTENSIONS := png
 CONVERTIBLE_INCLUDE_DIR := $(PUBLIC_DIR)
@@ -27,13 +30,11 @@ COMPRESSABLE_FILES := $(shell find $(COMPRESSABLE_INCLUDE_DIR) -type f \( $(COMP
 COMPRESSABLE_FILES_BROTLI := $(addsuffix .br, $(COMPRESSABLE_FILES))
 COMPRESSABLE_FILES_GZIP := $(addsuffix .gz, $(COMPRESSABLE_FILES))
 
-CONTENT_INDEX_COVER_TEMPLATE := themes/custom/static/images/cover-template.png
+CONTENT_INDEX_COVER_TEMPLATE := static/images/cover-template.png
 CONTENT_INDEX_INCLUDE_DIR := $(CONTENT_DIR)
 
 CONTENT_INDEX_FILES := $(shell find $(CONTENT_INDEX_INCLUDE_DIR) -type f -name index.md 2> /dev/null)
 CONTENT_INDEX_FILES_COVER := $(addsuffix _cover@2x.png, $(dir $(CONTENT_INDEX_FILES)))
-
-TWITTER_HANDLE := $(shell sed -n 's/twitter = "\(.*\)"/\1/p' config.toml)
 
 .PHONY: all
 all: build
@@ -43,9 +44,14 @@ clean:
 	@rm -rf $(PUBLIC_DIR)/*
 	@rm -rf $(CACHE_DIR)/*
 
+.PHONY: test
+test:
+	@npm run lint
+	@npm run test
+
 .PHONY: server
 server:
-	@hugo server
+	@hugo server --buildDrafts --buildFuture --buildExpired
 
 .PHONY: build
 build: covers
@@ -140,23 +146,41 @@ $(COMPRESSABLE_INCLUDE_DIR)/%.gz: $(COMPRESSABLE_INCLUDE_DIR)/%
 $(CONTENT_INDEX_INCLUDE_DIR)/%/_cover@2x.png: $(CONTENT_INDEX_INCLUDE_DIR)/%/index.md $(CONTENT_INDEX_COVER_TEMPLATE)
 	$(eval $@_TITLE := $(shell sed -n 's/title = "\(.*\)"/\1/p' $<))
 	@convert $(CONTENT_INDEX_COVER_TEMPLATE) \
-	  \( -size 280x64 \
+	  \( -size 625x35 \
 	     -background none \
-	     -fill white \
-	     -font 'xkcdScript' \
-	     -gravity center \
-	     label:'@$(TWITTER_HANDLE)' \) \
+	     -fill '#a1a1aa' \
+	     -font 'Roboto' \
+	     -gravity northwest \
+	     label:'Check out this post' \) \
 	  -gravity northwest \
-	  -geometry +76+432 \
+	  -geometry +75+50 \
 	  -composite \
-	  \( -size 696x480 \
+	  \( -size 625x275 \
 	     -background none \
 	     -fill white \
-	     -font 'xkcdScript' \
-	     -gravity center \
+	     -font 'Roboto' \
+	     -gravity northwest \
 	     caption:'$($@_TITLE)' \) \
 	  -gravity northwest \
-	  -geometry +432+76 \
+	  -geometry +75+110 \
+	  -composite \
+	  \( -size 450x50 \
+	     -background none \
+	     -fill '#a1a1aa' \
+	     -font 'Roboto' \
+	     -gravity northwest \
+	     label:'$(AUTHOR_NAME)' \) \
+	  -gravity northwest \
+	  -geometry +250+465 \
+	  -composite \
+	  \( -size 450x40 \
+	     -background none \
+	     -fill '#a1a1aa' \
+	     -font 'Roboto' \
+	     -gravity northwest \
+	     label:'@$(AUTHOR_HANDLE)' \) \
+	  -gravity northwest \
+	  -geometry +250+525 \
 	  -composite \
 	  $@
 	@printf "."
@@ -167,7 +191,7 @@ katex:
 	@unzip -d $(STATIC_JS_DIR) $(STATIC_JS_DIR)/katex.zip
 	@rm $(STATIC_JS_DIR)/katex.zip
 	@mv $(STATIC_JS_DIR)/katex $(KATEX_DIR)
-	@cd $(KATEX_DIR) && npx rollup -c ../../../../../rollup.katex.mjs
+	@cd $(KATEX_DIR) && npx rollup -c ../../../rollup.katex.mjs
 	@rm -rf $(KATEX_DIR)/contrib
 	@find $(KATEX_DIR) -depth 1 -type f -not \( -name 'katex.min.mjs' -or -name 'katex.min.css' \) -delete
 	@echo

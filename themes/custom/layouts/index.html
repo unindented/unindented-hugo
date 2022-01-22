@@ -1,6 +1,0 @@
-{{ define "main" }}
-  {{ .Content }}
-
-  {{ $articleListCount := .Site.Params.articleListCount | default 10 }}
-  {{ partial "article-list" (first $articleListCount (where .Site.RegularPages "Type" "in" (slice "blog" "playground"))) }}
-{{ end }}

@@ -1,5 +1,0 @@
-{{- $name := .Get "name" | default (.Get 0) | default "script" }}
-{{- $target := printf "%s%s.mjs" .Page.RelPermalink $name }}
-{{- $script := .Inner | resources.FromString $target -}}
-
-<script type="module" src="{{ $script.RelPermalink }}"></script>

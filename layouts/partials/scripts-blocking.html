@@ -1,0 +1,12 @@
+<script>
+  (() => {
+    const { classList: colorSchemeClass } = document.documentElement;
+    const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+
+    const persistedColorScheme = localStorage.getItem("color-scheme");
+    const preferDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const forceDark = persistedColorScheme === "dark" || (!persistedColorScheme && preferDark);
+    const colorScheme = colorSchemeClass.toggle("dark", forceDark) ? "dark" : "light";
+    document.querySelector('meta[name="color-scheme"]').setAttribute("content", colorScheme);
+  })();
+</script>

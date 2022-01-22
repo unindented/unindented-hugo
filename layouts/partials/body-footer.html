@@ -1,0 +1,59 @@
+<footer class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-8">
+  <div class="flex flex-row-reverse flex-wrap items-center justify-around gap-8">
+    <div class="flex flex-shrink-0 items-center space-x-4 sm:space-x-8 lg:ml-auto">
+      {{ with (site.GetPage "/").OutputFormats.Get "RSS" }}
+        <a
+          href="feed:{{ .Permalink }}"
+          class="transition-colors duration-500 hover:text-gray-500 focus:text-gray-500 dark:hover:text-gray-100 dark:focus:text-gray-100"
+        >
+          <svg height="1em" viewBox="0 0 448 512" fill="currentColor">
+            <use href="/images/sprites.svg#icon-rss" />
+          </svg>
+          <span class="sr-only">RSS</span></a
+        >
+      {{ end }}
+      {{ with site.Author.email }}
+        <a
+          href="mailto:{{ . }}"
+          target="_blank"
+          rel="me noreferrer"
+          class="transition-colors duration-500 hover:text-gray-600 focus:text-gray-600 dark:hover:text-white dark:focus:text-white"
+        >
+          <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
+            <use href="/images/sprites.svg#icon-email" />
+          </svg>
+          <span class="sr-only">Email</span></a
+        >
+      {{ end }}
+      {{ with site.Social.twitter }}
+        <a
+          href="https://twitter.com/{{ . }}"
+          target="_blank"
+          rel="me noreferrer"
+          class="transition-colors duration-500 hover:text-gray-600 focus:text-gray-600 dark:hover:text-white dark:focus:text-white"
+        >
+          <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
+            <use href="/images/sprites.svg#icon-twitter" />
+          </svg>
+          <span class="sr-only">Twitter</span></a
+        >
+      {{ end }}
+      {{ with site.Social.github }}
+        <a
+          href="https://github.com/{{ . }}"
+          target="_blank"
+          rel="me noreferrer"
+          class="transition-colors duration-500 hover:text-gray-600 focus:text-gray-600 dark:hover:text-white dark:focus:text-white"
+        >
+          <svg height="1em" viewBox="0 0 496 512" fill="currentColor">
+            <use href="/images/sprites.svg#icon-github" />
+          </svg>
+          <span class="sr-only">GitHub</span></a
+        >
+      {{ end }}
+    </div>
+    <p class="prose max-w-none text-center dark:prose-invert md:prose-lg lg:prose-xl">
+      {{ site.Copyright | markdownify }}
+    </p>
+  </div>
+</footer>

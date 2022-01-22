@@ -1,0 +1,2 @@
+{{ partial "utils/time" .Date }}
+{{ if eq .Section "blog" }} — {{ partial "utils/length" .Content }}{{ end }}

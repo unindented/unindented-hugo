@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./fonts.css";
+@import "./syntax.css";
+
+@layer components {
+  .form-button {
+    @apply border border-gray-500 bg-gray-100 py-1 px-4 text-gray-700 shadow-sm;
+  }
+  .form-button:not([disabled]) {
+    @apply hover:bg-gray-200;
+  }
+  .form-button-primary:not([disabled]) {
+    @apply border-blue-900 bg-blue-700 text-white hover:bg-blue-800;
+  }
+
+  .form-checkbox,
+  .form-radio {
+    @apply bg-gray-50 checked:!bg-current dark:bg-gray-800;
+  }
+
+  .form-color {
+    @apply rounded-none border border-gray-500 bg-gray-50 dark:bg-gray-800;
+  }
+  .form-color:focus {
+    @apply border-blue-600 outline outline-2 outline-offset-2 outline-transparent ring-1 ring-blue-600 ring-offset-0;
+  }
+
+  .form-fieldset {
+    @apply border border-gray-500 px-4 pt-3 pb-4;
+  }
+  .form-fieldset > legend {
+    @apply -mx-1 px-1;
+  }
+
+  .form-label-block {
+    @apply flex flex-col space-y-1;
+  }
+  .form-label-inline {
+    @apply flex items-center space-x-2;
+  }
+
+  .form-color,
+  .form-input,
+  .form-textarea,
+  .form-select {
+    @apply bg-gray-50 dark:bg-gray-800;
+  }
+}
+
+@layer utilities {
+  .u-w-col > *,
+  .u-w-col > picture > * {
+    @apply w-full;
+  }
+
+  .u-w-bleed {
+    @apply -mx-4 max-w-none sm:-mx-8;
+  }
+  .u-w-bleed > figcaption {
+    @apply mx-4 sm:mx-8;
+  }
+}

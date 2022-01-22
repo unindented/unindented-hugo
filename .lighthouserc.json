@@ -11,19 +11,20 @@
           "preset": "lighthouse:recommended",
           "assertions": {
             "canonical": "off",
-            "color-contrast": "off",
+            "csp-xss": "off",
             "is-crawlable": "off",
-            "unminified-css": "off",
+            "service-worker": "off",
+            "tap-targets": "off",
             "render-blocking-resources": ["error", { "maxLength": 1 }],
             "first-contentful-paint": ["error", { "maxNumericValue": 1500 }],
             "speed-index": ["error", { "maxNumericValue": 1500 }],
             "largest-contentful-paint": ["error", { "maxNumericValue": 1500 }],
             "interactive": ["error", { "maxNumericValue": 1500 }],
-            "total-blocking-time": ["error", { "maxNumericValue": 0 }],
-            "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
-            "resource-summary:document:size": ["error", { "maxNumericValue": 5500 }],
-            "resource-summary:script:size": ["error", { "maxNumericValue": 1000 }],
-            "resource-summary:total:size": ["error", { "maxNumericValue": 50000 }]
+            "total-blocking-time": ["error", { "maxNumericValue": 100 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
+            "resource-summary:document:size": ["error", { "maxNumericValue": 3400 }],
+            "resource-summary:script:size": ["error", { "maxNumericValue": 1100 }],
+            "resource-summary:total:size": ["error", { "maxNumericValue": 16700 }]
           }
         },
         {
@@ -31,21 +32,20 @@
           "preset": "lighthouse:recommended",
           "assertions": {
             "canonical": "off",
-            "color-contrast": "off",
+            "csp-xss": "off",
             "is-crawlable": "off",
+            "service-worker": "off",
             "tap-targets": "off",
-            "unminified-css": "off",
-            "unsized-images": "off",
             "render-blocking-resources": ["error", { "maxLength": 1 }],
             "first-contentful-paint": ["error", { "maxNumericValue": 1500 }],
             "speed-index": ["error", { "maxNumericValue": 1500 }],
             "largest-contentful-paint": ["error", { "maxNumericValue": 1500 }],
             "interactive": ["error", { "maxNumericValue": 1500 }],
-            "total-blocking-time": ["error", { "maxNumericValue": 0 }],
-            "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
-            "resource-summary:document:size": ["error", { "maxNumericValue": 6500 }],
-            "resource-summary:script:size": ["error", { "maxNumericValue": 1000 }],
-            "resource-summary:total:size": ["error", { "maxNumericValue": 75500 }]
+            "total-blocking-time": ["error", { "maxNumericValue": 100 }],
+            "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
+            "resource-summary:document:size": ["error", { "maxNumericValue": 6800 }],
+            "resource-summary:script:size": ["error", { "maxNumericValue": 1100 }],
+            "resource-summary:total:size": ["error", { "maxNumericValue": 36600 }]
           }
         }
       ]

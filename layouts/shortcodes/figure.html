@@ -1,0 +1,11 @@
+{{- $caption := .Get "caption" -}}
+{{- $class := .Get "class" -}}
+
+<figure class="{{ $class }}">
+  {{ .Inner | safeHTML }}
+  {{- with $caption -}}
+    <figcaption>
+      {{ . | markdownify }}
+    </figcaption>
+  {{- end -}}
+</figure>

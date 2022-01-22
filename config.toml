@@ -2,16 +2,15 @@ baseURL = "https://dev.unindented.org"
 languageCode = "en-us"
 sectionPagesMenu = "main"
 title = "Unindented"
-copyright = "All content by <a class=\"h-card\" rel=\"me\" href=\"https://www.unindented.org/\">Daniel Perez Alvarez</a> unless otherwise noted. <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noreferrer\">Some rights reserved</a>."
-theme = "custom"
+copyright = "All content by <a href=\"https://www.unindented.org/\" rel=\"me\" class=\"h-card\">Daniel Perez Alvarez</a> unless otherwise noted. <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noreferrer\">Some rights reserved</a>."
 
 enableRobotsTXT = true
 ignoreFiles = ["README.md", "LICENSE"]
 
 [params]
 description = "Home of Daniel Perez Alvarez"
-themeColor = "#1d1f24"
-backgroundColor = "#1d1f24"
+themeColor = "#27272a"
+backgroundColor = "#27272a"
 articleListCount = 25
 articleRelatedCount = 5
 
@@ -26,11 +25,17 @@ twitter = "unindented"
 
 # Other stuff
 
+[build]
+writeStats = true
+
 [markup.highlight]
 noClasses = false
 
 [markup.goldmark.renderer]
 unsafe = true
+[markup.goldmark.parser.attribute]
+block = true
+title = true
 
 [mediaTypes."application/manifest+json"]
 suffixes = ["webmanifest", "json"]
