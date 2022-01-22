@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default "en-us" }}">
+  {{ partial "head" . }}
+  <body
+    class="flex min-h-screen flex-col break-words bg-gray-100 leading-relaxed text-gray-700 antialiased selection:bg-blue-200 dark:bg-gray-800 dark:text-gray-300 dark:selection:bg-blue-800 md:text-lg lg:text-xl"
+  >
+    {{ partial "scripts-blocking" . }}
+
+    {{ partial "skip-navigation" . }}
+    {{ partial "body-header" . }}
+    <main id="main" class="flex flex-1 bg-gradient-to-rm from-white to-white dark:from-gray-900 dark:to-gray-900">
+      <article
+        class="{{ cond .IsPage "h-entry" "" }} mx-auto w-full max-w-7xl bg-white px-4 py-10 dark:bg-gray-900 sm:px-8"
+      >
+        {{ block "article-meta" . }}{{ end }}
+        {{ partial "article-header" . }}
+        <div class="{{ cond .IsPage "e-content" "" }} col-content">
+          {{ block "article-main" . }}{{ end }}
+        </div>
+        {{ block "article-footer" . }}{{ end }}
+      </article>
+    </main>
+    {{ partial "body-footer" . }}
+
+    {{ partial "scripts-non-blocking" . }}
+  </body>
+</html>

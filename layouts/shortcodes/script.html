@@ -1,0 +1,6 @@
+{{- $name := .Get "name" | default (.Get 0) | default "script" -}}
+{{- $type := .Get "type" | default (.Get 1) | default "module" -}}
+{{- $target := printf "%s%s.mjs" .Page.RelPermalink $name -}}
+{{- $script := .Inner | resources.FromString $target -}}
+
+<script type="{{ $type }}" async src="{{ $script.RelPermalink }}"></script>

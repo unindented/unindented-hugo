@@ -1,0 +1,5 @@
+{{ define "article-main" }}
+  {{ partial "prose" .Content }}
+
+  {{ partial "article-list" (partial "utils/get-articles") }}
+{{ end }}

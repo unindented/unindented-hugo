@@ -1,0 +1,8 @@
+{{- $src := .Get "src" -}}
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+{{- $alt := .Get "alt" -}}
+{{- $caption := .Get "caption" -}}
+{{- $class := .Get "class" -}}
+
+{{- partial "utils/video" (dict "src" $src "width" $width "height" $height "alt" $alt "caption" $caption "class" $class) -}}

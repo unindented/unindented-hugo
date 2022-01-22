@@ -1,0 +1,31 @@
+<header class="mx-auto w-full max-w-7xl px-4 py-10 text-gray-600 dark:text-gray-200 sm:px-8">
+  <nav class="flex flex-row flex-wrap justify-between gap-4">
+    <h1 class="font-extrabold">
+      <a href="/" class="inline-block py-2 hover:underline focus:underline">{{ site.Title }}</a>
+    </h1>
+    <ul class="flex flex-wrap items-center space-x-4 font-bold sm:space-x-8">
+      {{ $currentPage := . }}
+      {{ range site.Menus.main }}
+        {{ $isActive := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+        <li class="block">
+          <a
+            href="{{ .URL }}"
+            class="{{ if $isActive }}underline{{ end }} inline-block py-2 hover:underline focus:underline"
+            >{{ .Name }}</a
+          >
+        </li>
+      {{ end }}
+      <li class="block">
+        <button
+          id="color-scheme"
+          class="inline-block py-2 transition-colors duration-500 hover:text-gray-500 focus:text-gray-500 dark:hover:text-gray-100 dark:focus:text-gray-100"
+        >
+          <svg height="1em" viewbox="0 0 384 512" fill="currentColor">
+            <use href="/images/sprites.svg#icon-lightbulb" />
+          </svg>
+          <span class="sr-only">Toggle color scheme</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>

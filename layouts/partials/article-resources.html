@@ -1,0 +1,19 @@
+{{ $resources := slice }}
+{{ range .Resources }}
+  {{ if and (ne .ResourceType "image") (ne .ResourceType "video") }}
+    {{ $resources = append . $resources }}
+  {{ end }}
+{{ end }}
+
+{{ with $resources }}
+  <section>
+    <h2>Resources</h2>
+    <ul>
+      {{ range . }}
+        <li>
+          <a href="{{ .RelPermalink }}"><code>{{ .Title }}</code></a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

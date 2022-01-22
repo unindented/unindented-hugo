@@ -1,0 +1,5 @@
+{{ define "article-main" }}
+  {{ partial "prose" .Content }}
+
+  {{ partial "terms-list" .Data.Terms }}
+{{ end }}

@@ -1,6 +1,11 @@
-// @ts-check
+import { dirname, resolve as resolvePath } from "path";
+import { fileURLToPath } from "url";
 import { checks, devices, openBrowser, closeBrowser } from "./browser.mjs";
 import runServer from "./server.mjs";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const screenshotsPath = resolvePath(__dirname, "screenshots");
 
 const runCheckForDevice = async ({ deviceName, device, port, page, checkName, check: { url, selectors } }) => {
   let success = true;
@@ -11,7 +16,7 @@ const runCheckForDevice = async ({ deviceName, device, port, page, checkName, ch
     const screenshotName = `${deviceName}-${checkName}-${device.colorScheme ?? "default"}`
       .toLowerCase()
       .replace(/[^0-9a-z]+/g, "-");
-    const screenshotPath = `screenshots/${screenshotName}.png`;
+    const screenshotPath = resolvePath(screenshotsPath, `${screenshotName}.png`);
     await page.screenshot({ path: screenshotPath });
 
     for (const selector in selectors) {

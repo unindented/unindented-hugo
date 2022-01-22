@@ -1,7 +1,0 @@
-{{- $src := .Get "src" -}}
-{{- $alt := .Get "alt" -}}
-{{- $class := .Get "class" -}}
-
-{{- $img := .Page.Resources.GetMatch $src -}}
-
-{{- partial "utils/img" (dict "img" $img "src" $src "alt" $alt "class" $class) -}}

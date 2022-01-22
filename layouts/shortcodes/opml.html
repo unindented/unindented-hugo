@@ -1,0 +1,22 @@
+{{ range site.Data.opml.body.outline }}
+  <h2>{{ index . "-text" }}</h2>
+
+  <ul>
+    {{ range .outline }}
+      {{ $text := index . "-text" }}
+      {{ $htmlUrl := index . "-htmlUrl" }}
+      {{ $xmlUrl := index . "-xmlUrl" }}
+      <li>
+        <a href="{{ $htmlUrl }}" target="_blank" rel="noreferrer">{{ $text }}</a>
+        —
+        {{ $htmlUrl | replaceRE `^https?://(?:www.)?(.+?)/?$` "$1" }}
+        <a href="feed:{{ $xmlUrl }}">
+          <svg height="1em" viewBox="0 0 448 512" fill="currentColor" class="inline-block">
+            <use href="/images/sprites.svg#icon-rss" />
+          </svg>
+          <span class="sr-only">RSS</span>
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

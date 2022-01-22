@@ -1,0 +1,2 @@
+{{ $articleListCount := site.Params.articleListCount | default 10 }}
+{{ return first $articleListCount (where site.RegularPages "Type" "in" (slice "blog" "playground")) }}

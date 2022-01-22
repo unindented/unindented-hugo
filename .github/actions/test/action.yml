@@ -4,18 +4,16 @@ description: "Install required dependencies and test site"
 runs:
   using: "composite"
   steps:
-    - name: Run Playwright
-      env:
-        PLAYWRIGHT_VERSION: "1.6.x"
+    - name: Run tests
       shell: bash
       run: |
-        cd tests
-        npm install playwright@${PLAYWRIGHT_VERSION}
-        node index.mjs
+        npx playwright install-deps
+        npm ci
+        make test
 
     - name: Run Lighthouse
       env:
-        LHCI_VERSION: "0.6.x"
+        LHCI_VERSION: "0.9.x"
       shell: bash
       run: |
         npm install -g @lhci/cli@${LHCI_VERSION}

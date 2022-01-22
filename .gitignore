@@ -1,7 +1,10 @@
 /.lighthouseci/
+/node_modules/
 /public/
 /resources/_gen/
 /tests/node_modules/
 /tests/screenshots/*
 !/tests/screenshots/.keep
 /tests/package-lock.json
+/.hugo_build.lock
+/hugo_stats.json

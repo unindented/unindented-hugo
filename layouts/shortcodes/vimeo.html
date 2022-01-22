@@ -1,0 +1,17 @@
+{{- $config := site.Config.Privacy.Vimeo -}}
+{{- if not $config.Disable -}}
+  {{- $host := "player.vimeo.com" -}}
+  {{- $id := .Get "id" | default (.Get 0) -}}
+  {{- $autoplay := cond (eq (.Get "autoplay") "true") "1" "0" -}}
+  {{- $dnt := cond $config.EnableDNT "1" "0" -}}
+  {{- $title := .Get "title" | default "Vimeo video" -}}
+
+  <iframe
+    title="{{ $title }}"
+    src="https://{{ $host }}/video/{{ $id }}?autoplay={{ $autoplay }}&dnt={{ $dnt }}"
+    allow="autoplay; fullscreen"
+    loading="lazy"
+    frameborder="0"
+    class="my-8 aspect-video w-full border dark:brightness-80 dark:contrast-120"
+  ></iframe>
+{{- end -}}
