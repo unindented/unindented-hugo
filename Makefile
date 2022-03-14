@@ -1,11 +1,15 @@
+KATEX_VERSION := 0.15.2
+
 CONTENT_DIR := content
 PUBLIC_DIR := public
 CACHE_DIR := resources/_gen
+STATIC_JS_DIR := themes/custom/static/js
 
 CONVERTIBLE_EXTENSIONS := png
 CONVERTIBLE_INCLUDE_DIR := $(PUBLIC_DIR)
 CONVERTIBLE_EXCLUDE_DIRS := $(PUBLIC_DIR)/images
 CONVERTIBLE_CACHE_DIR := $(CACHE_DIR)/images
+KATEX_DIR := $(STATIC_JS_DIR)/katex-v$(KATEX_VERSION)
 
 CONVERTIBLE_FIND_INCLUDE := $(subst =, ,$(subst $(eval) , -o ,$(patsubst %,-iname='*.%',$(CONVERTIBLE_EXTENSIONS))))
 CONVERTIBLE_FIND_EXCLUDE := $(subst =, ,$(subst $(eval) , -o ,$(patsubst %,-path='%',$(CONVERTIBLE_EXCLUDE_DIRS))))
@@ -154,3 +158,15 @@ $(CONTENT_INDEX_INCLUDE_DIR)/%/_cover@2x.png: $(CONTENT_INDEX_INCLUDE_DIR)/%/ind
 	  -composite \
 	  $@
 	@printf "."
+
+.PHONY: katex
+katex:
+	@curl -Lo $(STATIC_JS_DIR)/katex.zip https://github.com/KaTeX/KaTeX/releases/download/v$(KATEX_VERSION)/katex.zip
+	@unzip -d $(STATIC_JS_DIR) $(STATIC_JS_DIR)/katex.zip
+	@rm $(STATIC_JS_DIR)/katex.zip
+	@mv $(STATIC_JS_DIR)/katex $(KATEX_DIR)
+	@cd $(KATEX_DIR) && npx rollup -c ../../../../../rollup.katex.mjs
+	@rm -rf $(KATEX_DIR)/contrib
+	@find $(KATEX_DIR) -depth 1 -type f -not \( -name 'katex.min.mjs' -or -name 'katex.min.css' \) -delete
+	@echo
+	@echo "Finished downloading KaTeX!"
