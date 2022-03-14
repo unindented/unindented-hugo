@@ -1,4 +1,5 @@
 KATEX_VERSION := 0.15.2
+P5_VERSION := 1.4.1
 
 CONTENT_DIR := content
 PUBLIC_DIR := public
@@ -10,6 +11,7 @@ CONVERTIBLE_INCLUDE_DIR := $(PUBLIC_DIR)
 CONVERTIBLE_EXCLUDE_DIRS := $(PUBLIC_DIR)/images
 CONVERTIBLE_CACHE_DIR := $(CACHE_DIR)/images
 KATEX_DIR := $(STATIC_JS_DIR)/katex-v$(KATEX_VERSION)
+P5_DIR := $(STATIC_JS_DIR)/p5-v$(P5_VERSION)
 
 CONVERTIBLE_FIND_INCLUDE := $(subst =, ,$(subst $(eval) , -o ,$(patsubst %,-iname='*.%',$(CONVERTIBLE_EXTENSIONS))))
 CONVERTIBLE_FIND_EXCLUDE := $(subst =, ,$(subst $(eval) , -o ,$(patsubst %,-path='%',$(CONVERTIBLE_EXCLUDE_DIRS))))
@@ -170,3 +172,10 @@ katex:
 	@find $(KATEX_DIR) -depth 1 -type f -not \( -name 'katex.min.mjs' -or -name 'katex.min.css' \) -delete
 	@echo
 	@echo "Finished downloading KaTeX!"
+
+.PHONY: p5
+p5:
+	@mkdir -p $(P5_DIR)
+	@curl -Lo $(P5_DIR)/p5.min.js https://github.com/processing/p5.js/releases/download/v$(P5_VERSION)/p5.min.js
+	@echo
+	@echo "Finished downloading p5.js!"
