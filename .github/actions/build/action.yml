@@ -19,7 +19,7 @@ runs:
         LINK: https://imagemagick.org/Usage/scripts
         SCRIPT_NAME: imagick_type_gen
         SCRIPT_SHA256: >-
-          d680e9ce3e0458911efd0f4413a040f2285c711443d056092082625f195df4bb
+          6ba7dfeefd3d020c89aa9f6675927d7f3bd5373f50260068dd62b0fc753b91fd
       shell: bash
       run: |
         curl -OL "$LINK/$SCRIPT_NAME"

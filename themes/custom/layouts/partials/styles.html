@@ -9,4 +9,4 @@
 {{ $styles := slice $normalize $config $color $base $utils $syntax $misc $fonts | resources.Concat "css/styles.css" }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 
-{{ if .Params.katex }}<link rel="stylesheet" href="/js/katex-v0.15.2/katex.min.css" />{{ end }}
+{{ if .Params.katex }}<link rel="stylesheet" href="/js/katex-v0.16.0/katex.min.css" />{{ end }}
