@@ -15,6 +15,7 @@
             "is-crawlable": "off",
             "service-worker": "off",
             "tap-targets": "off",
+            "uses-long-cache-ttl": "off",
             "render-blocking-resources": ["error", { "maxLength": 1 }],
             "first-contentful-paint": ["error", { "maxNumericValue": 1500 }],
             "speed-index": ["error", { "maxNumericValue": 1500 }],
@@ -22,9 +23,9 @@
             "interactive": ["error", { "maxNumericValue": 1500 }],
             "total-blocking-time": ["error", { "maxNumericValue": 100 }],
             "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
-            "resource-summary:document:size": ["error", { "maxNumericValue": 3400 }],
-            "resource-summary:script:size": ["error", { "maxNumericValue": 1100 }],
-            "resource-summary:total:size": ["error", { "maxNumericValue": 16700 }]
+            "resource-summary:document:size": ["error", { "maxNumericValue": 3500 }],
+            "resource-summary:script:size": ["error", { "maxNumericValue": 3000 }],
+            "resource-summary:total:size": ["error", { "maxNumericValue": 20000 }]
           }
         },
         {
@@ -36,6 +37,7 @@
             "is-crawlable": "off",
             "service-worker": "off",
             "tap-targets": "off",
+            "uses-long-cache-ttl": "off",
             "render-blocking-resources": ["error", { "maxLength": 1 }],
             "first-contentful-paint": ["error", { "maxNumericValue": 1500 }],
             "speed-index": ["error", { "maxNumericValue": 1500 }],
@@ -43,9 +45,9 @@
             "interactive": ["error", { "maxNumericValue": 1500 }],
             "total-blocking-time": ["error", { "maxNumericValue": 100 }],
             "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
-            "resource-summary:document:size": ["error", { "maxNumericValue": 6800 }],
-            "resource-summary:script:size": ["error", { "maxNumericValue": 1100 }],
-            "resource-summary:total:size": ["error", { "maxNumericValue": 36600 }]
+            "resource-summary:document:size": ["error", { "maxNumericValue": 7000 }],
+            "resource-summary:script:size": ["error", { "maxNumericValue": 3000 }],
+            "resource-summary:total:size": ["error", { "maxNumericValue": 40000 }]
           }
         }
       ]

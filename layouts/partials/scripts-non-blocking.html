@@ -3,3 +3,7 @@
 
 {{ if .Params.katex }}<script type="module" async src="/js/katex-render.mjs"></script>{{ end }}
 {{ if .Params.p5 }}<script type="module" async src="/js/p5-render.mjs"></script>{{ end }}
+
+{{- if hugo.IsProduction -}}
+<script async src="{{ site.Params.umamiTracker }}" data-website-id="{{ site.Params.umamiId }}"></script>
+{{- end -}}

@@ -13,6 +13,8 @@ themeColor = "#27272a"
 backgroundColor = "#27272a"
 articleListCount = 25
 articleRelatedCount = 5
+umamiId = "8bcbbf05-b840-4f8e-80d4-98504aa06a1b"
+umamiTracker = "https://umm.unindented.org/umm.js"
 
 [author]
 name = "Daniel Perez Alvarez"
