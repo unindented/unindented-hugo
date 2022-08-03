@@ -285,8 +285,8 @@ AddDefaultCharset utf-8
 # https://www.w3.org/TR/CSP/
 
 <IfModule mod_headers.c>
-    Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; frame-ancestors 'none'; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com; img-src data: 'self'; script-src 'self' 'sha256-54BDi1GSgFoHW0Vz8CuZJc3OeKPYOeU4HfijdZUgvNo='; block-all-mixed-content; upgrade-insecure-requests" "expr=%{REQUEST_URI} !~ m#\bwasm\b#i && %{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
-    Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; frame-ancestors 'none'; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com; img-src data: 'self'; script-src 'self' 'unsafe-eval' 'sha256-54BDi1GSgFoHW0Vz8CuZJc3OeKPYOeU4HfijdZUgvNo='; block-all-mixed-content; upgrade-insecure-requests" "expr=%{REQUEST_URI} =~ m#\bwasm\b#i && %{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
+    Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; connect-src https://umm.unindented.org 'self'; frame-ancestors 'none'; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com; img-src data: 'self'; script-src https://umm.unindented.org 'self' 'sha256-54BDi1GSgFoHW0Vz8CuZJc3OeKPYOeU4HfijdZUgvNo='; block-all-mixed-content; upgrade-insecure-requests" "expr=%{REQUEST_URI} !~ m#\bwasm\b#i && %{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
+    Header always set Content-Security-Policy "default-src 'self'; base-uri 'none'; connect-src https://umm.unindented.org 'self'; frame-ancestors 'none'; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com; img-src data: 'self'; script-src https://umm.unindented.org 'self' 'unsafe-eval' 'sha256-54BDi1GSgFoHW0Vz8CuZJc3OeKPYOeU4HfijdZUgvNo='; block-all-mixed-content; upgrade-insecure-requests" "expr=%{REQUEST_URI} =~ m#\bwasm\b#i && %{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
 </IfModule>
 
 # ----------------------------------------------------------------------
