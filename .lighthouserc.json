@@ -24,7 +24,7 @@
             "total-blocking-time": ["error", { "maxNumericValue": 100 }],
             "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
             "resource-summary:document:size": ["error", { "maxNumericValue": 3500 }],
-            "resource-summary:script:size": ["error", { "maxNumericValue": 3000 }],
+            "resource-summary:script:size": ["error", { "maxNumericValue": 3500 }],
             "resource-summary:total:size": ["error", { "maxNumericValue": 20000 }]
           }
         },
@@ -46,7 +46,7 @@
             "total-blocking-time": ["error", { "maxNumericValue": 100 }],
             "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
             "resource-summary:document:size": ["error", { "maxNumericValue": 7000 }],
-            "resource-summary:script:size": ["error", { "maxNumericValue": 3000 }],
+            "resource-summary:script:size": ["error", { "maxNumericValue": 3500 }],
             "resource-summary:total:size": ["error", { "maxNumericValue": 40000 }]
           }
         }
