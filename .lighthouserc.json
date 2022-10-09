@@ -12,6 +12,7 @@
           "assertions": {
             "canonical": "off",
             "csp-xss": "off",
+            "errors-in-console": "off",
             "is-crawlable": "off",
             "service-worker": "off",
             "tap-targets": "off",
@@ -34,6 +35,7 @@
           "assertions": {
             "canonical": "off",
             "csp-xss": "off",
+            "errors-in-console": "off",
             "is-crawlable": "off",
             "service-worker": "off",
             "tap-targets": "off",
