@@ -16,7 +16,7 @@
         class="absolute top-0 left-0 m-1 flex gap-2 rounded-full bg-black p-1 text-white opacity-50 transition-opacity hover:!opacity-100 group-hover:opacity-75 sm:m-2 sm:p-2"
       >
         {{ range split $actions " " }}
-          <button data-action="{{ . }}">
+          <button type="button" data-action="{{ . }}">
             <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
               <use href="/images/sprites.svg#icon-{{ . }}" />
             </svg>
