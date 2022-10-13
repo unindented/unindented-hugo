@@ -1,4 +1,4 @@
-import "./p5-v1.4.1/p5.min.js";
+import "./p5-v1.4.2/p5.min.js";
 
 document.querySelectorAll('script[type="text/p5"]').forEach((script) => {
   const newScript = document.createElement("script");
