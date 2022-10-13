@@ -1,5 +1,5 @@
 KATEX_VERSION := 0.16.0
-P5_VERSION := 1.4.1
+P5_VERSION := 1.4.2
 
 AUTHOR_NAME := $(shell sed -n 's/name = "\(.*\)"/\1/p' config.toml | head -n1)
 AUTHOR_HANDLE := $(shell sed -n 's/twitter = "\(.*\)"/\1/p' config.toml | head -n1)
