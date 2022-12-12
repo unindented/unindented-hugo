@@ -8,18 +8,19 @@
 
     {{ partial "skip-navigation" . }}
     {{ partial "body-header" . }}
+
     <main id="main" class="flex flex-1 bg-gradient-to-rm from-white to-white dark:from-gray-900 dark:to-gray-900">
-      <article
-        class="{{ cond .IsPage "h-entry" "" }} mx-auto w-full max-w-7xl bg-white px-4 py-10 dark:bg-gray-900 sm:px-8"
-      >
+      {{ $articleClasses := "mx-auto w-full max-w-7xl bg-white px-4 py-10 dark:bg-gray-900 sm:px-8" }}
+      {{ if .IsPage }}<article class="h-entry {{ $articleClasses }}">{{ else }}<div class="{{ $articleClasses }}">{{ end }}
         {{ block "article-meta" . }}{{ end }}
         {{ partial "article-header" . }}
-        <div class="{{ cond .IsPage "e-content" "" }} col-content">
+        <div class="{{ cond .IsPage "e-content " "" }}col-content">
           {{ block "article-main" . }}{{ end }}
         </div>
         {{ block "article-footer" . }}{{ end }}
-      </article>
+      {{ if .IsPage }}</article>{{ else }}</div>{{ end}}
     </main>
+
     {{ partial "body-footer" . }}
 
     {{ partial "scripts-non-blocking" . }}

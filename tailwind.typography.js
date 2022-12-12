@@ -50,18 +50,6 @@ const typographyModifiers = {
         samp: {
           fontSize: em(12, 14),
         },
-        "tfoot td": {
-          paddingTop: em(8, 12),
-          paddingRight: em(12, 12),
-          paddingBottom: em(8, 12),
-          paddingLeft: em(12, 12),
-        },
-        "tfoot td:first-child": {
-          paddingLeft: "0",
-        },
-        "tfoot td:last-child": {
-          paddingRight: "0",
-        },
         ".admonition": {
           padding: em(20, 18),
         },
@@ -115,18 +103,6 @@ const typographyModifiers = {
         },
         samp: {
           fontSize: em(14, 16),
-        },
-        "tfoot td": {
-          paddingTop: em(8, 14),
-          paddingRight: em(8, 14),
-          paddingBottom: em(8, 14),
-          paddingLeft: em(8, 14),
-        },
-        "tfoot td:first-child": {
-          paddingLeft: "0",
-        },
-        "tfoot td:last-child": {
-          paddingRight: "0",
         },
         ".admonition": {
           padding: em(20, 20),
@@ -182,18 +158,6 @@ const typographyModifiers = {
         samp: {
           fontSize: em(16, 18),
         },
-        "tfoot td": {
-          paddingTop: em(12, 16),
-          paddingRight: em(12, 16),
-          paddingBottom: em(12, 16),
-          paddingLeft: em(12, 16),
-        },
-        "tfoot td:first-child": {
-          paddingLeft: "0",
-        },
-        "tfoot td:last-child": {
-          paddingRight: "0",
-        },
         ".admonition": {
           padding: em(24, 24),
         },
@@ -247,18 +211,6 @@ const typographyModifiers = {
         },
         samp: {
           fontSize: em(18, 20),
-        },
-        "tfoot td": {
-          paddingTop: em(16, 18),
-          paddingRight: em(12, 18),
-          paddingBottom: em(16, 18),
-          paddingLeft: em(12, 18),
-        },
-        "tfoot td:first-child": {
-          paddingLeft: "0",
-        },
-        "tfoot td:last-child": {
-          paddingRight: "0",
         },
         ".admonition": {
           padding: em(32, 30),
@@ -314,18 +266,6 @@ const typographyModifiers = {
         samp: {
           fontSize: em(20, 24),
         },
-        "tfoot td": {
-          paddingTop: em(16, 20),
-          paddingRight: em(12, 20),
-          paddingBottom: em(16, 20),
-          paddingLeft: em(12, 20),
-        },
-        "tfoot td:first-child": {
-          paddingLeft: "0",
-        },
-        "tfoot td:last-child": {
-          paddingRight: "0",
-        },
         ".admonition": {
           padding: em(40, 36),
         },
@@ -364,6 +304,7 @@ const typographyDefault = {
       },
       "h5 strong, h6 strong": {
         fontWeight: "700",
+        color: "inherit",
       },
       hr: {
         borderStyle: "dotted",
@@ -388,13 +329,6 @@ const typographyDefault = {
       "samp::after": {
         content: '"`"',
       },
-      tfoot: {
-        borderTopWidth: "1px",
-        borderTopColor: "var(--tw-prose-th-borders)",
-      },
-      "tfoot td": {
-        verticalAlign: "top",
-      },
       ".admonition": {
         borderLeftWidth: "0.25rem",
       },
@@ -404,6 +338,7 @@ const typographyDefault = {
         overflowX: "auto",
       },
     },
+    typographyStyles[gray].css,
     ...typographyModifiers.base.css,
   ],
 };
@@ -411,7 +346,6 @@ const typographyDefault = {
 module.exports = {
   maxWidth,
   config: {
-    gray: typographyStyles[gray],
     DEFAULT: typographyDefault,
     ...typographyModifiers,
   },

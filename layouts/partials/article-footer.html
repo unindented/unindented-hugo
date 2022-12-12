@@ -1,29 +1,12 @@
 {{ if and .Params.authors .Params.date }}
-  {{ $authorsData := site.Data.authors }}
-
-  {{ $firstAuthor := (index $authorsData (index .Params.authors 0)) }}
-  {{ $authorThumb := $firstAuthor.thumbnail }}
-  {{ $authorThumbExt := $authorThumb | path.Ext }}
-  {{ $authorTwitter := $firstAuthor.social.twitter }}
-  {{ $authorEmail := $firstAuthor.email }}
-
-  {{ $tagLinks := partial "utils/tags" . }}
   {{ $authorLinks := partial "utils/authors" . }}
+  {{ $tagLinks := partial "utils/tags-text" . }}
 
   <footer class="col-content prose mt-12 dark:prose-invert md:prose-lg lg:prose-xl">
     <p class="admonition border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
-      Posted on
-      <a href="{{ .RelPermalink }}" class="u-url u-uid">{{ partial "utils/time" .Date }}</a>
-      {{ if $tagLinks }}under {{ $tagLinks }}{{ end }}
-      by {{ partial "utils/authors" . }}. Got any comments or suggestions? Send a
-      <a
-        href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via={{ $authorTwitter }}"
-        target="_blank"
-        rel="noreferrer"
-        >tweet</a
-      >
-      or an
-      <a href="mailto:{{ $authorEmail }}?subject={{ .Title }}" target="_blank" rel="noreferrer">email</a>.
+      Posted on <a href="{{ .RelPermalink }}" class="u-url u-uid">{{ partial "utils/time" .Date }}</a>
+      {{- if $tagLinks }} under {{ $tagLinks }}{{ end -}}
+      {{- if $authorLinks }} by {{ $authorLinks }}{{ end -}}.
     </p>
   </footer>
 {{ end }}

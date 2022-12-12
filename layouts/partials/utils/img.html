@@ -1,52 +1,52 @@
-{{- $img := .img.Filter (images.Gamma 1) -}}
-{{- $src := .src -}}
-{{- $alt := .alt | default "" -}}
-{{- $caption := .caption -}}
-{{- $class := .class -}}
+{{ $img := .img.Filter (images.Gamma 1) }}
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $caption := .caption }}
+{{ $class := .class }}
 
-{{- $ext := $src | path.Ext | replaceRE "^\\." "" -}}
-{{- $density := $src | replaceRE "^.+@(\\d+)x\\.[a-z]+$" "$1" | float -}}
-{{- $width := div $img.Width $density -}}
-{{- $height := div $img.Height $density -}}
+{{ $ext := $src | path.Ext | replaceRE "^\\." "" }}
+{{ $density := $src | replaceRE "^.+@(\\d+)x\\.[a-z]+$" "$1" | float }}
+{{ $width := div $img.Width $density }}
+{{ $height := div $img.Height $density }}
 
-{{- $srcsetBreakpoints := slice 384 768 1280 -}}
-{{- $sizesBreakpoints := slice 1280 -}}
+{{ $srcsetBreakpoints := slice 384 768 1280 }}
+{{ $sizesBreakpoints := slice 1280 }}
 
-{{- $srcset := slice -}}
-{{- range $srcsetBreakpoints -}}
-  {{- if lt (mul 1.25 .) $img.Width -}}
-    {{- $thumb := $img.Resize (printf "%dx" .) -}}
-    {{- $srcset = $srcset | append (printf "%s %dw" $thumb.RelPermalink .) -}}
-  {{- end -}}
-{{- end -}}
-{{- if lt (len $srcset) (len $srcsetBreakpoints) -}}
-  {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
-{{- end -}}
-{{- $srcset = delimit $srcset ", " -}}
+{{ $srcset := slice }}
+{{ range $srcsetBreakpoints }}
+  {{ if lt (mul 1.25 .) $img.Width }}
+    {{ $thumb := $img.Resize (printf "%dx" .) }}
+    {{ $srcset = $srcset | append (printf "%s %dw" $thumb.RelPermalink .) }}
+  {{ end }}
+{{ end }}
+{{ if lt (len $srcset) (len $srcsetBreakpoints) }}
+  {{ $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) }}
+{{ end }}
+{{ $srcset = delimit $srcset ", " }}
 
-{{- $sizes := slice -}}
-{{- range $sizesBreakpoints -}}
-  {{- $sizes = $sizes | append (printf "(min-width: %dpx) %dpx" . .) -}}
-{{- end -}}
-{{- $sizes = $sizes | append "100vw" -}}
-{{- $sizes = delimit $sizes ", " -}}
+{{ $sizes := slice }}
+{{ range $sizesBreakpoints }}
+  {{ $sizes = $sizes | append (printf "(min-width: %dpx) %dpx" . .) }}
+{{ end }}
+{{ $sizes = $sizes | append "100vw" }}
+{{ $sizes = delimit $sizes ", " }}
 
 <figure class="{{ $class }}">
   <picture>
-    {{- partial "utils/sources" (dict "ext" $ext "srcset" $srcset "sizes" $sizes) -}}
+    {{ partial "utils/sources" (dict "ext" $ext "srcset" $srcset "sizes" $sizes) }}
     <img
       alt="{{ $alt }}"
       width="{{ $width }}"
       height="{{ $height }}"
       src="{{ $img.RelPermalink }}"
-      {{- printf " srcset=\"%s\"" $srcset | safeHTMLAttr -}}
-      {{- printf " sizes=\"%s\"" $sizes | safeHTMLAttr -}}
+      {{ printf " srcset=\"%s\"" $srcset | safeHTMLAttr }}
+      {{ printf " sizes=\"%s\"" $sizes | safeHTMLAttr }}
       loading="lazy"
     />
   </picture>
-  {{- with $caption -}}
+  {{ with $caption }}
     <figcaption>
       {{ . | markdownify }}
     </figcaption>
-  {{- end -}}
+  {{ end }}
 </figure>

@@ -24,7 +24,7 @@
             "interactive": ["error", { "maxNumericValue": 1500 }],
             "total-blocking-time": ["error", { "maxNumericValue": 100 }],
             "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
-            "resource-summary:document:size": ["error", { "maxNumericValue": 3500 }],
+            "resource-summary:document:size": ["error", { "maxNumericValue": 4000 }],
             "resource-summary:script:size": ["error", { "maxNumericValue": 3500 }],
             "resource-summary:total:size": ["error", { "maxNumericValue": 20000 }]
           }

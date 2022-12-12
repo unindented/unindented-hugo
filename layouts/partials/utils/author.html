@@ -1,4 +1,4 @@
-{{- $authorsData := site.Data.authors -}}
-{{- $author := index $authorsData . -}}
+{{ $authorsData := site.Data.authors }}
+{{ $author := index $authorsData . }}
 
 {{ with $author }}<a class="p-author h-card" rel="author" href="{{ .social.website }}">{{ .displayName }}</a>{{ end }}

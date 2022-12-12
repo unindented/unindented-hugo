@@ -2,7 +2,7 @@ KATEX_VERSION := 0.16.4
 P5_VERSION := 1.4.2
 
 AUTHOR_NAME := $(shell sed -n 's/name = "\(.*\)"/\1/p' config.toml | head -n1)
-AUTHOR_HANDLE := $(shell sed -n 's/twitter = "\(.*\)"/\1/p' config.toml | head -n1)
+AUTHOR_HANDLE := $(shell sed -n 's/github = "\(.*\)"/\1/p' config.toml | head -n1)
 
 CONTENT_DIR := content
 PUBLIC_DIR := public
@@ -30,11 +30,12 @@ COMPRESSABLE_FILES := $(shell find $(COMPRESSABLE_INCLUDE_DIR) -type f \( $(COMP
 COMPRESSABLE_FILES_BROTLI := $(addsuffix .br, $(COMPRESSABLE_FILES))
 COMPRESSABLE_FILES_GZIP := $(addsuffix .gz, $(COMPRESSABLE_FILES))
 
-CONTENT_INDEX_COVER_TEMPLATE := static/images/cover-template.png
-CONTENT_INDEX_INCLUDE_DIR := $(CONTENT_DIR)
+CONTENT_COVER_TEMPLATE := static/images/cover-template.png
 
-CONTENT_INDEX_FILES := $(shell find $(CONTENT_INDEX_INCLUDE_DIR) -type f -name index.md 2> /dev/null)
-CONTENT_INDEX_FILES_COVER := $(addsuffix _cover@2x.png, $(dir $(CONTENT_INDEX_FILES)))
+CONTENT_INDEXES := $(shell find $(CONTENT_DIR) -type f -name _index.md 2> /dev/null)
+CONTENT_INDEXES_COVERS := $(addsuffix __cover@2x.png, $(dir $(CONTENT_INDEXES)))
+CONTENT_ARTICLES := $(shell find $(CONTENT_DIR) -type f -name index.md 2> /dev/null)
+CONTENT_ARTICLES_COVERS := $(addsuffix _cover@2x.png, $(dir $(CONTENT_ARTICLES)))
 
 .PHONY: all
 all: build
@@ -108,7 +109,7 @@ compress-gzip: $(COMPRESSABLE_FILES_GZIP)
 	@echo
 	@echo "Finished compressing files with Gzip!"
 
-covers: $(CONTENT_INDEX_FILES_COVER)
+covers: $(CONTENT_INDEXES_COVERS) $(CONTENT_ARTICLES_COVERS)
 	@echo
 	@echo "Finished generating cover files!"
 
@@ -143,42 +144,75 @@ $(COMPRESSABLE_INCLUDE_DIR)/%.gz: $(COMPRESSABLE_INCLUDE_DIR)/%
 	@touch $@
 	@printf "."
 
-$(CONTENT_INDEX_INCLUDE_DIR)/%/_cover@2x.png: $(CONTENT_INDEX_INCLUDE_DIR)/%/index.md $(CONTENT_INDEX_COVER_TEMPLATE)
+%/__cover@2x.png: %/_index.md $(CONTENT_COVER_TEMPLATE)
 	$(eval $@_TITLE := $(shell sed -n 's/title = "\(.*\)"/\1/p' $<))
-	@convert $(CONTENT_INDEX_COVER_TEMPLATE) \
+	@convert $(CONTENT_COVER_TEMPLATE) \
+	  \( -size 625x275 \
+	     -background none \
+	     -fill white \
+	     -font "Roboto" \
+	     -gravity northwest \
+	     caption:"$($@_TITLE)" \) \
+	  -gravity northwest \
+	  -geometry +75+110 \
+	  -composite \
+	  \( -size 450x50 \
+	     -background none \
+	     -fill "#a1a1aa" \
+	     -font "Roboto" \
+	     -gravity northwest \
+	     label:"$(AUTHOR_NAME)" \) \
+	  -gravity northwest \
+	  -geometry +250+465 \
+	  -composite \
+	  \( -size 450x40 \
+	     -background none \
+	     -fill "#a1a1aa" \
+	     -font "Roboto" \
+	     -gravity northwest \
+	     label:"@$(AUTHOR_HANDLE)" \) \
+	  -gravity northwest \
+	  -geometry +250+525 \
+	  -composite \
+	  $@
+	@printf "."
+
+%/_cover@2x.png: %/index.md $(CONTENT_COVER_TEMPLATE)
+	$(eval $@_TITLE := $(shell sed -n 's/title = "\(.*\)"/\1/p' $<))
+	@convert $(CONTENT_COVER_TEMPLATE) \
 	  \( -size 625x35 \
 	     -background none \
-	     -fill '#a1a1aa' \
-	     -font 'Roboto' \
+	     -fill "#a1a1aa" \
+	     -font "Roboto" \
 	     -gravity northwest \
-	     label:'Check out this post' \) \
+	     label:"Check out this article" \) \
 	  -gravity northwest \
 	  -geometry +75+50 \
 	  -composite \
 	  \( -size 625x275 \
 	     -background none \
 	     -fill white \
-	     -font 'Roboto' \
+	     -font "Roboto" \
 	     -gravity northwest \
-	     caption:'$($@_TITLE)' \) \
+	     caption:"$($@_TITLE)" \) \
 	  -gravity northwest \
 	  -geometry +75+110 \
 	  -composite \
 	  \( -size 450x50 \
 	     -background none \
-	     -fill '#a1a1aa' \
-	     -font 'Roboto' \
+	     -fill "#a1a1aa" \
+	     -font "Roboto" \
 	     -gravity northwest \
-	     label:'$(AUTHOR_NAME)' \) \
+	     label:"$(AUTHOR_NAME)" \) \
 	  -gravity northwest \
 	  -geometry +250+465 \
 	  -composite \
 	  \( -size 450x40 \
 	     -background none \
-	     -fill '#a1a1aa' \
-	     -font 'Roboto' \
+	     -fill "#a1a1aa" \
+	     -font "Roboto" \
 	     -gravity northwest \
-	     label:'@$(AUTHOR_HANDLE)' \) \
+	     label:"@$(AUTHOR_HANDLE)" \) \
 	  -gravity northwest \
 	  -geometry +250+525 \
 	  -composite \

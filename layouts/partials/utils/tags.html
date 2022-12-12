@@ -1,2 +1,0 @@
-{{- $tags := .GetTerms "tags" -}}
-{{ return delimit (apply $tags "partial" "utils/tag" ".") ", " " and " }}

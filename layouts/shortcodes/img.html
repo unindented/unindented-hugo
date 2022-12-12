@@ -1,8 +1,8 @@
-{{- $src := .Get "src" -}}
-{{- $alt := .Get "alt" -}}
-{{- $caption := .Get "caption" -}}
-{{- $class := .Get "class" -}}
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $class := .Get "class" }}
 
-{{- $img := .Page.Resources.GetMatch $src -}}
+{{ $img := .Page.Resources.GetMatch $src }}
 
-{{- partial "utils/img" (dict "img" $img "src" $src "alt" $alt "caption" $caption "class" $class) -}}
+{{ partial "utils/img" (dict "img" $img "src" $src "alt" $alt "caption" $caption "class" $class) }}
