@@ -1,59 +1,69 @@
-<footer class="mx-auto w-full max-w-7xl px-4 py-10 sm:px-8">
-  <div class="flex flex-row-reverse flex-wrap items-center justify-around gap-8">
-    <div class="flex flex-shrink-0 items-center space-x-4 sm:space-x-8 lg:ml-auto">
-      {{ with (site.GetPage "/").OutputFormats.Get "RSS" }}
-        <a
-          href="feed:{{ .Permalink }}"
-          class="transition-colors duration-500 hover:text-gray-500 focus:text-gray-500 dark:hover:text-gray-100 dark:focus:text-gray-100"
-        >
-          <svg height="1em" viewBox="0 0 448 512" fill="currentColor">
-            <use href="/images/sprites.svg#icon-rss" />
-          </svg>
-          <span class="sr-only">RSS</span></a
-        >
-      {{ end }}
-      {{ with site.Author.email }}
-        <a
-          href="mailto:{{ . }}"
-          target="_blank"
-          rel="me noreferrer"
-          class="transition-colors duration-500 hover:text-gray-600 focus:text-gray-600 dark:hover:text-white dark:focus:text-white"
-        >
-          <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
-            <use href="/images/sprites.svg#icon-email" />
-          </svg>
-          <span class="sr-only">Email</span></a
-        >
-      {{ end }}
-      {{ with site.Social.twitter }}
-        <a
-          href="https://twitter.com/{{ . }}"
-          target="_blank"
-          rel="me noreferrer"
-          class="transition-colors duration-500 hover:text-gray-600 focus:text-gray-600 dark:hover:text-white dark:focus:text-white"
-        >
-          <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
-            <use href="/images/sprites.svg#icon-twitter" />
-          </svg>
-          <span class="sr-only">Twitter</span></a
-        >
-      {{ end }}
-      {{ with site.Social.github }}
-        <a
-          href="https://github.com/{{ . }}"
-          target="_blank"
-          rel="me noreferrer"
-          class="transition-colors duration-500 hover:text-gray-600 focus:text-gray-600 dark:hover:text-white dark:focus:text-white"
-        >
-          <svg height="1em" viewBox="0 0 496 512" fill="currentColor">
-            <use href="/images/sprites.svg#icon-github" />
-          </svg>
-          <span class="sr-only">GitHub</span></a
-        >
-      {{ end }}
-    </div>
+<footer class="mx-auto w-full max-w-7xl px-4 py-10 text-gray-600 dark:text-gray-400 sm:px-8">
+  <div class="flex flex-row-reverse flex-wrap justify-around gap-8">
+    <nav aria-label="social" class="lg:ml-auto">
+      <ul class="flex flex-wrap gap-4 sm:gap-8">
+        {{ with (site.GetPage "/").OutputFormats.Get "RSS" }}
+          <li class="block">
+            <a
+              href="feed:{{ .Permalink }}"
+              aria-labelledby="social-rss-label"
+              class="inline-block py-2 transition-colors hover:text-gray-700 focus:text-gray-700 dark:hover:text-gray-300 dark:focus:text-gray-300"
+            >
+              <span id="social-rss-label" hidden>RSS</span>
+              <svg height="1em" viewBox="0 0 448 512" fill="currentColor">
+                <use href="/images/sprites.svg#icon-rss" /></svg
+            ></a>
+          </li>
+        {{ end }}
+        {{ with site.Author.email }}
+          <li class="block">
+            <a
+              href="mailto:{{ . }}"
+              target="_blank"
+              rel="me noreferrer"
+              aria-labelledby="social-email-label"
+              class="inline-block py-2 transition-colors hover:text-gray-700 focus:text-gray-700 dark:hover:text-gray-300 dark:focus:text-gray-300"
+            >
+              <span id="social-email-label" hidden>Email</span>
+              <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
+                <use href="/images/sprites.svg#icon-email" /></svg
+            ></a>
+          </li>
+        {{ end }}
+        {{ with site.Social.github }}
+          <li class="block">
+            <a
+              href="https://github.com/{{ . }}"
+              target="_blank"
+              rel="me noreferrer"
+              aria-labelledby="social-github-label"
+              class="inline-block py-2 transition-colors hover:text-gray-700 focus:text-gray-700 dark:hover:text-gray-300 dark:focus:text-gray-300"
+            >
+              <span id="social-github-label" hidden>GitHub</span>
+              <svg height="1em" viewBox="0 0 496 512" fill="currentColor">
+                <use href="/images/sprites.svg#icon-github" /></svg
+            ></a>
+          </li>
+        {{ end }}
+        {{ with site.Social.linkedin }}
+          <li class="block">
+            <a
+              href="https://www.linkedin.com/in/{{ . }}/"
+              target="_blank"
+              rel="me noreferrer"
+              aria-labelledby="social-linkedin-label"
+              class="inline-block py-2 transition-colors hover:text-gray-700 focus:text-gray-700 dark:hover:text-gray-300 dark:focus:text-gray-300"
+            >
+              <span id="social-linkedin-label" hidden>LinkedIn</span>
+              <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
+                <use href="/images/sprites.svg#icon-linkedin" /></svg
+            ></a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
     <p class="prose max-w-none text-center dark:prose-invert md:prose-lg lg:prose-xl">
-      {{ site.Copyright | markdownify }}
+      {{- site.Copyright | markdownify -}}
     </p>
   </div>
 </footer>

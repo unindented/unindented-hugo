@@ -1,10 +1,10 @@
 /*
-{{- $latestArticles := partial "utils/get-articles" -}}
-{{- $latestArticles = delimit (apply $latestArticles "partial" "utils/rel-permalink" ".") "\", \"" -}}
+{{ $latestArticles := partial "utils/latest-articles" }}
+{{ $latestArticles = delimit (apply $latestArticles "partial" "utils/rel-permalink" ".") "\", \"" }}
 
-{{- $offlineImage := (resources.GetMatch "images/offline.svg").Content -}}
+{{ $offlineImage := (resources.GetMatch "images/offline.svg").Content }}
 
-{{- $version := now.Format "v20060102" -}}
+{{ $version := now.Format "v20060102" }}
 */
 
 const version = "{{ $version }}";

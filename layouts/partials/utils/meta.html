@@ -1,2 +1,7 @@
-{{ partial "utils/time" .Date }}
-{{ if eq .Section "blog" }} — {{ partial "utils/length" .Content }}{{ end }}
+<div class="flex flex-row flex-wrap gap-4 text-base text-gray-600 dark:text-gray-400">
+  <div>
+    {{ partial "utils/time" .Date }}
+    {{- if eq .Section "blog" }} — {{ partial "utils/length" .Content }}{{ end -}}
+  </div>
+  {{ partial "utils/tags-list" . }}
+</div>

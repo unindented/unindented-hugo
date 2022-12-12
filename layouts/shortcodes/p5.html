@@ -1,22 +1,26 @@
-{{- $caption := .Get "caption" -}}
-{{- $class := .Get "class" -}}
-{{- $name := .Get "name" -}}
-{{- $actions := .Get "actions" -}}
+{{ $caption := .Get "caption" }}
+{{ $class := .Get "class" }}
+{{ $name := .Get "name" }}
+{{ $actions := .Get "actions" }}
 
-{{- $path := cond (strings.HasSuffix .Page.RelPermalink "/") .Page.RelPermalink "" }}
-{{- $target := printf "%s%s.mjs" $path $name -}}
-{{- $script := .Inner | resources.FromString $target -}}
+{{ $path := cond (strings.HasSuffix .Page.RelPermalink "/") .Page.RelPermalink "" }}
+{{ $target := printf "%s%s.mjs" $path $name }}
+{{ $script := .Inner | resources.FromString $target }}
 
-{{- $supportedActions := dict "play" "Play" "pause" "Pause" "download" "Download" -}}
+{{ $supportedActions := dict "play" "Play" "pause" "Pause" "download" "Download" }}
 
 <figure class="{{ $class }}">
   <div id="{{ $name }}" class="group relative min-h-[6rem] bg-black">
     {{ if $actions }}
       <div
-        class="absolute top-0 left-0 m-1 flex gap-2 rounded-full bg-black p-1 text-white opacity-50 transition-opacity hover:!opacity-100 group-hover:opacity-75 sm:m-2 sm:p-2"
+        class="absolute top-0 left-0 m-1 flex gap-2 rounded-full bg-black p-1 text-white opacity-50 transition-opacity focus-within:!opacity-100 hover:!opacity-100 group-hover:opacity-75 sm:m-2 sm:p-2"
       >
         {{ range split $actions " " }}
-          <button type="button" data-action="{{ . }}">
+          <button
+            type="button"
+            data-action="{{ . }}"
+            class="opacity-75 transition-opacity hover:!opacity-100 focus:!opacity-100"
+          >
             <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
               <use href="/images/sprites.svg#icon-{{ . }}" />
             </svg>
@@ -26,11 +30,11 @@
       </div>
     {{ end }}
   </div>
-  {{- with $caption -}}
+  {{ with $caption }}
     <figcaption>
       {{ . | markdownify }}
     </figcaption>
-  {{- end -}}
+  {{ end }}
 </figure>
 
 <script type="text/p5" src="{{ $script.RelPermalink }}"></script>

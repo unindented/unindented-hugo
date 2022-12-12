@@ -1,7 +1,7 @@
 {{- $pages := (where site.RegularPages "Type" "in" (slice "blog" "playground")) -}}
 {{- $limit := site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
-{{- $pages = $pages | first $limit -}}
+  {{- $pages = $pages | first $limit -}}
 {{- end -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -9,7 +9,7 @@
     <title>{{ site.Title }} — {{ site.Params.description }}</title>
     <link>{{ .Permalink }}</link>
     <description>Recent content by {{ site.Author.name }}</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo {{ hugo.Version }}</generator>
     <language>{{ site.LanguageCode | default "en-us" }}</language>
     {{ with site.Author.email }}<managingEditor>{{ . }}{{ with site.Author.name }} ({{ . }}){{ end }}</managingEditor>{{ end }}
     {{ with site.Author.email }}<webMaster>{{ . }}{{ with site.Author.name }} ({{ . }}){{ end }}</webMaster>{{ end }}

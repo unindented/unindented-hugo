@@ -5,15 +5,27 @@
 @import "./fonts.css";
 @import "./syntax.css";
 
+@layer base {
+  *:focus {
+    @apply outline outline-2 outline-offset-2 outline-transparent;
+  }
+  *:focus:not(:focus-visible) {
+    @apply shadow-none outline outline-2 outline-offset-2 outline-transparent;
+  }
+  *:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-blue-600;
+  }
+}
+
 @layer components {
   .form-button {
     @apply border border-gray-500 bg-gray-100 py-1 px-4 text-gray-700 shadow-sm;
   }
   .form-button:not([disabled]) {
-    @apply hover:bg-gray-200;
+    @apply hover:bg-gray-200 focus:bg-gray-200;
   }
   .form-button-primary:not([disabled]) {
-    @apply border-blue-900 bg-blue-700 text-white hover:bg-blue-800;
+    @apply border-blue-900 bg-blue-700 text-white hover:bg-blue-800 focus:bg-blue-800;
   }
 
   .form-checkbox,
@@ -36,10 +48,10 @@
   }
 
   .form-label-block {
-    @apply flex flex-col space-y-1;
+    @apply flex flex-col gap-1;
   }
   .form-label-inline {
-    @apply flex items-center space-x-2;
+    @apply flex items-center gap-2;
   }
 
   .form-color,

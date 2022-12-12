@@ -1,11 +1,11 @@
-{{- $caption := .Get "caption" -}}
-{{- $class := .Get "class" -}}
+{{ $caption := .Get "caption" }}
+{{ $class := .Get "class" }}
 
 <figure class="{{ $class }}">
   {{ .Inner | safeHTML }}
-  {{- with $caption -}}
+  {{ with $caption }}
     <figcaption>
       {{ . | markdownify }}
     </figcaption>
-  {{- end -}}
+  {{ end }}
 </figure>
