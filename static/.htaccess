@@ -89,19 +89,6 @@
 #     Header always set Cross-Origin-Resource-Policy "same-origin"
 # </IfModule>
 
-# ----------------------------------------------------------------------
-# | Referrer Policy                                                    |
-# ----------------------------------------------------------------------
-
-# Mitigate information leakage.
-#
-# https://scotthelme.co.uk/a-new-security-header-referrer-policy/
-# https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy
-
-<IfModule mod_headers.c>
-    Header always set Referrer-Policy "strict-origin-when-cross-origin" "expr=%{CONTENT_TYPE} =~ m#text\/(css|html|javascript)|application\/pdf|xml#i"
-</IfModule>
-
 # ######################################################################
 # # ERRORS                                                             #
 # ######################################################################
@@ -171,9 +158,10 @@ Options -MultiViews
 
     AddType audio/mp4                                   f4a f4b m4a
     AddType audio/ogg                                   oga ogg opus
+    AddType image/avif                                  avif avifs
     AddType image/bmp                                   bmp
+    AddType image/jxl                                   jxl
     AddType image/svg+xml                               svg svgz
-    AddType image/avif                                  avif
     AddType image/webp                                  webp
     AddType video/mp4                                   f4v f4p m4v mp4
     AddType video/ogg                                   ogv
@@ -290,19 +278,6 @@ AddDefaultCharset utf-8
 </IfModule>
 
 # ----------------------------------------------------------------------
-# | Permissions Policy                                                 |
-# ----------------------------------------------------------------------
-
-# Control which features and APIs can be used in the browser.
-#
-# https://scotthelme.co.uk/goodbye-feature-policy-and-hello-permissions-policy/
-# https://www.w3.org/TR/permissions-policy-1/
-
-<IfModule mod_headers.c>
-    Header always set Permissions-Policy "fullscreen=(self)" "expr=%{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
-</IfModule>
-
-# ----------------------------------------------------------------------
 # | File access                                                        |
 # ----------------------------------------------------------------------
 
@@ -371,6 +346,32 @@ AddDefaultCharset utf-8
 
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Referrer Policy                                                    |
+# ----------------------------------------------------------------------
+
+# Mitigate information leakage.
+#
+# https://scotthelme.co.uk/a-new-security-header-referrer-policy/
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Referrer-Policy
+
+<IfModule mod_headers.c>
+    Header always set Referrer-Policy "strict-origin-when-cross-origin" "expr=%{CONTENT_TYPE} =~ m#text\/(css|html|javascript)|application\/pdf|xml#i"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Permissions Policy                                                 |
+# ----------------------------------------------------------------------
+
+# Control which features and APIs can be used in the browser.
+#
+# https://scotthelme.co.uk/goodbye-feature-policy-and-hello-permissions-policy/
+# https://www.w3.org/TR/permissions-policy-1/
+
+<IfModule mod_headers.c>
+    Header always set Permissions-Policy "fullscreen=(self)" "expr=%{CONTENT_TYPE} =~ m#text\/(html|javascript)|application\/pdf|xml#i"
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -481,6 +482,7 @@ ServerSignature Off
                                       "image/bmp" \
                                       "image/svg+xml" \
                                       "image/vnd.microsoft.icon" \
+                                      "image/x-icon" \
                                       "text/cache-manifest" \
                                       "text/calendar" \
                                       "text/css" \
@@ -618,21 +620,6 @@ ServerSignature Off
 </IfModule>
 
 # ----------------------------------------------------------------------
-# | Content transformation                                             |
-# ----------------------------------------------------------------------
-
-# Prevent intermediate caches or proxies (such as those used by mobile
-# network providers) and browsers data-saving features from modifying
-# the website's content.
-#
-# https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control
-# https://tools.ietf.org/html/rfc7234#section-5.2.2.4
-
-# <IfModule mod_headers.c>
-#     Header merge Cache-Control "no-transform"
-# </IfModule>
-
-# ----------------------------------------------------------------------
 # | ETags                                                              |
 # ----------------------------------------------------------------------
 
@@ -664,99 +651,52 @@ FileETag None
     ExpiresActive on
     ExpiresDefault                                      "access plus 1 month"
 
-  # CSS
+    # Specific: Assets
+    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
+    ExpiresByType image/x-icon                          "access plus 1 week"
 
-    ExpiresByType text/css                              "access plus 1 month"
+    # Specific: Manifests
+    ExpiresByType application/manifest+json             "access plus 1 week"
+    ExpiresByType application/x-web-app-manifest+json   "access"
+    ExpiresByType text/cache-manifest                   "access"
 
-  # Data interchange
-
+    # Specific: Data interchange
     ExpiresByType application/atom+xml                  "access plus 1 hour"
     ExpiresByType application/rdf+xml                   "access plus 1 hour"
     ExpiresByType application/rss+xml                   "access plus 1 hour"
 
-    ExpiresByType application/json                      "access plus 0 seconds"
-    ExpiresByType application/ld+json                   "access plus 0 seconds"
-    ExpiresByType application/schema+json               "access plus 0 seconds"
-    ExpiresByType application/geo+json                  "access plus 0 seconds"
-    ExpiresByType application/xml                       "access plus 0 seconds"
-    ExpiresByType text/calendar                         "access plus 0 seconds"
-    ExpiresByType text/xml                              "access plus 0 seconds"
+    # Specific: Documents
+    ExpiresByType text/html                             "access"
+    ExpiresByType text/markdown                         "access"
+    ExpiresByType text/calendar                         "access"
 
-  # Favicon (cannot be renamed!) and cursor images
-
-    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
-    ExpiresByType image/x-icon                          "access plus 1 week"
-
-  # HTML
-
-    ExpiresByType text/html                             "access plus 0 seconds"
-
-  # JavaScript
-
-    ExpiresByType application/javascript                "access plus 1 month"
-    ExpiresByType application/x-javascript              "access plus 1 month"
-    ExpiresByType text/javascript                       "access plus 1 month"
-
-  # Manifest files
-
-    ExpiresByType application/manifest+json             "access plus 1 week"
-    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
-    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
-
-  # Markdown
-
-    ExpiresByType text/markdown                         "access plus 0 seconds"
-
-  # Media files
-
-    ExpiresByType audio/ogg                             "access plus 1 month"
-    ExpiresByType image/apng                            "access plus 1 month"
-    ExpiresByType image/bmp                             "access plus 1 month"
-    ExpiresByType image/gif                             "access plus 1 month"
-    ExpiresByType image/jpeg                            "access plus 1 month"
-    ExpiresByType image/png                             "access plus 1 month"
-    ExpiresByType image/svg+xml                         "access plus 1 month"
-    ExpiresByType image/avif                            "access plus 1 month"
-    ExpiresByType image/webp                            "access plus 1 month"
-    ExpiresByType video/mp4                             "access plus 1 month"
-    ExpiresByType video/ogg                             "access plus 1 month"
-    ExpiresByType video/webm                            "access plus 1 month"
-
-  # WebAssembly
-
-    ExpiresByType application/wasm                      "access plus 1 month"
-
-  # Web fonts
-
-    # Collection
-    ExpiresByType font/collection                       "access plus 1 month"
-
-    # Embedded OpenType (EOT)
-    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
-    ExpiresByType font/eot                              "access plus 1 month"
-
-    # OpenType
-    ExpiresByType font/opentype                         "access plus 1 month"
-    ExpiresByType font/otf                              "access plus 1 month"
-
-    # TrueType
-    ExpiresByType application/x-font-ttf                "access plus 1 month"
-    ExpiresByType font/ttf                              "access plus 1 month"
-
-    # Web Open Font Format (WOFF) 1.0
-    ExpiresByType application/font-woff                 "access plus 1 month"
-    ExpiresByType application/x-font-woff               "access plus 1 month"
-    ExpiresByType font/woff                             "access plus 1 month"
-
-    # Web Open Font Format (WOFF) 2.0
-    ExpiresByType application/font-woff2                "access plus 1 month"
-    ExpiresByType font/woff2                            "access plus 1 month"
-
-  # Other
-
+    # Specific: Other
     ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
 
+    # Generic: Data
+    ExpiresByType application/json                      "access"
+    ExpiresByType application/ld+json                   "access"
+    ExpiresByType application/schema+json               "access"
+    ExpiresByType application/geo+json                  "access"
+    ExpiresByType application/xml                       "access"
+    ExpiresByType text/xml                              "access"
+
 </IfModule>
+
+# ----------------------------------------------------------------------
+# | Content transformation                                             |
+# ----------------------------------------------------------------------
+
+# Prevent intermediate caches or proxies (such as those used by mobile
+# network providers) and browsers data-saving features from modifying
+# the website's content.
+#
+# https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control
+# https://tools.ietf.org/html/rfc7234#section-5.2.2.4
+
+# <IfModule mod_headers.c>
+#     Header merge Cache-Control "no-transform"
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # | File concatenation                                                 |
@@ -802,7 +742,7 @@ FileETag None
 # <IfModule mod_rewrite.c>
 #     RewriteEngine On
 #     RewriteCond %{REQUEST_FILENAME} !-f
-#     RewriteRule ^(.+)\.(\w+)\.(avif|bmp|css|cur|gif|ico|jpe?g|m?js|a?png|svgz?|webp|webmanifest)$ $1.$3 [L]
+#     RewriteRule ^(.+)\.(\w+)\.(avifs?|bmp|css|cur|gif|ico|jpe?g|jxl|m?js|a?png|svgz?|webp|webmanifest)$ $1.$3 [L]
 # </IfModule>
 
 # ######################################################################
@@ -818,6 +758,16 @@ FileETag None
         Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
         Header set Expires "Thu, 1 Jan 1970 00:00:00 GMT"
         Header set Pragma "no-cache"
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Webfinger                                                          |
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    <FilesMatch "webfinger$">
+        Header set Content-Type "application/jrd+json"
     </FilesMatch>
 </IfModule>
 
