@@ -1,10 +1,22 @@
 {
   "subject": "acct:unindented@hachyderm.io",
   "aliases": [
+    "mailto:daniel@unindented.org",
+    "https://www.unindented.org/",
     "https://hachyderm.io/@unindented",
     "https://hachyderm.io/users/unindented"
   ],
   "links": [
+    {
+      "rel": "http://webfinger.net/rel/avatar",
+      "type": "image/png",
+      "href": "https://www.unindented.org/authors/daniel-512.png"
+    },
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://www.unindented.org/"
+    },
     {
       "rel": "http://webfinger.net/rel/profile-page",
       "type": "text/html",
