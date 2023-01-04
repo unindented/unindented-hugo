@@ -6,11 +6,13 @@ const { maxWidth, config: customTypography } = require("./tailwind.typography");
 
 module.exports = {
   content: [
-    "./layouts/**/*.html",
     "./content/**/*.html",
     "./content/**/*.md",
     "./content/**/*.js",
     "./content/**/*.mjs",
+    "./layouts/**/*.html",
+    "./static/js/*.js",
+    "./static/js/*.mjs",
   ],
   plugins: [forms({ strategy: "class" }), typography],
   darkMode: "class",

@@ -1,3 +1,4 @@
+FUSE_VERSION := 6.6.2
 KATEX_VERSION := 0.16.4
 P5_VERSION := 1.4.2
 
@@ -13,6 +14,7 @@ CONVERTIBLE_EXTENSIONS := png
 CONVERTIBLE_INCLUDE_DIR := $(PUBLIC_DIR)
 CONVERTIBLE_EXCLUDE_DIRS := $(PUBLIC_DIR)/images
 CONVERTIBLE_CACHE_DIR := $(CACHE_DIR)/images
+FUSE_DIR := $(STATIC_JS_DIR)/fuse-v$(FUSE_VERSION)
 KATEX_DIR := $(STATIC_JS_DIR)/katex-v$(KATEX_VERSION)
 P5_DIR := $(STATIC_JS_DIR)/p5-v$(P5_VERSION)
 
@@ -218,6 +220,13 @@ $(COMPRESSABLE_INCLUDE_DIR)/%.gz: $(COMPRESSABLE_INCLUDE_DIR)/%
 	  -composite \
 	  $@
 	@printf "."
+
+.PHONY: fuse
+fuse:
+	@mkdir -p $(FUSE_DIR)
+	@curl -Lo $(FUSE_DIR)/fuse.min.js https://cdn.jsdelivr.net/npm/fuse.js@$(FUSE_VERSION)/dist/fuse.basic.esm.min.js
+	@echo
+	@echo "Finished downloading Fuse.js!"
 
 .PHONY: katex
 katex:
