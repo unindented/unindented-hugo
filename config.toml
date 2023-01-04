@@ -53,8 +53,12 @@ rel = "manifest"
 [outputFormats.rss]
 baseName = "rss"
 
+[outputFormats.search]
+mediaType = "application/json"
+baseName = "search"
+
 [outputs]
-home = ["html", "manifest", "rss"]
+home = ["html", "manifest", "rss", "search"]
 page = ["html"]
 section = ["html"]
 taxonomy = ["html"]

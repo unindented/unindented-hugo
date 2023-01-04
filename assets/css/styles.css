@@ -15,6 +15,10 @@
   *:focus-visible {
     @apply outline outline-2 outline-offset-2 outline-blue-600;
   }
+
+  html:has(dialog[open]) {
+    @apply overflow-hidden;
+  }
 }
 
 @layer components {

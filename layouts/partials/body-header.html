@@ -1,6 +1,6 @@
 <header class="mx-auto w-full max-w-7xl px-4 py-10 text-gray-600 dark:text-gray-400 sm:px-8">
   <nav aria-label="main">
-    <ul class="flex flex-wrap items-center gap-4 font-bold sm:gap-8">
+    <ul class="flex flex-wrap items-center justify-end gap-4 font-bold sm:gap-8">
       <li class="mr-auto block">
         <a
           href="/"
@@ -25,8 +25,9 @@
       <li class="block">
         <button
           type="button"
-          id="color-scheme"
           aria-labelledby="color-scheme-label"
+          data-hotkey="c"
+          id="color-scheme-button"
           class="inline-block py-2 transition-colors hover:text-gray-700 focus:text-gray-700 dark:hover:text-gray-300 dark:focus:text-gray-300"
         >
           <svg height="1em" viewbox="0 0 384 512" fill="currentColor">
@@ -35,6 +36,48 @@
           </svg>
         </button>
       </li>
+      <li class="block">
+        <button
+          type="button"
+          aria-labelledby="search-label"
+          data-hotkey="s,/"
+          id="search-button"
+          class="inline-block py-2 transition-colors hover:text-gray-700 focus:text-gray-700 dark:hover:text-gray-300 dark:focus:text-gray-300"
+        >
+          <svg height="1em" viewbox="0 0 512 512" fill="currentColor">
+            <title id="search-label">Open search dialog</title>
+            <use href="/images/sprites.svg#icon-search" />
+          </svg>
+        </button>
+      </li>
     </ul>
   </nav>
+
+  <dialog
+    id="search-dialog"
+    class="h-2/3 w-full bg-white p-0 backdrop:backdrop-blur-md backdrop:backdrop-brightness-50 dark:bg-gray-900 md:max-w-prose"
+  >
+    <div class="flex h-full flex-col">
+      <form
+        method="dialog"
+        class="flex flex-col gap-4 border-b border-gray-200 p-4 dark:border-gray-700 sm:flex-row sm:p-8"
+      >
+        <label class="form-label-inline flex-1 gap-4">
+          <svg height="2em" viewbox="0 0 512 512" fill="currentColor">
+            <title>Search</title>
+            <use href="/images/sprites.svg#icon-search" />
+          </svg>
+          <input type="text" spellcheck="false" id="search-dialog-input" name="q" class="form-input w-full" />
+        </label>
+        <div class="hidden flex-row gap-2 sm:flex">
+          <button type="submit" id="search-dialog-confirm-button" class="form-button form-button-primary">Search</button>
+          <button id="search-dialog-cancel-button" class="form-button">Cancel</button>
+        </div>
+      </form>
+      <div
+        id="search-dialog-results"
+        class="flex flex-1 flex-col overflow-y-auto overscroll-contain px-4 pb-2 sm:px-8 sm:pb-4"
+      ></div>
+    </div>
+  </dialog>
 </header>
