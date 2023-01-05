@@ -30,6 +30,7 @@
     </outline>
     <outline text="Security" title="Security">
       <outline type="rss" text="Brian Krebs" title="Brian Krebs" description="" xmlUrl="https://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com/" />
+      <outline type="rss" text="Kev Quirk" title="Kev Quirk" description="" xmlUrl="https://kevquirk.com/feed.xml" htmlUrl="https://kevquirk.com/" />
       <outline type="rss" text="Scott Helme" title="Scott Helme" description="" xmlUrl="https://scotthelme.co.uk/rss/" htmlUrl="https://scotthelme.co.uk/" />
       <outline type="rss" text="Troy Hunt" title="Troy Hunt" description="" xmlUrl="https://feeds.feedburner.com/TroyHunt" htmlUrl="https://www.troyhunt.com/" />
     </outline>
