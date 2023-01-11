@@ -6,12 +6,13 @@ copyright = "All content by <a href=\"https://www.unindented.org/\" rel=\"me\" c
 
 enableRobotsTXT = true
 ignoreFiles = ["README.md", "LICENSE"]
+paginate = 15
 
 [params]
 description = "Home of Daniel Perez Alvarez"
 themeColor = "#27272a"
 backgroundColor = "#27272a"
-articleListCount = 20
+articleLatestCount = 15
 articleRelatedCount = 5
 umamiId = "2433548f-1dd7-4cc1-86df-6532dd711972"
 umamiTracker = "https://umm.unindented.org/umm.js"
