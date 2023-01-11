@@ -1,5 +1,5 @@
 /*
-{{ $latestArticles := partial "utils/latest-articles" }}
+{{ $latestArticles := partial "utils/articles-latest" }}
 {{ $latestArticles = delimit (apply $latestArticles "partial" "utils/rel-permalink" ".") "\", \"" }}
 
 {{ $offlineImage := (resources.GetMatch "images/offline.svg").Content }}
