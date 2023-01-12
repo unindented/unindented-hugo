@@ -224,7 +224,7 @@ $(COMPRESSABLE_INCLUDE_DIR)/%.gz: $(COMPRESSABLE_INCLUDE_DIR)/%
 .PHONY: fuse
 fuse:
 	@mkdir -p $(FUSE_DIR)
-	@curl -Lo $(FUSE_DIR)/fuse.min.js https://cdn.jsdelivr.net/npm/fuse.js@$(FUSE_VERSION)/dist/fuse.basic.esm.min.js
+	@curl -Lo $(FUSE_DIR)/fuse.min.js https://cdn.jsdelivr.net/npm/fuse.js@$(FUSE_VERSION)/dist/fuse.esm.min.js
 	@echo
 	@echo "Finished downloading Fuse.js!"
 
