@@ -13,7 +13,7 @@ runs:
 
     - name: Run Lighthouse
       env:
-        LHCI_VERSION: "0.10.x"
+        LHCI_VERSION: "0.12.x"
       shell: bash
       run: |
         npm install -g @lhci/cli@${LHCI_VERSION}
