@@ -4,11 +4,22 @@
   },
   "env": {
     "browser": true,
-    "es2020": true,
+    "es2022": true,
     "node": true
   },
   "globals": {
     "p5": true
   },
-  "extends": "eslint:recommended"
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_"
+      }
+    ]
+  }
 }

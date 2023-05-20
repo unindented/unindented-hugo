@@ -3,6 +3,7 @@ const typography = require("@tailwindcss/typography");
 
 const { config: customColors } = require("./tailwind.colors");
 const { maxWidth, config: customTypography } = require("./tailwind.typography");
+const { shapeRendering } = require("./tailwind.utils");
 
 module.exports = {
   content: [
@@ -14,7 +15,7 @@ module.exports = {
     "./static/js/*.js",
     "./static/js/*.mjs",
   ],
-  plugins: [forms({ strategy: "class" }), typography],
+  plugins: [forms({ strategy: "class" }), typography, shapeRendering],
   darkMode: "class",
   theme: {
     colors: customColors,
