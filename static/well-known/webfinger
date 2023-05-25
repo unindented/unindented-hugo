@@ -10,7 +10,7 @@
     {
       "rel": "http://webfinger.net/rel/avatar",
       "type": "image/png",
-      "href": "https://www.unindented.org/authors/daniel-512.png"
+      "href": "https://www.unindented.org/.well-known/avatar"
     },
     {
       "rel": "http://webfinger.net/rel/profile-page",
