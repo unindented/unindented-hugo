@@ -1,0 +1,28 @@
+<div class="not-prose u-w-bleed">
+  <ul
+    class="select-none snap-x snap-mandatory list-none overflow-x-scroll whitespace-nowrap bg-gray-100 pb-36 pt-24 dark:bg-gray-800 md:pb-48 md:pt-32 lg:pb-60 lg:pt-40"
+  >
+    {{ range $index, $movie := site.Data.movies }}
+      <li
+        class="z-10 mx-2 inline-block aspect-square w-48 snap-center first-of-type:ml-[calc(50%_-_6rem)] last-of-type:mr-[calc(50%_-_6rem)] supports-animation-timeline:relative supports-animation-timeline:animate-coverflow-z-index supports-animation-timeline:will-change-z-index supports-animation-timeline:animation-timeline-[coverflow] supports-animation-timeline:perspective-[40rem] supports-animation-timeline:view-timeline-inline supports-animation-timeline:view-timeline-name-[coverflow] md:w-64 md:first-of-type:ml-[calc(50%_-_8rem)] md:last-of-type:mr-[calc(50%_-_8rem)] lg:w-80 lg:first-of-type:ml-[calc(50%_-_10rem)] lg:last-of-type:mr-[calc(50%_-_10rem)]"
+      >
+        <div
+          class="group relative supports-animation-timeline:animate-coverflow-rotate supports-animation-timeline:will-change-transform supports-animation-timeline:animation-timeline-[coverflow]"
+        >
+          <img
+            alt=""
+            src="images/{{ $movie.cover }}"
+            loading="{{ cond (eq $index 0) "eager" "lazy" }}"
+            draggable="false"
+            class="block h-auto w-full from-black/0 to-black/25 box-reflect-4"
+          />
+          <div
+            class="absolute bottom-0 left-0 right-0 z-50 whitespace-normal bg-black/75 px-2 py-1 text-center text-sm text-white opacity-0 transition-opacity group-hover:opacity-100"
+          >
+            {{ $movie.movie }} ({{ $movie.year }})
+          </div>
+        </div>
+      </li>
+    {{ end }}
+  </ul>
+</div>

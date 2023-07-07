@@ -1,6 +1,5 @@
 baseURL = "https://dev.unindented.org"
 languageCode = "en-us"
-sectionPagesMenu = "main"
 title = "Unindented"
 copyright = "All content by <a href=\"https://www.unindented.org/\" rel=\"me\" class=\"h-card\">Daniel Perez Alvarez</a> unless otherwise noted. <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noreferrer\">Some rights reserved</a>."
 
