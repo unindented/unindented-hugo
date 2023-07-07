@@ -1,0 +1,2022 @@
+[
+  {
+    "movie": "8 Mile",
+    "year": "2002",
+    "cover": "8_mile_2002.jpg"
+  },
+  {
+    "movie": "12 Angry Men",
+    "year": "1957",
+    "cover": "12_angry_men_1957.jpg"
+  },
+  {
+    "movie": "The 39 Steps",
+    "year": "1935",
+    "cover": "the_39_steps_1935.jpg"
+  },
+  {
+    "movie": "The 40 Year-Old Virgin",
+    "year": "2005",
+    "cover": "the_40_year_old_virgin_2005.jpg"
+  },
+  {
+    "movie": "2001: A Space Odyssey",
+    "year": "1968",
+    "cover": "2001_a_space_odyssey_1968.jpg"
+  },
+  {
+    "movie": "The Abyss",
+    "year": "1989",
+    "cover": "the_abyss_1989.jpg"
+  },
+  {
+    "movie": "Ace Ventura: Pet Detective",
+    "year": "1994",
+    "cover": "ace_ventura_pet_detective_1994.jpg"
+  },
+  {
+    "movie": "Ace Ventura: When Nature Calls",
+    "year": "1995",
+    "cover": "ace_ventura_when_nature_calls_1995.jpg"
+  },
+  {
+    "movie": "The Addams Family",
+    "year": "1991",
+    "cover": "the_addams_family_1991.jpg"
+  },
+  {
+    "movie": "Addams Family Values",
+    "year": "1993",
+    "cover": "addams_family_values_1993.jpg"
+  },
+  {
+    "movie": "Akira",
+    "year": "1988",
+    "cover": "akira_1988.jpg"
+  },
+  {
+    "movie": "Aladdin",
+    "year": "1992",
+    "cover": "aladdin_1992.jpg"
+  },
+  {
+    "movie": "Alice in Wonderland",
+    "year": "1951",
+    "cover": "alice_in_wonderland_1951.jpg"
+  },
+  {
+    "movie": "Alien",
+    "year": "1979",
+    "cover": "alien_1979.jpg"
+  },
+  {
+    "movie": "Aliens",
+    "year": "1986",
+    "cover": "aliens_1986.jpg"
+  },
+  {
+    "movie": "Alien³",
+    "year": "1992",
+    "cover": "alien_3_1992.jpg"
+  },
+  {
+    "movie": "Amadeus",
+    "year": "1984",
+    "cover": "amadeus_1984.jpg"
+  },
+  {
+    "movie": "Amélie",
+    "year": "2001",
+    "cover": "amelie_2001.jpg"
+  },
+  {
+    "movie": "American Beauty",
+    "year": "1999",
+    "cover": "american_beauty_1999.jpg"
+  },
+  {
+    "movie": "American Factory",
+    "year": "2019",
+    "cover": "american_factory_2019.jpg"
+  },
+  {
+    "movie": "American History X",
+    "year": "1998",
+    "cover": "american_history_x_1998.jpg"
+  },
+  {
+    "movie": "American Psycho",
+    "year": "2000",
+    "cover": "american_psycho_2000.jpg"
+  },
+  {
+    "movie": "Amores Perros",
+    "year": "2000",
+    "cover": "amores_perros_2000.jpg"
+  },
+  {
+    "movie": "Anchorman: The Legend of Ron Burgundy",
+    "year": "2004",
+    "cover": "anchorman_the_legend_of_ron_burgundy_2004.jpg"
+  },
+  {
+    "movie": "Anchorman 2 The Legend Continues",
+    "year": "2013",
+    "cover": "anchorman_2_the_legend_continues_2013.jpg"
+  },
+  {
+    "movie": "Apocalypse Now",
+    "year": "1979",
+    "cover": "apocalypse_now_1979.jpg"
+  },
+  {
+    "movie": "Arrival",
+    "year": "2016",
+    "cover": "arrival_2016.jpg"
+  },
+  {
+    "movie": "Baby Driver",
+    "year": "2017",
+    "cover": "baby_driver_2017.jpg"
+  },
+  {
+    "movie": "Back to the Future",
+    "year": "1985",
+    "cover": "back_to_the_future_1985.jpg"
+  },
+  {
+    "movie": "Back to the Future Part II",
+    "year": "1989",
+    "cover": "back_to_the_future_part_ii_1989.jpg"
+  },
+  {
+    "movie": "Back to the Future Part III",
+    "year": "1990",
+    "cover": "back_to_the_future_part_iii_1990.jpg"
+  },
+  {
+    "movie": "Bambi",
+    "year": "1942",
+    "cover": "bambi_1942.jpg"
+  },
+  {
+    "movie": "Barry Lyndon",
+    "year": "1975",
+    "cover": "barry_lyndon_1975.jpg"
+  },
+  {
+    "movie": "Barton Fink",
+    "year": "1991",
+    "cover": "barton_fink_1991.jpg"
+  },
+  {
+    "movie": "Batman",
+    "year": "1989",
+    "cover": "batman_1989.jpg"
+  },
+  {
+    "movie": "Batman Returns",
+    "year": "1992",
+    "cover": "batman_returns_1992.jpg"
+  },
+  {
+    "movie": "A Beautiful Mind",
+    "year": "2001",
+    "cover": "a_beautiful_mind_2001.jpg"
+  },
+  {
+    "movie": "Beavis and Butt-Head Do America",
+    "year": "1996",
+    "cover": "beavis_and_butt_head_do_america_1996.jpg"
+  },
+  {
+    "movie": "Beavis and Butt-Head Do the Universe",
+    "year": "2022",
+    "cover": "beavis_and_butt_head_do_the_universe_2022.jpg"
+  },
+  {
+    "movie": "Beethoven",
+    "year": "1992",
+    "cover": "beethoven_1992.jpg"
+  },
+  {
+    "movie": "Beetlejuice",
+    "year": "1988",
+    "cover": "beetlejuice_1988.jpg"
+  },
+  {
+    "movie": "Being John Malkovich",
+    "year": "1999",
+    "cover": "being_john_malkovich_1999.jpg"
+  },
+  {
+    "movie": "Big",
+    "year": "1988",
+    "cover": "big_1988.jpg"
+  },
+  {
+    "movie": "Big Hero 6",
+    "year": "2014",
+    "cover": "big_hero_6_2014.jpg"
+  },
+  {
+    "movie": "The Big Lebowski",
+    "year": "1998",
+    "cover": "the_big_lebowski_1998.jpg"
+  },
+  {
+    "movie": "The Big Short",
+    "year": "2015",
+    "cover": "the_big_short_2015.jpg"
+  },
+  {
+    "movie": "Big Trouble in Little China",
+    "year": "1986",
+    "cover": "big_trouble_in_little_china_1986.jpg"
+  },
+  {
+    "movie": "Birdman or (The Unexpected Virtue of Ignorance)",
+    "year": "2014",
+    "cover": "birdman_or_the_unexpected_virtue_of_ignorance_2014.jpg"
+  },
+  {
+    "movie": "The Birds",
+    "year": "1963",
+    "cover": "the_birds_1963.jpg"
+  },
+  {
+    "movie": "BlacKkKlansman",
+    "year": "2018",
+    "cover": "blackkklansman_2018.jpg"
+  },
+  {
+    "movie": "Black Swan",
+    "year": "2010",
+    "cover": "black_swan_2010.jpg"
+  },
+  {
+    "movie": "Blade Runner",
+    "year": "1982",
+    "cover": "blade_runner_1982.jpg"
+  },
+  {
+    "movie": "Blade Runner 2049",
+    "year": "2017",
+    "cover": "blade_runner_2049_2017.jpg"
+  },
+  {
+    "movie": "Blades of Glory",
+    "year": "2007",
+    "cover": "blades_of_glory_2007.jpg"
+  },
+  {
+    "movie": "Blazing Saddles",
+    "year": "1974",
+    "cover": "blazing_saddles_1974.jpg"
+  },
+  {
+    "movie": "Blood Simple",
+    "year": "1984",
+    "cover": "blood_simple_1984.jpg"
+  },
+  {
+    "movie": "Blow Out",
+    "year": "1981",
+    "cover": "blow_out_1981.jpg"
+  },
+  {
+    "movie": "The Blues Brothers",
+    "year": "1980",
+    "cover": "the_blues_brothers_1980.jpg"
+  },
+  {
+    "movie": "Boogie Nights",
+    "year": "1997",
+    "cover": "boogie_nights_1997.jpg"
+  },
+  {
+    "movie": "Brave",
+    "year": "2012",
+    "cover": "brave_2012.jpg"
+  },
+  {
+    "movie": "Braveheart",
+    "year": "1995",
+    "cover": "braveheart_1995.jpg"
+  },
+  {
+    "movie": "Brazil",
+    "year": "1985",
+    "cover": "brazil_1985.jpg"
+  },
+  {
+    "movie": "Cars",
+    "year": "2006",
+    "cover": "cars_2006.jpg"
+  },
+  {
+    "movie": "Cars 2",
+    "year": "2011",
+    "cover": "cars_2_2011.jpg"
+  },
+  {
+    "movie": "Cars 3",
+    "year": "2017",
+    "cover": "cars_3_2017.jpg"
+  },
+  {
+    "movie": "Casablanca",
+    "year": "1942",
+    "cover": "casablanca_1942.jpg"
+  },
+  {
+    "movie": "Casino",
+    "year": "1995",
+    "cover": "casino_1995.jpg"
+  },
+  {
+    "movie": "Chariots of Fire",
+    "year": "1981",
+    "cover": "chariots_of_fire_1981.jpg"
+  },
+  {
+    "movie": "Children of Men",
+    "year": "2006",
+    "cover": "children_of_men_2006.jpg"
+  },
+  {
+    "movie": "Chinatown",
+    "year": "1974",
+    "cover": "chinatown_1974.jpg"
+  },
+  {
+    "movie": "Citizen Kane",
+    "year": "1941",
+    "cover": "citizen_kane_1941.jpg"
+  },
+  {
+    "movie": "City of God",
+    "year": "2002",
+    "cover": "city_of_god_2002.jpg"
+  },
+  {
+    "movie": "Clerks",
+    "year": "1994",
+    "cover": "clerks_1994.jpg"
+  },
+  {
+    "movie": "Clerks II",
+    "year": "2006",
+    "cover": "clerks_ii_2006.jpg"
+  },
+  {
+    "movie": "Clerks III",
+    "year": "2022",
+    "cover": "clerks_iii_2022.jpg"
+  },
+  {
+    "movie": "A Clockwork Orange",
+    "year": "1971",
+    "cover": "a_clockwork_orange_1971.jpg"
+  },
+  {
+    "movie": "Close Encounters of the Third Kind",
+    "year": "1977",
+    "cover": "close_encounters_of_the_third_kind_1977.jpg"
+  },
+  {
+    "movie": "Cobain: Montage of Heck",
+    "year": "2015",
+    "cover": "cobain_montage_of_heck_2015.jpg"
+  },
+  {
+    "movie": "Coco",
+    "year": "2017",
+    "cover": "coco_2017.jpg"
+  },
+  {
+    "movie": "Console Wars",
+    "year": "2020",
+    "cover": "console_wars_2020.jpg"
+  },
+  {
+    "movie": "Cool Hand Luke",
+    "year": "1967",
+    "cover": "cool_hand_luke_1967.jpg"
+  },
+  {
+    "movie": "Creed",
+    "year": "2015",
+    "cover": "creed_2015.jpg"
+  },
+  {
+    "movie": "Creed II",
+    "year": "2018",
+    "cover": "creed_ii_2018.jpg"
+  },
+  {
+    "movie": "Crip Camp: A Disability Revolution",
+    "year": "2020",
+    "cover": "crip_camp_a_disability_revolution_2020.jpg"
+  },
+  {
+    "movie": "Cube",
+    "year": "1997",
+    "cover": "cube_1997.jpg"
+  },
+  {
+    "movie": "The Dark Knight - Batman Begins",
+    "year": "2005",
+    "cover": "batman_begins_2005.jpg"
+  },
+  {
+    "movie": "The Dark Knight",
+    "year": "2008",
+    "cover": "the_dark_knight_2008.jpg"
+  },
+  {
+    "movie": "The Dark Knight Rises",
+    "year": "2012",
+    "cover": "the_dark_knight_rises_2012.jpg"
+  },
+  {
+    "movie": "Dark Waters",
+    "year": "2019",
+    "cover": "dark_waters_2019.jpg"
+  },
+  {
+    "movie": "David Byrne’s American Utopia",
+    "year": "2020",
+    "cover": "david_byrne_s_american_utopia_2020.jpg"
+  },
+  {
+    "movie": "Dead Poets Society",
+    "year": "1989",
+    "cover": "dead_poets_society_1989.jpg"
+  },
+  {
+    "movie": "The Deer Hunter",
+    "year": "1978",
+    "cover": "the_deer_hunter_1978.jpg"
+  },
+  {
+    "movie": "Deliverance",
+    "year": "1972",
+    "cover": "deliverance_1972.jpg"
+  },
+  {
+    "movie": "The Departed",
+    "year": "2006",
+    "cover": "the_departed_2006.jpg"
+  },
+  {
+    "movie": "The Devil Wears Prada",
+    "year": "2006",
+    "cover": "the_devil_wears_prada_2006.jpg"
+  },
+  {
+    "movie": "Die Hard",
+    "year": "1988",
+    "cover": "die_hard_1988.jpg"
+  },
+  {
+    "movie": "Die Hard 2",
+    "year": "1990",
+    "cover": "die_hard_2_1990.jpg"
+  },
+  {
+    "movie": "Die Hard With a Vengeance",
+    "year": "1995",
+    "cover": "die_hard_with_a_vengeance_1995.jpg"
+  },
+  {
+    "movie": "District 9",
+    "year": "2009",
+    "cover": "district_9_2009.jpg"
+  },
+  {
+    "movie": "Django Unchained",
+    "year": "2012",
+    "cover": "django_unchained_2012.jpg"
+  },
+  {
+    "movie": "Do the Right Thing",
+    "year": "1989",
+    "cover": "do_the_right_thing_1989.jpg"
+  },
+  {
+    "movie": "Donnie Darko",
+    "year": "2001",
+    "cover": "donnie_darko_2001.jpg"
+  },
+  {
+    "movie": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+    "year": "1964",
+    "cover": "dr_strangelove_or_how_i_learned_to_stop_worrying_and_love_the_bomb_1964.jpg"
+  },
+  {
+    "movie": "Dune",
+    "year": "2021",
+    "cover": "dune_2021.jpg"
+  },
+  {
+    "movie": "E.T. the Extra-Terrestrial",
+    "year": "1982",
+    "cover": "e_t_the_extra_terrestrial_1982.jpg"
+  },
+  {
+    "movie": "Edward Scissorhands",
+    "year": "1990",
+    "cover": "edward_scissorhands_1990.jpg"
+  },
+  {
+    "movie": "Elf",
+    "year": "2003",
+    "cover": "elf_2003.jpg"
+  },
+  {
+    "movie": "Eraserhead",
+    "year": "1977",
+    "cover": "eraserhead_1977.jpg"
+  },
+  {
+    "movie": "Eternal Sunshine of the Spotless Mind",
+    "year": "2004",
+    "cover": "eternal_sunshine_of_the_spotless_mind_2004.jpg"
+  },
+  {
+    "movie": "Everything Everywhere All at Once",
+    "year": "2022",
+    "cover": "everything_everywhere_all_at_once_2022.jpg"
+  },
+  {
+    "movie": "The Exorcist",
+    "year": "1973",
+    "cover": "the_exorcist_1973.jpg"
+  },
+  {
+    "movie": "Eyes Wide Shut",
+    "year": "1999",
+    "cover": "eyes_wide_shut_1999.jpg"
+  },
+  {
+    "movie": "Fantasia",
+    "year": "1940",
+    "cover": "fantasia_1940.jpg"
+  },
+  {
+    "movie": "Fantasia 2000",
+    "year": "1999",
+    "cover": "fantasia_2000_1999.jpg"
+  },
+  {
+    "movie": "Fargo",
+    "year": "1996",
+    "cover": "fargo_1996.jpg"
+  },
+  {
+    "movie": "Fear and Loathing in Las Vegas",
+    "year": "1998",
+    "cover": "fear_and_loathing_in_las_vegas_1998.jpg"
+  },
+  {
+    "movie": "Ferris Bueller’s Day Off",
+    "year": "1986",
+    "cover": "ferris_bueller_s_day_off_1986.jpg"
+  },
+  {
+    "movie": "The Fifth Element",
+    "year": "1997",
+    "cover": "the_fifth_element_1997.jpg"
+  },
+  {
+    "movie": "Fight Club",
+    "year": "1999",
+    "cover": "fight_club_1999.jpg"
+  },
+  {
+    "movie": "Finding Nemo",
+    "year": "2003",
+    "cover": "finding_nemo_2003.jpg"
+  },
+  {
+    "movie": "Finding Dory",
+    "year": "2016",
+    "cover": "finding_dory_2016.jpg"
+  },
+  {
+    "movie": "Flight of the Navigator",
+    "year": "1986",
+    "cover": "flight_of_the_navigator_1986.jpg"
+  },
+  {
+    "movie": "Forrest Gump",
+    "year": "1994",
+    "cover": "forrest_gump_1994.jpg"
+  },
+  {
+    "movie": "Frozen",
+    "year": "2013",
+    "cover": "frozen_2013.jpg"
+  },
+  {
+    "movie": "Frozen II",
+    "year": "2019",
+    "cover": "frozen_ii_2019.jpg"
+  },
+  {
+    "movie": "Full Metal Jacket",
+    "year": "1987",
+    "cover": "full_metal_jacket_1987.jpg"
+  },
+  {
+    "movie": "The Game",
+    "year": "1997",
+    "cover": "the_game_1997.jpg"
+  },
+  {
+    "movie": "George Carlin: Life Is Worth Losing",
+    "year": "2005",
+    "cover": "george_carlin_life_is_worth_losing_2005.jpg"
+  },
+  {
+    "movie": "Get Out",
+    "year": "2017",
+    "cover": "get_out_2017.jpg"
+  },
+  {
+    "movie": "Ghost in the Shell",
+    "year": "1995",
+    "cover": "ghost_in_the_shell_1995.jpg"
+  },
+  {
+    "movie": "Ghostbusters",
+    "year": "1984",
+    "cover": "ghostbusters_1984.jpg"
+  },
+  {
+    "movie": "Ghostbusters II",
+    "year": "1989",
+    "cover": "ghostbusters_ii_1989.jpg"
+  },
+  {
+    "movie": "Gladiator",
+    "year": "2000",
+    "cover": "gladiator_2000.jpg"
+  },
+  {
+    "movie": "Glass Onion: A Knives Out Mystery",
+    "year": "2022",
+    "cover": "glass_onion_a_knives_out_mystery_2022.jpg"
+  },
+  {
+    "movie": "The Godfather",
+    "year": "1972",
+    "cover": "the_godfather_1972.jpg"
+  },
+  {
+    "movie": "The Godfather Part II",
+    "year": "1974",
+    "cover": "the_godfather_part_ii_1974.jpg"
+  },
+  {
+    "movie": "The Godfather Part III",
+    "year": "1990",
+    "cover": "the_godfather_part_iii_1990.jpg"
+  },
+  {
+    "movie": "Gone with the Wind",
+    "year": "1939",
+    "cover": "gone_with_the_wind_1939.jpg"
+  },
+  {
+    "movie": "Good Will Hunting",
+    "year": "1997",
+    "cover": "good_will_hunting_1997.jpg"
+  },
+  {
+    "movie": "GoodFellas",
+    "year": "1990",
+    "cover": "goodfellas_1990.jpg"
+  },
+  {
+    "movie": "The Goonies",
+    "year": "1985",
+    "cover": "the_goonies_1985.jpg"
+  },
+  {
+    "movie": "Gran Torino",
+    "year": "2008",
+    "cover": "gran_torino_2008.jpg"
+  },
+  {
+    "movie": "The Grand Budapest Hotel",
+    "year": "2014",
+    "cover": "the_grand_budapest_hotel_2014.jpg"
+  },
+  {
+    "movie": "Grave of the Fireflies",
+    "year": "1988",
+    "cover": "grave_of_the_fireflies_1988.jpg"
+  },
+  {
+    "movie": "Gravity",
+    "year": "2013",
+    "cover": "gravity_2013.jpg"
+  },
+  {
+    "movie": "The Great Outdoors",
+    "year": "1988",
+    "cover": "the_great_outdoors_1988.jpg"
+  },
+  {
+    "movie": "Gremlins",
+    "year": "1984",
+    "cover": "gremlins_1984.jpg"
+  },
+  {
+    "movie": "Gremlins 2: The New Batch",
+    "year": "1990",
+    "cover": "gremlins_2_the_new_batch_1990.jpg"
+  },
+  {
+    "movie": "Groundhog Day",
+    "year": "1993",
+    "cover": "groundhog_day_1993.jpg"
+  },
+  {
+    "movie": "Hackers",
+    "year": "1995",
+    "cover": "hackers_1995.jpg"
+  },
+  {
+    "movie": "Hamilton",
+    "year": "2020",
+    "cover": "hamilton_2020.jpg"
+  },
+  {
+    "movie": "Harry Potter and the Philosopher’s Stone",
+    "year": "2001",
+    "cover": "harry_potter_and_the_philosopher_s_stone_2001.jpg"
+  },
+  {
+    "movie": "Harry Potter and the Chamber of Secrets",
+    "year": "2002",
+    "cover": "harry_potter_and_the_chamber_of_secrets_2002.jpg"
+  },
+  {
+    "movie": "Harry Potter and the Prisoner of Azkaban",
+    "year": "2004",
+    "cover": "harry_potter_and_the_prisoner_of_azkaban_2004.jpg"
+  },
+  {
+    "movie": "Harry Potter and the Goblet of Fire",
+    "year": "2005",
+    "cover": "harry_potter_and_the_goblet_of_fire_2005.jpg"
+  },
+  {
+    "movie": "Harry Potter and the Order of the Phoenix",
+    "year": "2007",
+    "cover": "harry_potter_and_the_order_of_the_phoenix_2007.jpg"
+  },
+  {
+    "movie": "Harry Potter and the Half-Blood Prince",
+    "year": "2009",
+    "cover": "harry_potter_and_the_half_blood_prince_2009.jpg"
+  },
+  {
+    "movie": "Harry Potter and the Deathly Hallows Part 1",
+    "year": "2010",
+    "cover": "harry_potter_and_the_deathly_hallows_part_1_2010.jpg"
+  },
+  {
+    "movie": "Harry Potter and the Deathly Hallows Part 2",
+    "year": "2011",
+    "cover": "harry_potter_and_the_deathly_hallows_part_2_2011.jpg"
+  },
+  {
+    "movie": "Heat",
+    "year": "1995",
+    "cover": "heat_1995.jpg"
+  },
+  {
+    "movie": "Her",
+    "year": "2013",
+    "cover": "her_2013.jpg"
+  },
+  {
+    "movie": "The History of WWE: 50 Years of Sports Entertainment",
+    "year": "2013",
+    "cover": "the_history_of_wwe_50_years_of_sports_entertainment_2013.jpg"
+  },
+  {
+    "movie": "Home Alone",
+    "year": "1990",
+    "cover": "home_alone_1990.jpg"
+  },
+  {
+    "movie": "Home Alone 2: Lost in New York",
+    "year": "1992",
+    "cover": "home_alone_2_lost_in_new_york_1992.jpg"
+  },
+  {
+    "movie": "Homecoming: A Film by Beyoncé",
+    "year": "2019",
+    "cover": "homecoming_a_film_by_beyonce_2019.jpg"
+  },
+  {
+    "movie": "Honey, I Shrunk the Kids",
+    "year": "1989",
+    "cover": "honey_i_shrunk_the_kids_1989.jpg"
+  },
+  {
+    "movie": "Honey, I Blew Up the Kid",
+    "year": "1992",
+    "cover": "honey_i_blew_up_the_kid_1992.jpg"
+  },
+  {
+    "movie": "Honey, We Shrunk Ourselves",
+    "year": "1997",
+    "cover": "honey_we_shrunk_ourselves_1997.jpg"
+  },
+  {
+    "movie": "Hotel Rwanda",
+    "year": "2004",
+    "cover": "hotel_rwanda_2004.jpg"
+  },
+  {
+    "movie": "How the Grinch Stole Christmas!",
+    "year": "1966",
+    "cover": "how_the_grinch_stole_christmas_1966.jpg"
+  },
+  {
+    "movie": "How to Blow Up a Pipeline",
+    "year": "2023",
+    "cover": "how_to_blow_up_a_pipeline_2023.jpg"
+  },
+  {
+    "movie": "Howl’s Moving Castle",
+    "year": "2004",
+    "cover": "howl_s_moving_castle_2004.jpg"
+  },
+  {
+    "movie": "The Hudsucker Proxy",
+    "year": "1994",
+    "cover": "the_hudsucker_proxy_1994.jpg"
+  },
+  {
+    "movie": "Idiocracy",
+    "year": "2006",
+    "cover": "idiocracy_2006.jpg"
+  },
+  {
+    "movie": "In the Heat of the Night",
+    "year": "1967",
+    "cover": "in_the_heat_of_the_night_1967.jpg"
+  },
+  {
+    "movie": "Inception",
+    "year": "2010",
+    "cover": "inception_2010.jpg"
+  },
+  {
+    "movie": "The Incredibles",
+    "year": "2004",
+    "cover": "the_incredibles_2004.jpg"
+  },
+  {
+    "movie": "Incredibles 2",
+    "year": "2018",
+    "cover": "incredibles_2_2018.jpg"
+  },
+  {
+    "movie": "Indiana Jones and the Raiders of the Lost Ark",
+    "year": "1981",
+    "cover": "indiana_jones_and_the_raiders_of_the_lost_ark_1981.jpg"
+  },
+  {
+    "movie": "Indiana Jones and the Temple of Doom",
+    "year": "1984",
+    "cover": "indiana_jones_and_the_temple_of_doom_1984.jpg"
+  },
+  {
+    "movie": "Indiana Jones and the Last Crusade",
+    "year": "1989",
+    "cover": "indiana_jones_and_the_last_crusade_1989.jpg"
+  },
+  {
+    "movie": "Inside Out",
+    "year": "2015",
+    "cover": "inside_out_2015.jpg"
+  },
+  {
+    "movie": "Interstellar",
+    "year": "2014",
+    "cover": "interstellar_2014.jpg"
+  },
+  {
+    "movie": "The Intouchables",
+    "year": "2011",
+    "cover": "the_intouchables_2011.jpg"
+  },
+  {
+    "movie": "The Iron Giant",
+    "year": "1999",
+    "cover": "the_iron_giant_1999.jpg"
+  },
+  {
+    "movie": "It",
+    "year": "2017",
+    "cover": "it_2017.jpg"
+  },
+  {
+    "movie": "It Chapter Two",
+    "year": "2019",
+    "cover": "it_chapter_two_2019.jpg"
+  },
+  {
+    "movie": "Jackie Brown",
+    "year": "1997",
+    "cover": "jackie_brown_1997.jpg"
+  },
+  {
+    "movie": "Jaws",
+    "year": "1975",
+    "cover": "jaws_1975.jpg"
+  },
+  {
+    "movie": "Jaws 2",
+    "year": "1978",
+    "cover": "jaws_2_1978.jpg"
+  },
+  {
+    "movie": "JFK",
+    "year": "1991",
+    "cover": "jfk_1991.jpg"
+  },
+  {
+    "movie": "Jiro Dreams of Sushi",
+    "year": "2011",
+    "cover": "jiro_dreams_of_sushi_2011.jpg"
+  },
+  {
+    "movie": "The Jungle Book",
+    "year": "1967",
+    "cover": "the_jungle_book_1967.jpg"
+  },
+  {
+    "movie": "Jurassic Park",
+    "year": "1993",
+    "cover": "jurassic_park_1993.jpg"
+  },
+  {
+    "movie": "The Karate Kid",
+    "year": "1984",
+    "cover": "the_karate_kid_1984.jpg"
+  },
+  {
+    "movie": "The Karate Kid Part II",
+    "year": "1986",
+    "cover": "the_karate_kid_part_ii_1986.jpg"
+  },
+  {
+    "movie": "Kiki’s Delivery Service",
+    "year": "1989",
+    "cover": "kiki_s_delivery_service_1989.jpg"
+  },
+  {
+    "movie": "Kill Bill: The Whole Bloody Affair",
+    "year": "2011",
+    "cover": "kill_bill_the_whole_bloody_affair_2011.jpg"
+  },
+  {
+    "movie": "King Kong",
+    "year": "2005",
+    "cover": "king_kong_2005.jpg"
+  },
+  {
+    "movie": "The King of Kong: A Fistful of Quarters",
+    "year": "2007",
+    "cover": "the_king_of_kong_a_fistful_of_quarters_2007.jpg"
+  },
+  {
+    "movie": "Knives Out",
+    "year": "2019",
+    "cover": "knives_out_2019.jpg"
+  },
+  {
+    "movie": "L.A. Confidential",
+    "year": "1997",
+    "cover": "l_a_confidential_1997.jpg"
+  },
+  {
+    "movie": "La La Land",
+    "year": "2016",
+    "cover": "la_la_land_2016.jpg"
+  },
+  {
+    "movie": "Lady and the Tramp",
+    "year": "1955",
+    "cover": "lady_and_the_tramp_1955.jpg"
+  },
+  {
+    "movie": "The Last Emperor",
+    "year": "1987",
+    "cover": "the_last_emperor_1987.jpg"
+  },
+  {
+    "movie": "The Last Waltz",
+    "year": "1978",
+    "cover": "the_last_waltz_1978.jpg"
+  },
+  {
+    "movie": "Leave No Trace",
+    "year": "2018",
+    "cover": "leave_no_trace_2018.jpg"
+  },
+  {
+    "movie": "The Lego Movie",
+    "year": "2014",
+    "cover": "the_lego_movie_2014.jpg"
+  },
+  {
+    "movie": "The Lego Movie 2: The Second Part",
+    "year": "2019",
+    "cover": "the_lego_movie_2_the_second_part_2019.jpg"
+  },
+  {
+    "movie": "The Life Aquatic with Steve Zissou",
+    "year": "2004",
+    "cover": "the_life_aquatic_with_steve_zissou_2004.jpg"
+  },
+  {
+    "movie": "Life Is Beautiful",
+    "year": "1997",
+    "cover": "life_is_beautiful_1997.jpg"
+  },
+  {
+    "movie": "Life of Brian",
+    "year": "1979",
+    "cover": "life_of_brian_1979.jpg"
+  },
+  {
+    "movie": "Lilo & Stitch",
+    "year": "2002",
+    "cover": "lilo_stitch_2002.jpg"
+  },
+  {
+    "movie": "The Lion King",
+    "year": "1994",
+    "cover": "the_lion_king_1994.jpg"
+  },
+  {
+    "movie": "The Little Mermaid",
+    "year": "1989",
+    "cover": "the_little_mermaid_1989.jpg"
+  },
+  {
+    "movie": "Little Miss Sunshine",
+    "year": "2006",
+    "cover": "little_miss_sunshine_2006.jpg"
+  },
+  {
+    "movie": "Lock, Stock and Two Smoking Barrels",
+    "year": "1998",
+    "cover": "lock_stock_and_two_smoking_barrels_1998.jpg"
+  },
+  {
+    "movie": "Looper",
+    "year": "2012",
+    "cover": "looper_2012.jpg"
+  },
+  {
+    "movie": "The Lord of the Rings - The Fellowship of the Ring",
+    "year": "2001",
+    "cover": "the_lord_of_the_rings_the_fellowship_of_the_ring_2001.jpg"
+  },
+  {
+    "movie": "The Lord of the Rings - The Two Towers",
+    "year": "2002",
+    "cover": "the_lord_of_the_rings_the_two_towers_2002.jpg"
+  },
+  {
+    "movie": "The Lord of the Rings - The Return of the King",
+    "year": "2003",
+    "cover": "the_lord_of_the_rings_the_return_of_the_king_2003.jpg"
+  },
+  {
+    "movie": "Lost in Translation",
+    "year": "2003",
+    "cover": "lost_in_translation_2003.jpg"
+  },
+  {
+    "movie": "Luca",
+    "year": "2021",
+    "cover": "luca_2021.jpg"
+  },
+  {
+    "movie": "Lupin the Third: The Castle of Cagliostro",
+    "year": "1979",
+    "cover": "lupin_the_third_the_castle_of_cagliostro_1979.jpg"
+  },
+  {
+    "movie": "Mad Max",
+    "year": "1979",
+    "cover": "mad_max_1979.jpg"
+  },
+  {
+    "movie": "Mad Max 2",
+    "year": "1981",
+    "cover": "mad_max_2_1981.jpg"
+  },
+  {
+    "movie": "Mad Max: Fury Road",
+    "year": "2015",
+    "cover": "mad_max_fury_road_2015.jpg"
+  },
+  {
+    "movie": "Malcolm X",
+    "year": "1992",
+    "cover": "malcolm_x_1992.jpg"
+  },
+  {
+    "movie": "Mars Attacks!",
+    "year": "1996",
+    "cover": "mars_attacks_1996.jpg"
+  },
+  {
+    "movie": "The Martian",
+    "year": "2015",
+    "cover": "the_martian_2015.jpg"
+  },
+  {
+    "movie": "Mary Poppins",
+    "year": "1964",
+    "cover": "mary_poppins_1964.jpg"
+  },
+  {
+    "movie": "The Matrix",
+    "year": "1999",
+    "cover": "the_matrix_1999.jpg"
+  },
+  {
+    "movie": "The Matrix Reloaded",
+    "year": "2003",
+    "cover": "the_matrix_reloaded_2003.jpg"
+  },
+  {
+    "movie": "The Matrix Revolutions",
+    "year": "2003",
+    "cover": "the_matrix_revolutions_2003.jpg"
+  },
+  {
+    "movie": "Memento",
+    "year": "2000",
+    "cover": "memento_2000.jpg"
+  },
+  {
+    "movie": "Metallica: Some Kind of Monster",
+    "year": "2004",
+    "cover": "metallica_some_kind_of_monster_2004.jpg"
+  },
+  {
+    "movie": "Midnight Cowboy",
+    "year": "1969",
+    "cover": "midnight_cowboy_1969.jpg"
+  },
+  {
+    "movie": "The Mighty Ducks",
+    "year": "1992",
+    "cover": "the_mighty_ducks_1992.jpg"
+  },
+  {
+    "movie": "Million Dollar Baby",
+    "year": "2004",
+    "cover": "million_dollar_baby_2004.jpg"
+  },
+  {
+    "movie": "Minority Report",
+    "year": "2002",
+    "cover": "minority_report_2002.jpg"
+  },
+  {
+    "movie": "Misery",
+    "year": "1990",
+    "cover": "misery_1990.jpg"
+  },
+  {
+    "movie": "Miss Americana",
+    "year": "2020",
+    "cover": "miss_americana_2020.jpg"
+  },
+  {
+    "movie": "The Mission",
+    "year": "1986",
+    "cover": "the_mission_1986.jpg"
+  },
+  {
+    "movie": "Moana",
+    "year": "2016",
+    "cover": "moana_2016.jpg"
+  },
+  {
+    "movie": "Monsters, Inc.",
+    "year": "2001",
+    "cover": "monsters_inc_2001.jpg"
+  },
+  {
+    "movie": "Monsters University",
+    "year": "2013",
+    "cover": "monsters_university_2013.jpg"
+  },
+  {
+    "movie": "Monty Python and the Holy Grail",
+    "year": "1975",
+    "cover": "monty_python_and_the_holy_grail_1975.jpg"
+  },
+  {
+    "movie": "Moon",
+    "year": "2009",
+    "cover": "moon_2009.jpg"
+  },
+  {
+    "movie": "Moonage Daydream",
+    "year": "2022",
+    "cover": "moonage_daydream_2022.jpg"
+  },
+  {
+    "movie": "Mulan",
+    "year": "1998",
+    "cover": "mulan_1998.jpg"
+  },
+  {
+    "movie": "The Muppet Christmas Carol",
+    "year": "1992",
+    "cover": "the_muppet_christmas_carol_1992.jpg"
+  },
+  {
+    "movie": "My Neighbor Totoro",
+    "year": "1988",
+    "cover": "my_neighbor_totoro_1988.jpg"
+  },
+  {
+    "movie": "Napoleon Dynamite",
+    "year": "2004",
+    "cover": "napoleon_dynamite_2004.jpg"
+  },
+  {
+    "movie": "Nausicaä of the Valley of the Wind",
+    "year": "1984",
+    "cover": "nausicaa_of_the_valley_of_the_wind_1984.jpg"
+  },
+  {
+    "movie": "The NeverEnding Story",
+    "year": "1984",
+    "cover": "the_neverending_story_1984.jpg"
+  },
+  {
+    "movie": "The NeverEnding Story II: The Next Chapter",
+    "year": "1990",
+    "cover": "the_neverending_story_ii_the_next_chapter_1990.jpg"
+  },
+  {
+    "movie": "The NeverEnding Story III",
+    "year": "1994",
+    "cover": "the_neverending_story_iii_1994.jpg"
+  },
+  {
+    "movie": "Nightcrawler",
+    "year": "2014",
+    "cover": "nightcrawler_2014.jpg"
+  },
+  {
+    "movie": "The Nightmare Before Christmas",
+    "year": "1993",
+    "cover": "the_nightmare_before_christmas_1993.jpg"
+  },
+  {
+    "movie": "North by Northwest",
+    "year": "1959",
+    "cover": "north_by_northwest_1959.jpg"
+  },
+  {
+    "movie": "Notorious",
+    "year": "1946",
+    "cover": "notorious_1946.jpg"
+  },
+  {
+    "movie": "O Brother, Where Art Thou!",
+    "year": "2000",
+    "cover": "o_brother_where_art_thou_2000.jpg"
+  },
+  {
+    "movie": "Oblivion",
+    "year": "2013",
+    "cover": "oblivion_2013.jpg"
+  },
+  {
+    "movie": "Ocean’s Eleven",
+    "year": "2001",
+    "cover": "ocean_s_eleven_2001.jpg"
+  },
+  {
+    "movie": "Ocean’s Twelve",
+    "year": "2004",
+    "cover": "ocean_s_twelve_2004.jpg"
+  },
+  {
+    "movie": "Ocean’s Thirteen",
+    "year": "2007",
+    "cover": "ocean_s_thirteen_2007.jpg"
+  },
+  {
+    "movie": "Office Space",
+    "year": "1999",
+    "cover": "office_space_1999.jpg"
+  },
+  {
+    "movie": "Old School",
+    "year": "2003",
+    "cover": "old_school_2003.jpg"
+  },
+  {
+    "movie": "One Flew Over the Cuckoo’s Nest",
+    "year": "1975",
+    "cover": "one_flew_over_the_cuckoo_s_nest_1975.jpg"
+  },
+  {
+    "movie": "One Hundred and One Dalmatians",
+    "year": "1961",
+    "cover": "one_hundred_and_one_dalmatians_1961.jpg"
+  },
+  {
+    "movie": "Onward",
+    "year": "2020",
+    "cover": "onward_2020.jpg"
+  },
+  {
+    "movie": "Parasite",
+    "year": "2019",
+    "cover": "parasite_2019.jpg"
+  },
+  {
+    "movie": "Parenthood",
+    "year": "1989",
+    "cover": "parenthood_1989.jpg"
+  },
+  {
+    "movie": "Peter Pan",
+    "year": "1953",
+    "cover": "peter_pan_1953.jpg"
+  },
+  {
+    "movie": "The Pianist",
+    "year": "2002",
+    "cover": "the_pianist_2002.jpg"
+  },
+  {
+    "movie": "Pinocchio",
+    "year": "1940",
+    "cover": "pinocchio_1940.jpg"
+  },
+  {
+    "movie": "Planet of the Apes",
+    "year": "1968",
+    "cover": "planet_of_the_apes_1968.jpg"
+  },
+  {
+    "movie": "Pokémon Detective Pikachu",
+    "year": "2019",
+    "cover": "poke_mon_detective_pikachu_2019.jpg"
+  },
+  {
+    "movie": "Poltergeist",
+    "year": "1982",
+    "cover": "poltergeist_1982.jpg"
+  },
+  {
+    "movie": "Poltergeist II The Other Side",
+    "year": "1986",
+    "cover": "poltergeist_ii_the_other_side_1986.jpg"
+  },
+  {
+    "movie": "Poltergeist III",
+    "year": "1988",
+    "cover": "poltergeist_iii_1988.jpg"
+  },
+  {
+    "movie": "Ponyo",
+    "year": "2008",
+    "cover": "ponyo_2008.jpg"
+  },
+  {
+    "movie": "Porco Rosso",
+    "year": "1992",
+    "cover": "porco_rosso_1992.jpg"
+  },
+  {
+    "movie": "Predator",
+    "year": "1987",
+    "cover": "predator_1987.jpg"
+  },
+  {
+    "movie": "The Princess Bride",
+    "year": "1987",
+    "cover": "the_princess_bride_1987.jpg"
+  },
+  {
+    "movie": "Princess Mononoke",
+    "year": "1997",
+    "cover": "princess_mononoke_1997.jpg"
+  },
+  {
+    "movie": "The Producers",
+    "year": "1967",
+    "cover": "the_producers_1967.jpg"
+  },
+  {
+    "movie": "Psycho",
+    "year": "1960",
+    "cover": "psycho_1960.jpg"
+  },
+  {
+    "movie": "Pulp Fiction",
+    "year": "1994",
+    "cover": "pulp_fiction_1994.jpg"
+  },
+  {
+    "movie": "Raging Bull",
+    "year": "1980",
+    "cover": "raging_bull_1980.jpg"
+  },
+  {
+    "movie": "Rain Man",
+    "year": "1988",
+    "cover": "rain_man_1988.jpg"
+  },
+  {
+    "movie": "Raising Arizona",
+    "year": "1987",
+    "cover": "raising_arizona_1987.jpg"
+  },
+  {
+    "movie": "Ran",
+    "year": "1985",
+    "cover": "ran_1985.jpg"
+  },
+  {
+    "movie": "Rashomon",
+    "year": "1950",
+    "cover": "rashomon_1950.jpg"
+  },
+  {
+    "movie": "Ratatouille",
+    "year": "2007",
+    "cover": "ratatouille_2007.jpg"
+  },
+  {
+    "movie": "Raya and the Last Dragon",
+    "year": "2021",
+    "cover": "raya_and_the_last_dragon_2021.jpg"
+  },
+  {
+    "movie": "Rear Window",
+    "year": "1954",
+    "cover": "rear_window_1954.jpg"
+  },
+  {
+    "movie": "Rebecca",
+    "year": "1940",
+    "cover": "rebecca_1940.jpg"
+  },
+  {
+    "movie": "The Report",
+    "year": "2019",
+    "cover": "the_report_2019.jpg"
+  },
+  {
+    "movie": "Reservoir Dogs",
+    "year": "1992",
+    "cover": "reservoir_dogs_1992.jpg"
+  },
+  {
+    "movie": "RoboCop",
+    "year": "1987",
+    "cover": "robocop_1987.jpg"
+  },
+  {
+    "movie": "RoboCop 2",
+    "year": "1990",
+    "cover": "robocop_2_1990.jpg"
+  },
+  {
+    "movie": "RoboCop 3",
+    "year": "1993",
+    "cover": "robocop_3_1993.jpg"
+  },
+  {
+    "movie": "Rocky",
+    "year": "1976",
+    "cover": "rocky_1976.jpg"
+  },
+  {
+    "movie": "Rocky II",
+    "year": "1979",
+    "cover": "rocky_ii_1979.jpg"
+  },
+  {
+    "movie": "Rocky III",
+    "year": "1982",
+    "cover": "rocky_iii_1982.jpg"
+  },
+  {
+    "movie": "Rocky IV",
+    "year": "1985",
+    "cover": "rocky_iv_1985.jpg"
+  },
+  {
+    "movie": "Rocky V",
+    "year": "1990",
+    "cover": "rocky_v_1990.jpg"
+  },
+  {
+    "movie": "Rope",
+    "year": "1948",
+    "cover": "rope_1948.jpg"
+  },
+  {
+    "movie": "Running With Speed",
+    "year": "2023",
+    "cover": "running_with_speed_2023.jpg"
+  },
+  {
+    "movie": "Saving Private Ryan",
+    "year": "1998",
+    "cover": "saving_private_ryan_1998.jpg"
+  },
+  {
+    "movie": "A Scanner Darkly",
+    "year": "2006",
+    "cover": "a_scanner_darkly_2006.jpg"
+  },
+  {
+    "movie": "Scarface",
+    "year": "1983",
+    "cover": "scarface_1983.jpg"
+  },
+  {
+    "movie": "Schindler’s List",
+    "year": "1993",
+    "cover": "schindler_s_list_1993.jpg"
+  },
+  {
+    "movie": "School of Rock",
+    "year": "2003",
+    "cover": "school_of_rock_2003.jpg"
+  },
+  {
+    "movie": "Scott Pilgrim vs. the World",
+    "year": "2010",
+    "cover": "scott_pilgrim_vs_the_world_2010.jpg"
+  },
+  {
+    "movie": "Se7en",
+    "year": "1995",
+    "cover": "se7en_1995.jpg"
+  },
+  {
+    "movie": "Seven Samurai",
+    "year": "1954",
+    "cover": "seven_samurai_1954.jpg"
+  },
+  {
+    "movie": "The Seventh Seal",
+    "year": "1957",
+    "cover": "the_seventh_seal_1957.jpg"
+  },
+  {
+    "movie": "Shadow of a Doubt",
+    "year": "1943",
+    "cover": "shadow_of_a_doubt_1943.jpg"
+  },
+  {
+    "movie": "The Shawshank Redemption",
+    "year": "1994",
+    "cover": "the_shawshank_redemption_1994.jpg"
+  },
+  {
+    "movie": "The Shining",
+    "year": "1980",
+    "cover": "the_shining_1980.jpg"
+  },
+  {
+    "movie": "Shrek",
+    "year": "2001",
+    "cover": "shrek_2001.jpg"
+  },
+  {
+    "movie": "Shrek 2",
+    "year": "2004",
+    "cover": "shrek_2_2004.jpg"
+  },
+  {
+    "movie": "The Silence of the Lambs",
+    "year": "1991",
+    "cover": "the_silence_of_the_lambs_1991.jpg"
+  },
+  {
+    "movie": "Singin’ in the Rain",
+    "year": "1952",
+    "cover": "singin_in_the_rain_1952.jpg"
+  },
+  {
+    "movie": "Slumdog Millionaire",
+    "year": "2008",
+    "cover": "slumdog_millionaire_2008.jpg"
+  },
+  {
+    "movie": "Snatch",
+    "year": "2000",
+    "cover": "snatch_2000.jpg"
+  },
+  {
+    "movie": "The Social Network",
+    "year": "2010",
+    "cover": "the_social_network_2010.jpg"
+  },
+  {
+    "movie": "Solaris",
+    "year": "1972",
+    "cover": "solaris_1972.jpg"
+  },
+  {
+    "movie": "Some Like It Hot",
+    "year": "1959",
+    "cover": "some_like_it_hot_1959.jpg"
+  },
+  {
+    "movie": "The Song Remains the Same",
+    "year": "1976",
+    "cover": "the_song_remains_the_same_1976.jpg"
+  },
+  {
+    "movie": "Soul",
+    "year": "2020",
+    "cover": "soul_2020.jpg"
+  },
+  {
+    "movie": "Sound of Metal",
+    "year": "2020",
+    "cover": "sound_of_metal_2020.jpg"
+  },
+  {
+    "movie": "The Sound of Music",
+    "year": "1965",
+    "cover": "the_sound_of_music_1965.jpg"
+  },
+  {
+    "movie": "Spartacus",
+    "year": "1960",
+    "cover": "spartacus_1960.jpg"
+  },
+  {
+    "movie": "Spellbound",
+    "year": "1945",
+    "cover": "spellbound_1945.jpg"
+  },
+  {
+    "movie": "Spirited Away",
+    "year": "2001",
+    "cover": "spirited_away_2001.jpg"
+  },
+  {
+    "movie": "Spotlight",
+    "year": "2015",
+    "cover": "spotlight_2015.jpg"
+  },
+  {
+    "movie": "Star Wars - A New Hope",
+    "year": "1977",
+    "cover": "star_wars_a_new_hope_1977.jpg"
+  },
+  {
+    "movie": "Star Wars - The Empire Strikes Back",
+    "year": "1980",
+    "cover": "star_wars_the_empire_strikes_back_1980.jpg"
+  },
+  {
+    "movie": "Star Wars - Return of the Jedi",
+    "year": "1983",
+    "cover": "star_wars_return_of_the_jedi_1983.jpg"
+  },
+  {
+    "movie": "Star Wars - The Phantom Menace",
+    "year": "1999",
+    "cover": "star_wars_the_phantom_menace_1999.jpg"
+  },
+  {
+    "movie": "Star Wars - Attack of the Clones",
+    "year": "2002",
+    "cover": "star_wars_attack_of_the_clones_2002.jpg"
+  },
+  {
+    "movie": "Star Wars - Revenge of the Sith",
+    "year": "2005",
+    "cover": "star_wars_revenge_of_the_sith_2005.jpg"
+  },
+  {
+    "movie": "Star Wars - The Force Awakens",
+    "year": "2015",
+    "cover": "star_wars_the_force_awakens_2015.jpg"
+  },
+  {
+    "movie": "Star Wars - The Last Jedi",
+    "year": "2017",
+    "cover": "star_wars_the_last_jedi_2017.jpg"
+  },
+  {
+    "movie": "Star Wars - The Rise of Skywalker",
+    "year": "2019",
+    "cover": "star_wars_the_rise_of_skywalker_2019.jpg"
+  },
+  {
+    "movie": "Starship Troopers",
+    "year": "1997",
+    "cover": "starship_troopers_1997.jpg"
+  },
+  {
+    "movie": "Step Brothers",
+    "year": "2008",
+    "cover": "step_brothers_2008.jpg"
+  },
+  {
+    "movie": "The Sting",
+    "year": "1973",
+    "cover": "the_sting_1973.jpg"
+  },
+  {
+    "movie": "Strangers on a Train",
+    "year": "1951",
+    "cover": "strangers_on_a_train_1951.jpg"
+  },
+  {
+    "movie": "The Tale of The Princess Kaguya",
+    "year": "2013",
+    "cover": "the_tale_of_the_princess_kaguya_2013.jpg"
+  },
+  {
+    "movie": "Talladega Nights The Ballad of Ricky Bobby",
+    "year": "2006",
+    "cover": "talladega_nights_the_ballad_of_ricky_bobby_2006.jpg"
+  },
+  {
+    "movie": "Taxi Driver",
+    "year": "1976",
+    "cover": "taxi_driver_1976.jpg"
+  },
+  {
+    "movie": "Tenacious D in The Pick of Destiny",
+    "year": "2006",
+    "cover": "tenacious_d_in_the_pick_of_destiny_2006.jpg"
+  },
+  {
+    "movie": "Tenet",
+    "year": "2020",
+    "cover": "tenet_2020.jpg"
+  },
+  {
+    "movie": "The Terminator",
+    "year": "1984",
+    "cover": "the_terminator_1984.jpg"
+  },
+  {
+    "movie": "Terminator 2: Judgment Day",
+    "year": "1991",
+    "cover": "terminator_2_judgment_day_1991.jpg"
+  },
+  {
+    "movie": "The Texas Chain Saw Massacre",
+    "year": "1974",
+    "cover": "the_texas_chain_saw_massacre_1974.jpg"
+  },
+  {
+    "movie": "There’s Something About Mary",
+    "year": "1998",
+    "cover": "there_s_something_about_mary_1998.jpg"
+  },
+  {
+    "movie": "Thief",
+    "year": "1981",
+    "cover": "thief_1981.jpg"
+  },
+  {
+    "movie": "The Thin Blue Line",
+    "year": "1988",
+    "cover": "the_thin_blue_line_1988.jpg"
+  },
+  {
+    "movie": "The Thing",
+    "year": "1982",
+    "cover": "the_thing_1982.jpg"
+  },
+  {
+    "movie": "This Is Spinal Tap",
+    "year": "1984",
+    "cover": "this_is_spinal_tap_1984.jpg"
+  },
+  {
+    "movie": "Three Billboards Outside Ebbing, Missouri",
+    "year": "2017",
+    "cover": "three_billboards_outside_ebbing_missouri_2017.jpg"
+  },
+  {
+    "movie": "The Tinder Swindler",
+    "year": "2022",
+    "cover": "the_tinder_swindler_2022.jpg"
+  },
+  {
+    "movie": "To Catch a Thief",
+    "year": "1955",
+    "cover": "to_catch_a_thief_1955.jpg"
+  },
+  {
+    "movie": "Tokyo Story",
+    "year": "1953",
+    "cover": "tokyo_story_1953.jpg"
+  },
+  {
+    "movie": "Top Gun",
+    "year": "1986",
+    "cover": "top_gun_1986.jpg"
+  },
+  {
+    "movie": "Top Gun: Maverick",
+    "year": "2022",
+    "cover": "top_gun_maverick_2022.jpg"
+  },
+  {
+    "movie": "Total Recall",
+    "year": "1990",
+    "cover": "total_recall_1990.jpg"
+  },
+  {
+    "movie": "Toy Story",
+    "year": "1995",
+    "cover": "toy_story_1995.jpg"
+  },
+  {
+    "movie": "Toy Story 2",
+    "year": "1999",
+    "cover": "toy_story_2_1999.jpg"
+  },
+  {
+    "movie": "Toy Story 3",
+    "year": "2010",
+    "cover": "toy_story_3_2010.jpg"
+  },
+  {
+    "movie": "Toy Story 4",
+    "year": "2019",
+    "cover": "toy_story_4_2019.jpg"
+  },
+  {
+    "movie": "Trading Places",
+    "year": "1983",
+    "cover": "trading_places_1983.jpg"
+  },
+  {
+    "movie": "Trainspotting",
+    "year": "1996",
+    "cover": "trainspotting_1996.jpg"
+  },
+  {
+    "movie": "The Truman Show",
+    "year": "1998",
+    "cover": "the_truman_show_1998.jpg"
+  },
+  {
+    "movie": "Turning Red",
+    "year": "2022",
+    "cover": "turning_red_2022.jpg"
+  },
+  {
+    "movie": "Twelve Monkeys",
+    "year": "1995",
+    "cover": "twelve_monkeys_1995.jpg"
+  },
+  {
+    "movie": "Up",
+    "year": "2009",
+    "cover": "up_2009.jpg"
+  },
+  {
+    "movie": "The Usual Suspects",
+    "year": "1995",
+    "cover": "the_usual_suspects_1995.jpg"
+  },
+  {
+    "movie": "Vertigo",
+    "year": "1958",
+    "cover": "vertigo_1958.jpg"
+  },
+  {
+    "movie": "Videodrome",
+    "year": "1983",
+    "cover": "videodrome_1983.jpg"
+  },
+  {
+    "movie": "WALL·E",
+    "year": "2008",
+    "cover": "wall_e_2008.jpg"
+  },
+  {
+    "movie": "WarGames",
+    "year": "1983",
+    "cover": "wargames_1983.jpg"
+  },
+  {
+    "movie": "Wayne’s World",
+    "year": "1992",
+    "cover": "wayne_s_world_1992.jpg"
+  },
+  {
+    "movie": "Wayne’s World 2",
+    "year": "1993",
+    "cover": "wayne_s_world_2_1993.jpg"
+  },
+  {
+    "movie": "Whiplash",
+    "year": "2014",
+    "cover": "whiplash_2014.jpg"
+  },
+  {
+    "movie": "Who Framed Roger Rabbit",
+    "year": "1988",
+    "cover": "who_framed_roger_rabbit_1988.jpg"
+  },
+  {
+    "movie": "The Wicker Man",
+    "year": "1973",
+    "cover": "the_wicker_man_1973.jpg"
+  },
+  {
+    "movie": "Willow",
+    "year": "1988",
+    "cover": "willow_1988.jpg"
+  },
+  {
+    "movie": "Willy Wonka & the Chocolate Factory",
+    "year": "1971",
+    "cover": "willy_wonka_the_chocolate_factory_1971.jpg"
+  },
+  {
+    "movie": "The Wind Rises",
+    "year": "2013",
+    "cover": "the_wind_rises_2013.jpg"
+  },
+  {
+    "movie": "Witness for the Prosecution",
+    "year": "1957",
+    "cover": "witness_for_the_prosecution_1957.jpg"
+  },
+  {
+    "movie": "The Wolf of Wall Street",
+    "year": "2013",
+    "cover": "the_wolf_of_wall_street_2013.jpg"
+  },
+  {
+    "movie": "Won’t You Be My Neighbor!",
+    "year": "2018",
+    "cover": "won_t_you_be_my_neighbor_2018.jpg"
+  },
+  {
+    "movie": "Wreck-It Ralph",
+    "year": "2012",
+    "cover": "wreck_it_ralph_2012.jpg"
+  },
+  {
+    "movie": "Wreck-It Ralph: Ralph Breaks the Internet",
+    "year": "2018",
+    "cover": "wreck_it_ralph_ralph_breaks_the_internet_2018.jpg"
+  },
+  {
+    "movie": "Young Frankenstein",
+    "year": "1974",
+    "cover": "young_frankenstein_1974.jpg"
+  },
+  {
+    "movie": "Zoolander",
+    "year": "2001",
+    "cover": "zoolander_2001.jpg"
+  },
+  {
+    "movie": "Zoolander 2",
+    "year": "2016",
+    "cover": "zoolander_2_2016.jpg"
+  },
+  {
+    "movie": "Zootopia",
+    "year": "2016",
+    "cover": "zootopia_2016.jpg"
+  }
+]

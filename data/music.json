@@ -1,0 +1,644 @@
+[
+  {
+    "artist": "A Tribe Called Quest",
+    "album": "The Low End Theory",
+    "year": "1991",
+    "cover": "a_tribe_called_quest_the_low_end_theory_1991.jpg"
+  },
+  {
+    "artist": "Agate Rollings",
+    "album": "Diomede",
+    "year": "2016",
+    "cover": "agate_rollings_diomede_2016.jpg"
+  },
+  {
+    "artist": "Amy Winehouse",
+    "album": "Back to Black",
+    "year": "2006",
+    "cover": "amy_winehouse_back_to_black_2006.jpg"
+  },
+  {
+    "artist": "Aretha Franklin",
+    "album": "I Never Loved a Man the Way I Love You",
+    "year": "1967",
+    "cover": "aretha_franklin_i_never_loved_a_man_the_way_i_love_you_1967.jpg"
+  },
+  {
+    "artist": "Beyoncé",
+    "album": "Lemonade",
+    "year": "2016",
+    "cover": "beyonce_lemonade_2016.jpg"
+  },
+  {
+    "artist": "Bob Dylan",
+    "album": "Highway 61 Revisited",
+    "year": "1965",
+    "cover": "bob_dylan_highway_61_revisited_1965.jpg"
+  },
+  {
+    "artist": "Bob Dylan",
+    "album": "Blonde on Blonde",
+    "year": "1966",
+    "cover": "bob_dylan_blonde_on_blonde_1966.jpg"
+  },
+  {
+    "artist": "Bob Dylan",
+    "album": "Blood on the Tracks",
+    "year": "1975",
+    "cover": "bob_dylan_blood_on_the_tracks_1975.jpg"
+  },
+  {
+    "artist": "Bob Seger & the Silver Bullet Band",
+    "album": "Night Moves",
+    "year": "1976",
+    "cover": "bob_seger_the_silver_bullet_band_night_moves_1976.jpg"
+  },
+  {
+    "artist": "Bob Seger & the Silver Bullet Band",
+    "album": "Stranger in Town",
+    "year": "1978",
+    "cover": "bob_seger_the_silver_bullet_band_stranger_in_town_1978.jpg"
+  },
+  {
+    "artist": "Bon Jovi",
+    "album": "Slippery When Wet",
+    "year": "1986",
+    "cover": "bon_jovi_slippery_when_wet_1986.jpg"
+  },
+  {
+    "artist": "Bruce Springsteen",
+    "album": "Born to Run",
+    "year": "1975",
+    "cover": "bruce_springsteen_born_to_run_1975.jpg"
+  },
+  {
+    "artist": "Carole King",
+    "album": "Tapestry",
+    "year": "1971",
+    "cover": "carole_king_tapestry_1971.jpg"
+  },
+  {
+    "artist": "Daft Punk",
+    "album": "Discovery",
+    "year": "2001",
+    "cover": "daft_punk_discovery_2001.jpg"
+  },
+  {
+    "artist": "David Bowie",
+    "album": "The Rise and Fall of Ziggy Stardust and the Spiders From Mars",
+    "year": "1972",
+    "cover": "david_bowie_the_rise_and_fall_of_ziggy_stardust_and_the_spiders_from_mars_1972.jpg"
+  },
+  {
+    "artist": "Def Leppard",
+    "album": "Hysteria",
+    "year": "1987",
+    "cover": "def_leppard_hysteria_1987.jpg"
+  },
+  {
+    "artist": "Depeche Mode",
+    "album": "Violator",
+    "year": "1990",
+    "cover": "depeche_mode_violator_1990.jpg"
+  },
+  {
+    "artist": "Dire Straits",
+    "album": "Brothers in Arms",
+    "year": "1985",
+    "cover": "dire_straits_brothers_in_arms_1985.jpg"
+  },
+  {
+    "artist": "Disclosure",
+    "album": "Settle",
+    "year": "2013",
+    "cover": "disclosure_settle_2013.jpg"
+  },
+  {
+    "artist": "Dr. Dre",
+    "album": "The Chronic",
+    "year": "1992",
+    "cover": "dr_dre_the_chronic_1992.jpg"
+  },
+  {
+    "artist": "Emerson, Lake & Palmer",
+    "album": "Welcome Back, My Friends, to the Show That Never Ends ⁓ Ladies and Gentlemen",
+    "year": "1974",
+    "cover": "emerson_lake_palmer_welcome_back_my_friends_to_the_show_that_never_ends_ladies_and_gentlemen_1974.jpg"
+  },
+  {
+    "artist": "Ernesto Cervini",
+    "album": "Tetrahedron",
+    "year": "2020",
+    "cover": "ernesto_cervini_tetrahedron_2020.jpg"
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "album": "Rumours",
+    "year": "1977",
+    "cover": "fleetwood_mac_rumours_1977.jpg"
+  },
+  {
+    "artist": "Girl Talk",
+    "album": "Feed the Animals",
+    "year": "2008",
+    "cover": "girl_talk_feed_the_animals_2008.jpg"
+  },
+  {
+    "artist": "Glenn Danzig",
+    "album": "Black Aria",
+    "year": "1992",
+    "cover": "glenn_danzig_black_aria_1992.jpg"
+  },
+  {
+    "artist": "Gnarls Barkley",
+    "album": "St. Elsewhere",
+    "year": "2006",
+    "cover": "gnarls_barkley_st_elsewhere_2006.jpg"
+  },
+  {
+    "artist": "Guns N’ Roses",
+    "album": "Appetite for Destruction",
+    "year": "1987",
+    "cover": "guns_n_roses_appetite_for_destruction_1987.jpg"
+  },
+  {
+    "artist": "INXS",
+    "album": "Listen Like Thieves",
+    "year": "1985",
+    "cover": "inxs_listen_like_thieves_1985.jpg"
+  },
+  {
+    "artist": "INXS",
+    "album": "Kick",
+    "year": "1987",
+    "cover": "inxs_kick_1987.jpg"
+  },
+  {
+    "artist": "Jeff Buckley",
+    "album": "Grace",
+    "year": "1994",
+    "cover": "jeff_buckley_grace_1994.jpg"
+  },
+  {
+    "artist": "Jethro Tull",
+    "album": "Aqualung",
+    "year": "1971",
+    "cover": "jethro_tull_aqualung_1971.jpg"
+  },
+  {
+    "artist": "John Coltrane",
+    "album": "Blue Train",
+    "year": "1957",
+    "cover": "john_coltrane_blue_train_1957.jpg"
+  },
+  {
+    "artist": "John Coltrane",
+    "album": "A Love Supreme",
+    "year": "1965",
+    "cover": "john_coltrane_a_love_supreme_1965.jpg"
+  },
+  {
+    "artist": "John Frusciante",
+    "album": "The Empyrean",
+    "year": "2009",
+    "cover": "john_frusciante_the_empyrean_2009.jpg"
+  },
+  {
+    "artist": "Johnny Cash",
+    "album": "At Folsom Prison",
+    "year": "1968",
+    "cover": "johnny_cash_at_folsom_prison_1968.jpg"
+  },
+  {
+    "artist": "Joni Mitchell",
+    "album": "Blue",
+    "year": "1971",
+    "cover": "joni_mitchell_blue_1971.jpg"
+  },
+  {
+    "artist": "Joy Division",
+    "album": "Unknown Pleasures",
+    "year": "1979",
+    "cover": "joy_division_unknown_pleasures_1979.jpg"
+  },
+  {
+    "artist": "Joy Division",
+    "album": "Closer",
+    "year": "1980",
+    "cover": "joy_division_closer_1980.jpg"
+  },
+  {
+    "artist": "Judas Priest",
+    "album": "British Steel",
+    "year": "1980",
+    "cover": "judas_priest_british_steel_1980.jpg"
+  },
+  {
+    "artist": "Judas Priest",
+    "album": "Screaming for Vengeance",
+    "year": "1982",
+    "cover": "judas_priest_screaming_for_vengeance_1982.jpg"
+  },
+  {
+    "artist": "Kanye West",
+    "album": "My Beautiful Dark Twisted Fantasy",
+    "year": "2010",
+    "cover": "kanye_west_my_beautiful_dark_twisted_fantasy_2010.jpg"
+  },
+  {
+    "artist": "Kate Bush",
+    "album": "Hounds of Love",
+    "year": "1985",
+    "cover": "kate_bush_hounds_of_love_1985.jpg"
+  },
+  {
+    "artist": "Lana Del Rey",
+    "album": "Born to Die",
+    "year": "2012",
+    "cover": "lana_del_rey_born_to_die_2012.jpg"
+  },
+  {
+    "artist": "Lauryn Hill",
+    "album": "The Miseducation of Lauryn Hill",
+    "year": "1998",
+    "cover": "lauryn_hill_the_miseducation_of_lauryn_hill_1998.jpg"
+  },
+  {
+    "artist": "Lorde",
+    "album": "Pure Heroine",
+    "year": "2013",
+    "cover": "lorde_pure_heroine_2013.jpg"
+  },
+  {
+    "artist": "Lorde",
+    "album": "Melodrama",
+    "year": "2017",
+    "cover": "lorde_melodrama_2017.jpg"
+  },
+  {
+    "artist": "MGMT",
+    "album": "Oracular Spectacular",
+    "year": "2007",
+    "cover": "mgmt_oracular_spectacular_2007.jpg"
+  },
+  {
+    "artist": "Marvin Gaye",
+    "album": "What’s Going On",
+    "year": "1971",
+    "cover": "marvin_gaye_what_s_going_on_1971.jpg"
+  },
+  {
+    "artist": "Mastodon",
+    "album": "Crack the Skye",
+    "year": "2009",
+    "cover": "mastodon_crack_the_skye_2009.jpg"
+  },
+  {
+    "artist": "Metallica",
+    "album": "Kill ’Em All",
+    "year": "1983",
+    "cover": "metallica_kill_em_all_1983.jpg"
+  },
+  {
+    "artist": "Metallica",
+    "album": "Ride the Lightning",
+    "year": "1984",
+    "cover": "metallica_ride_the_lightning_1984.jpg"
+  },
+  {
+    "artist": "Metallica",
+    "album": "Master of Puppets",
+    "year": "1986",
+    "cover": "metallica_master_of_puppets_1986.jpg"
+  },
+  {
+    "artist": "Metallica",
+    "album": "…And Justice for All",
+    "year": "1988",
+    "cover": "metallica_and_justice_for_all_1988.jpg"
+  },
+  {
+    "artist": "Metallica",
+    "album": "Metallica",
+    "year": "1991",
+    "cover": "metallica_metallica_1991.jpg"
+  },
+  {
+    "artist": "Metallica",
+    "album": "Death Magnetic",
+    "year": "2008",
+    "cover": "metallica_death_magnetic_2008.jpg"
+  },
+  {
+    "artist": "Michael Jackson",
+    "album": "Thriller",
+    "year": "1982",
+    "cover": "michael_jackson_thriller_1982.jpg"
+  },
+  {
+    "artist": "Michael Jackson",
+    "album": "Bad",
+    "year": "1987",
+    "cover": "michael_jackson_bad_1987.jpg"
+  },
+  {
+    "artist": "Miles Davis",
+    "album": "Kind of Blue",
+    "year": "1959",
+    "cover": "miles_davis_kind_of_blue_1959.jpg"
+  },
+  {
+    "artist": "Neutral Milk Hotel",
+    "album": "In the Aeroplane Over the Sea",
+    "year": "1998",
+    "cover": "neutral_milk_hotel_in_the_aeroplane_over_the_sea_1998.jpg"
+  },
+  {
+    "artist": "Nirvana",
+    "album": "Nevermind",
+    "year": "1991",
+    "cover": "nirvana_nevermind_1991.jpg"
+  },
+  {
+    "artist": "Paul Simon",
+    "album": "Graceland",
+    "year": "1986",
+    "cover": "paul_simon_graceland_1986.jpg"
+  },
+  {
+    "artist": "Pearl Jam",
+    "album": "Ten",
+    "year": "1991",
+    "cover": "pearl_jam_ten_1991.jpg"
+  },
+  {
+    "artist": "Pearl Jam",
+    "album": "Vs.",
+    "year": "1993",
+    "cover": "pearl_jam_vs_1993.jpg"
+  },
+  {
+    "artist": "Pink Floyd",
+    "album": "The Dark Side of the Moon",
+    "year": "1973",
+    "cover": "pink_floyd_the_dark_side_of_the_moon_1973.jpg"
+  },
+  {
+    "artist": "Pinkshinyultrablast",
+    "album": "Happy Songs for Happy Zombies",
+    "year": "2009",
+    "cover": "pinkshinyultrablast_happy_songs_for_happy_zombies_2009.jpg"
+  },
+  {
+    "artist": "Prince",
+    "album": "Sign “☮︎” the Times",
+    "year": "1987",
+    "cover": "prince_sign_the_times_1987.jpg"
+  },
+  {
+    "artist": "Public Enemy",
+    "album": "It Takes a Nation of Millions to Hold Us Back",
+    "year": "1988",
+    "cover": "public_enemy_it_takes_a_nation_of_millions_to_hold_us_back_1988.jpg"
+  },
+  {
+    "artist": "Queen",
+    "album": "A Night at the Opera",
+    "year": "1975",
+    "cover": "queen_a_night_at_the_opera_1975.jpg"
+  },
+  {
+    "artist": "Queen",
+    "album": "A Day at the Races",
+    "year": "1976",
+    "cover": "queen_a_day_at_the_races_1976.jpg"
+  },
+  {
+    "artist": "Queen",
+    "album": "A Kind of Magic",
+    "year": "1986",
+    "cover": "queen_a_kind_of_magic_1986.jpg"
+  },
+  {
+    "artist": "R.E.M",
+    "album": "Automatic for the People",
+    "year": "1992",
+    "cover": "r_e_m_automatic_for_the_people_1992.jpg"
+  },
+  {
+    "artist": "Radiohead",
+    "album": "OK Computer",
+    "year": "1997",
+    "cover": "radiohead_ok_computer_1997.jpg"
+  },
+  {
+    "artist": "Radiohead",
+    "album": "Kid A",
+    "year": "2000",
+    "cover": "radiohead_kid_a_2000.jpg"
+  },
+  {
+    "artist": "Ramones",
+    "album": "Ramones",
+    "year": "1976",
+    "cover": "ramones_ramones_1976.jpg"
+  },
+  {
+    "artist": "Rush",
+    "album": "Moving Pictures",
+    "year": "1981",
+    "cover": "rush_moving_pictures_1981.jpg"
+  },
+  {
+    "artist": "Simon & Garfunkel",
+    "album": "Sounds of Silence",
+    "year": "1966",
+    "cover": "simon_garfunkel_sounds_of_silence_1966.jpg"
+  },
+  {
+    "artist": "Sly & the Family Stone",
+    "album": "There’s a Riot Goin’ On",
+    "year": "1971",
+    "cover": "sly_the_family_stone_there_s_a_riot_goin_on_1971.jpg"
+  },
+  {
+    "artist": "Sly & the Family Stone",
+    "album": "Fresh",
+    "year": "1973",
+    "cover": "sly_the_family_stone_fresh_1973.jpg"
+  },
+  {
+    "artist": "Stateless",
+    "album": "Art of No State",
+    "year": "2003",
+    "cover": "stateless_art_of_no_state_2003.jpg"
+  },
+  {
+    "artist": "Stevie Nicks",
+    "album": "Bella Donna",
+    "year": "1981",
+    "cover": "stevie_nicks_bella_donna_1981.jpg"
+  },
+  {
+    "artist": "Stevie Wonder",
+    "album": "Innervisions",
+    "year": "1973",
+    "cover": "stevie_wonder_innervisions_1973.jpg"
+  },
+  {
+    "artist": "Stevie Wonder",
+    "album": "Songs in the Key of Life",
+    "year": "1976",
+    "cover": "stevie_wonder_songs_in_the_key_of_life_1976.jpg"
+  },
+  {
+    "artist": "Stevie Wonder",
+    "album": "Natural Wonder",
+    "year": "1995",
+    "cover": "stevie_wonder_natural_wonder_1995.jpg"
+  },
+  {
+    "artist": "Talking Heads",
+    "album": "Remain in Light",
+    "year": "1980",
+    "cover": "talking_heads_remain_in_light_1980.jpg"
+  },
+  {
+    "artist": "The Beach Boys",
+    "album": "Pet Sounds",
+    "year": "1966",
+    "cover": "the_beach_boys_pet_sounds_1966.jpg"
+  },
+  {
+    "artist": "The Beatles",
+    "album": "Revolver",
+    "year": "1966",
+    "cover": "the_beatles_revolver_1966.jpg"
+  },
+  {
+    "artist": "The Beatles",
+    "album": "Abbey Road",
+    "year": "1969",
+    "cover": "the_beatles_abbey_road_1969.jpg"
+  },
+  {
+    "artist": "The Black Keys",
+    "album": "Brothers",
+    "year": "2010",
+    "cover": "the_black_keys_brothers_2010.jpg"
+  },
+  {
+    "artist": "The Clash",
+    "album": "London Calling",
+    "year": "1979",
+    "cover": "the_clash_london_calling_1979.jpg"
+  },
+  {
+    "artist": "The Dave Brubeck Quartet",
+    "album": "Time Out",
+    "year": "1959",
+    "cover": "the_dave_brubeck_quartet_time_out_1959.jpg"
+  },
+  {
+    "artist": "The Jimi Hendrix Experience",
+    "album": "Are You Experienced",
+    "year": "1967",
+    "cover": "the_jimi_hendrix_experience_are_you_experienced_1967.jpg"
+  },
+  {
+    "artist": "The Jimi Hendrix Experience",
+    "album": "Electric Ladyland",
+    "year": "1968",
+    "cover": "the_jimi_hendrix_experience_electric_ladyland_1968.jpg"
+  },
+  {
+    "artist": "The Prodigy",
+    "album": "The Fat of the Land",
+    "year": "1997",
+    "cover": "the_prodigy_the_fat_of_the_land_1997.jpg"
+  },
+  {
+    "artist": "The Rolling Stones",
+    "album": "Exile on Main St.",
+    "year": "1972",
+    "cover": "the_rolling_stones_exile_on_main_st_1972.jpg"
+  },
+  {
+    "artist": "The Shaolin Afronauts",
+    "album": "Follow the Path",
+    "year": "2014",
+    "cover": "the_shaolin_afronauts_follow_the_path_2014.jpg"
+  },
+  {
+    "artist": "The Stone Roses",
+    "album": "The Stone Roses",
+    "year": "1989",
+    "cover": "the_stone_roses_the_stone_roses_1989.jpg"
+  },
+  {
+    "artist": "The Stone Roses",
+    "album": "Second Coming",
+    "year": "1994",
+    "cover": "the_stone_roses_second_coming_1994.jpg"
+  },
+  {
+    "artist": "The Stranglers",
+    "album": "La Folie",
+    "year": "1981",
+    "cover": "the_stranglers_la_folie_1981.jpg"
+  },
+  {
+    "artist": "The White Stripes",
+    "album": "White Blood Cells",
+    "year": "2001",
+    "cover": "the_white_stripes_white_blood_cells_2001.jpg"
+  },
+  {
+    "artist": "The xx",
+    "album": "xx",
+    "year": "2009",
+    "cover": "the_xx_xx_2009.jpg"
+  },
+  {
+    "artist": "The xx",
+    "album": "Coexist",
+    "year": "2012",
+    "cover": "the_xx_coexist_2012.jpg"
+  },
+  {
+    "artist": "Twisted Sister",
+    "album": "Stay Hungry",
+    "year": "1984",
+    "cover": "twisted_sister_stay_hungry_1984.jpg"
+  },
+  {
+    "artist": "U2",
+    "album": "The Joshua Tree",
+    "year": "1987",
+    "cover": "u2_the_joshua_tree_1987.jpg"
+  },
+  {
+    "artist": "Various Artists",
+    "album": "Reservoir Dogs: Music From the Original Motion Picture Soundtrack",
+    "year": "1992",
+    "cover": "various_artists_reservoir_dogs_music_from_the_original_motion_picture_soundtrack_1992.jpg"
+  },
+  {
+    "artist": "Various Artists",
+    "album": "Pulp Fiction: Music From the Motion Picture",
+    "year": "1994",
+    "cover": "various_artists_pulp_fiction_music_from_the_motion_picture_1994.jpg"
+  },
+  {
+    "artist": "Various Artists",
+    "album": "Grand Theft Auto: Vice City: Official Soundtrack Box Set",
+    "year": "2002",
+    "cover": "various_artists_grand_theft_auto_vice_city_official_soundtrack_box_set_2002.jpg"
+  },
+  {
+    "artist": "Yo La Tengo",
+    "album": "I Am Not Afraid of You and I Will Beat Your Ass",
+    "year": "2006",
+    "cover": "yo_la_tengo_i_am_not_afraid_of_you_and_i_will_beat_your_ass_2006.jpg"
+  }
+]
