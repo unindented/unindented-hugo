@@ -72,9 +72,9 @@
 # https://web.dev/coop-coep/
 # https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy
 
-# <IfModule mod_headers.c>
-#     Header always set Cross-Origin-Embedder-Policy "require-corp" "expr=%{CONTENT_TYPE} =~ m#text\/html#i"
-# </IfModule>
+<IfModule mod_headers.c>
+    Header always set Cross-Origin-Embedder-Policy "require-corp" "expr=%{REQUEST_URI} =~ m#\bplayground\b#i && %{CONTENT_TYPE} =~ m#text\/html#i"
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Cross-origin resource policy (CORP)                                |
@@ -85,9 +85,9 @@
 # https://web.dev/coop-coep/
 # https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Resource-Policy
 
-# <IfModule mod_headers.c>
-#     Header always set Cross-Origin-Resource-Policy "same-origin"
-# </IfModule>
+<IfModule mod_headers.c>
+    Header always set Cross-Origin-Resource-Policy "same-origin"
+</IfModule>
 
 # ######################################################################
 # # ERRORS                                                             #
