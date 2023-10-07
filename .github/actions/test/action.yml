@@ -8,6 +8,7 @@ runs:
       shell: bash
       run: |
         npx playwright install-deps
+        npx playwright install
         npm ci
         make test
 
