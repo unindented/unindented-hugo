@@ -3,7 +3,7 @@
 {{ $styles = $styles | resources.PostCSS $options }}
 {{ if hugo.IsProduction }}
   {{ $styles = $styles | resources.PostProcess }}
-{{ else if site.IsServer }}
+{{ else if hugo.IsServer }}
   {{ $styles = $styles | resources.ExecuteAsTemplate (printf "css/styles.dev.%v.css" now.UnixMilli) . }}
 {{ end }}
 

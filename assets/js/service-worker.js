@@ -118,7 +118,7 @@ self.addEventListener("fetch", (event) => {
     try {
       const response = await fetch(request);
       return onNetworkResolve(response);
-    } catch (err) {
+    } catch {
       return onNetworkReject();
     }
   };

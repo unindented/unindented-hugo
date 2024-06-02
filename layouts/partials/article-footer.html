@@ -5,8 +5,8 @@
   <footer class="col-content prose mt-12 dark:prose-invert md:prose-lg lg:prose-xl">
     <p class="admonition border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
       Posted on <a href="{{ .RelPermalink }}" class="u-url u-uid">{{ partial "utils/time" .Date }}</a>
-      {{- if $tagLinks }} under {{ $tagLinks }}{{ end -}}
-      {{- if $authorLinks }} by {{ $authorLinks }}{{ end -}}.
+      {{- if $tagLinks }} under {{ $tagLinks | safeHTML }}{{ end -}}
+      {{- if $authorLinks }} by {{ $authorLinks | safeHTML }}{{ end -}}.
     </p>
   </footer>
 {{ end }}
