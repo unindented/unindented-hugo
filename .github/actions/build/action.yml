@@ -52,9 +52,9 @@ runs:
     - name: Install Hugo
       env:
         LINK: https://github.com/gohugoio/hugo/releases/download
-        HUGO_VERSION: "0.111.3"
+        HUGO_VERSION: "0.126.3"
         HUGO_SHA256: >-
-          62f611bee5e4d922c0bc7841e8b8ad5e467a36b7391ea13000832098556f14ff
+          e750c6510b3a7a3cd7d0a93bae908729a4a89afd6aefb1cb85b5b984039aebe2
       shell: bash
       run: |
         curl -OL "$LINK/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
@@ -63,7 +63,7 @@ runs:
 
     - name: Install Node dependencies
       env:
-        POSTCSS_CLI_VERSION: "10.1.x"
+        POSTCSS_CLI_VERSION: "11.0.x"
       shell: bash
       run: |
         npm install -g postcss-cli@${POSTCSS_CLI_VERSION}

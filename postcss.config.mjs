@@ -1,10 +1,10 @@
-const autoprefixer = require("autoprefixer");
-const cssnano = require("cssnano");
-const tailwindcss = require("tailwindcss");
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import tailwindcss from "tailwindcss";
 
 const tailwindConfig = process.env.HUGO_FILE_TAILWIND_CONFIG_JS || "./tailwind.config.js";
 
-module.exports = {
+export default {
   plugins: [
     tailwindcss(tailwindConfig),
     autoprefixer,
