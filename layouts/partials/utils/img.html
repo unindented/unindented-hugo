@@ -1,11 +1,12 @@
-{{ $img := .img.Filter (images.Gamma 1) }}
+{{ $img := .img }}
 {{ $src := .src }}
 {{ $alt := .alt | default "" }}
 {{ $caption := .caption }}
 {{ $class := .class }}
+{{ $loading := .loading | default "lazy" }}
 
 {{ $ext := $src | path.Ext | replaceRE "^\\." "" }}
-{{ $density := $src | replaceRE "^.+@(\\d+)x\\.[a-z]+$" "$1" | float }}
+{{ $density := $src | replaceRE "^.+@(\\d+)x\\..+$" "$1" | float }}
 {{ $width := div $img.Width $density }}
 {{ $height := div $img.Height $density }}
 
@@ -15,7 +16,7 @@
 {{ $srcset := slice }}
 {{ range $srcsetBreakpoints }}
   {{ if lt (mul 1.25 .) $img.Width }}
-    {{ $thumb := $img.Resize (printf "%dx" .) }}
+    {{ $thumb := $img.Resize (printf "%dx webp" .) }}
     {{ $srcset = $srcset | append (printf "%s %dw" $thumb.RelPermalink .) }}
   {{ end }}
 {{ end }}
@@ -33,15 +34,17 @@
 
 <figure class="{{ $class }}">
   <picture>
-    {{ partial "utils/sources" (dict "ext" $ext "srcset" $srcset "sizes" $sizes) }}
+    <source
+      type="image/webp"
+      {{ printf " srcset=\"%s\"" $srcset | safeHTMLAttr }}
+      {{ if $sizes }}{{ printf " sizes=\"%s\"" $sizes | safeHTMLAttr }}{{ end }}
+    />
     <img
       alt="{{ $alt }}"
       width="{{ $width }}"
       height="{{ $height }}"
       src="{{ $img.RelPermalink }}"
-      {{ printf " srcset=\"%s\"" $srcset | safeHTMLAttr }}
-      {{ printf " sizes=\"%s\"" $sizes | safeHTMLAttr }}
-      loading="lazy"
+      loading="{{ $loading }}"
     />
   </picture>
   {{ with $caption }}

@@ -1,5 +1,5 @@
 /*
-{{ $latestArticles := partial "utils/articles-latest" }}
+{{ $latestArticles := partial "utils/articles-latest" . }}
 {{ $latestArticles = delimit (apply $latestArticles "partial" "utils/rel-permalink" ".") "\", \"" }}
 
 {{ $offlineImage := (resources.GetMatch "images/offline.svg").Content }}
@@ -13,9 +13,22 @@ const pagesCacheName = version + "-pages";
 const imagesCacheName = version + "-images";
 const assetsCacheName = version + "-assets";
 
-const offlinePages = ["/", "/about/", "/blog/", "/playground/", "{{ $latestArticles }}"];
+const offlinePages = [
+  "{{ relref . "/" }}",
+  "{{ relref . "/about" }}",
+  "{{ relref . "/blog" }}",
+  "{{ relref . "/playground" }}",
+  "{{ $latestArticles }}",
+];
 
-const staticAssets = ["/offline.html", "/css/styles.css", "/images/sprites.svg", "/js/scripts.js"];
+const staticAssets = [
+  "{{ "offline.html" | relURL }}",
+  "{{ "css/styles.css" | relURL }}",
+  "{{ "js/scripts.js" | relURL }}",
+  "{{ "favicon.ico" | relURL }}",
+  "{{ "images/logo.svg" | relURL }}",
+  "{{ "images/sprites.svg" | relURL }}",
+];
 
 const updateStaticCache = () => {
   // These items can be cached after install.
@@ -107,7 +120,7 @@ self.addEventListener("fetch", (event) => {
   const onNetworkReject = async () => {
     if (isRequestOfType(request, "text/html")) {
       const cachedResponse = await readCaches(request);
-      return cachedResponse || readCaches("/offline.html");
+      return cachedResponse || readCaches("{{ "offline.html" | relURL }}");
     }
     if (isRequestOfType(request, "image")) {
       return new Response(`{{ $offlineImage }}`, { headers: { "content-type": "image/svg+xml" } });

@@ -1,0 +1,41 @@
+name: Deploy
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_call:
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+        with:
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          submodules: recursive
+      - name: Download website
+        uses: actions/download-artifact@65a9edc5881444af0b9093a5e628f2fe47ea3b2e # v4
+        with:
+          name: website
+          path: .
+      - name: Deploy
+        uses: ./.github/actions/rsync
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          options: --archive --delete --exclude-from .rsyncignore
+          source: .
+          target: ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOSTNAME }}:~/${{ github.event_name == 'pull_request' && 'dev.unindented.org' || 'unindented.org' }}/

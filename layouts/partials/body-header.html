@@ -31,7 +31,7 @@
         >
           <svg height="1em" viewbox="0 0 384 512" fill="currentColor">
             <title id="color-scheme-label">Toggle color scheme</title>
-            <use href="/images/sprites.svg#icon-lightbulb" />
+            {{ partial "utils/sprite" (dict "name" "lightbulb") }}
           </svg>
         </button>
       </li>
@@ -45,7 +45,7 @@
         >
           <svg height="1em" viewbox="0 0 512 512" fill="currentColor">
             <title id="search-label">Open search dialog</title>
-            <use href="/images/sprites.svg#icon-search" />
+            {{ partial "utils/sprite" (dict "name" "search") }}
           </svg>
         </button>
       </li>
@@ -64,7 +64,7 @@
         <label class="form-label-inline flex-1 gap-4">
           <svg height="2em" viewbox="0 0 512 512" fill="currentColor">
             <title>Search</title>
-            <use href="/images/sprites.svg#icon-search" />
+            {{ partial "utils/sprite" (dict "name" "search") }}
           </svg>
           <input type="text" spellcheck="false" id="search-dialog-input" name="q" class="form-input w-full" />
         </label>

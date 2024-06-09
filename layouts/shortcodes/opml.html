@@ -12,7 +12,7 @@
         {{ $htmlUrl | replaceRE `^https?://(?:www.)?(.+?)/?$` "$1" }}
         <a href="feed:{{ $xmlUrl }}">
           <svg height="1em" viewBox="0 0 448 512" fill="currentColor" class="inline-block">
-            <use href="/images/sprites.svg#icon-rss" />
+            {{ partial "utils/sprite" (dict "name" "rss") }}
           </svg>
           <span class="sr-only">RSS</span>
         </a>

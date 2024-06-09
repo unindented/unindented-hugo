@@ -4,7 +4,7 @@ title = "Unindented"
 copyright = "All content by <a href=\"https://www.unindented.org/\" rel=\"me\" class=\"h-card\">Daniel Perez Alvarez</a> unless otherwise noted. <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noreferrer\">Some rights reserved</a>."
 
 enableRobotsTXT = true
-ignoreFiles = ["README.md", "LICENSE"]
+ignoreFiles = ["LICENSE", "README.md"]
 paginate = 15
 
 [params]
@@ -32,14 +32,28 @@ twitter = "unindented"
 [build]
 writeStats = true
 
+[imaging]
+hint = 'icon'
+quality = 75
+
 [markup.highlight]
 noClasses = false
 
-[markup.goldmark.renderer]
-unsafe = true
+[markup.goldmark.extensions.extras.insert]
+enable = true
+[markup.goldmark.extensions.extras.mark]
+enable = true
+[markup.goldmark.extensions.extras.subscript]
+enable = true
+[markup.goldmark.extensions.extras.superscript]
+enable = true
+
 [markup.goldmark.parser.attribute]
 block = true
 title = true
+
+[markup.goldmark.renderer]
+unsafe = true
 
 [mediaTypes."application/manifest+json"]
 suffixes = ["webmanifest", "json"]

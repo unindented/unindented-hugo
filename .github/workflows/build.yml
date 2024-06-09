@@ -1,0 +1,44 @@
+name: Build
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+        with:
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          submodules: recursive
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Run e2e tests
+        run: pnpm test:e2e
+      - name: Build
+        run: |
+          pnpm build \
+            --baseURL "$BASE_URL" \
+            --destination "public"
+        env:
+          BASE_URL: ${{ github.event_name == 'pull_request' && 'https://dev.unindented.org/' || 'https://www.unindented.org/' }}
+      - name: Run Lighthouse tests
+        run: pnpm test:lhci
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - name: Upload website
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
+        with:
+          name: website
+          path: public
+          retention-days: 1
+      - name: Upload e2e test reports
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4
+        if: ${{ always() }}
+        with:
+          name: e2e-reports
+          path: |
+            e2e-report/
+            e2e-results/
+          retention-days: 7

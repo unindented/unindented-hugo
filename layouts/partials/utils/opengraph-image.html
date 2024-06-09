@@ -1,0 +1,40 @@
+{{ $images := .Resources.ByType "image" }}
+{{ $featured := $images.GetMatch "*feature*" }}
+{{ if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
+{{ if not $featured }}
+  {{ $featured = resources.Get "images/opengraph-template.png" }}
+
+  {{ $title := .Title }}
+  {{ $titleOptions := dict
+    "color" "#fff"
+    "size" (sub 140 (len $title))
+    "lineSpacing" 10
+    "x" 50 "y" 50
+    "font" (resources.Get "fonts/roboto-black.ttf")
+  }}
+  {{ $titleFilter := images.Text $title $titleOptions }}
+
+  {{ $siteTitle := site.Title }}
+  {{ $siteTitleOptions := dict
+    "color" "#fff"
+    "size" 72
+    "lineSpacing" 10
+    "x" 265 "y" 440
+    "font" (resources.Get "fonts/roboto-black.ttf")
+  }}
+  {{ $siteTitleFilter := images.Text $siteTitle $siteTitleOptions }}
+
+  {{ $url := .Permalink }}
+  {{ $urlOptions := dict
+    "color" "#fff"
+    "size" 24
+    "lineSpacing" 10
+    "x" 268 "y" 536
+    "font" (resources.Get "fonts/roboto-bold.ttf")
+  }}
+  {{ $urlFilter := images.Text $url $urlOptions }}
+
+  {{ $featured = $featured | images.Filter $titleFilter | images.Filter $siteTitleFilter | images.Filter $urlFilter }}
+{{ end }}
+
+{{ return $featured }}

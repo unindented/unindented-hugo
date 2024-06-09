@@ -22,7 +22,7 @@
             class="opacity-75 transition-opacity hover:!opacity-100 focus:!opacity-100"
           >
             <svg height="1em" viewBox="0 0 512 512" fill="currentColor">
-              <use href="/images/sprites.svg#icon-{{ . }}" />
+              {{ partial "utils/sprite" (dict "name" .) }}
             </svg>
             <span class="sr-only">{{ index $supportedActions . }}</span>
           </button>
