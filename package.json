@@ -14,22 +14,22 @@
     "test:lhci": "lhci autorun"
   },
   "devDependencies": {
-    "@eslint/js": "^9.4.0",
+    "@eslint/js": "9.4.0",
     "@playwright/test": "1.44.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.13",
-    "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.1",
-    "eslint": "^9.4.0",
-    "globals": "^15.3.0",
-    "postcss": "^8.4.38",
-    "prettier": "^3.3.0",
-    "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-tailwindcss": "^0.6.1",
-    "rollup": "^4.18.0",
-    "tailwindcss": "^3.4.3"
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "@rollup/plugin-terser": "0.4.4",
+    "@tailwindcss/forms": "0.5.7",
+    "@tailwindcss/typography": "0.5.13",
+    "autoprefixer": "10.4.19",
+    "cssnano": "7.0.1",
+    "eslint": "9.4.0",
+    "globals": "15.3.0",
+    "postcss": "8.4.38",
+    "prettier": "3.3.0",
+    "prettier-plugin-go-template": "0.0.15",
+    "prettier-plugin-tailwindcss": "0.6.1",
+    "rollup": "4.18.0",
+    "tailwindcss": "3.4.3"
   },
-  "packageManager": "pnpm@9.1.4"
+  "packageManager": "pnpm@9.2.0"
 }
