@@ -10,6 +10,7 @@
     "clean": "rm -rf .lighthouseci e2e-report e2e-results public resources/_gen .hugo_build.lock hugo_stats.json",
     "start": "hugo server --buildDrafts --buildExpired --buildFuture",
     "build": "hugo --cleanDestinationDir --minify",
+    "test:lint": "eslint .",
     "test:e2e": "playwright test",
     "test:lhci": "lhci autorun"
   },

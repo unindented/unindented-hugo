@@ -14,20 +14,20 @@ const imagesCacheName = version + "-images";
 const assetsCacheName = version + "-assets";
 
 const offlinePages = [
-  "{{ relref . "/" }}",
-  "{{ relref . "/about" }}",
-  "{{ relref . "/blog" }}",
-  "{{ relref . "/playground" }}",
-  "{{ $latestArticles }}",
+  '{{ relref . "/" }}',
+  '{{ relref . "/about" }}',
+  '{{ relref . "/blog" }}',
+  '{{ relref . "/playground" }}',
+  '{{ $latestArticles }}',
 ];
 
 const staticAssets = [
-  "{{ "offline.html" | relURL }}",
-  "{{ "css/styles.css" | relURL }}",
-  "{{ "js/scripts.js" | relURL }}",
-  "{{ "favicon.ico" | relURL }}",
-  "{{ "images/logo.svg" | relURL }}",
-  "{{ "images/sprites.svg" | relURL }}",
+  '{{ "offline.html" | relURL }}',
+  '{{ "css/styles.css" | relURL }}',
+  '{{ "js/scripts.js" | relURL }}',
+  '{{ "favicon.ico" | relURL }}',
+  '{{ "images/logo.svg" | relURL }}',
+  '{{ "images/sprites.svg" | relURL }}',
 ];
 
 const updateStaticCache = () => {
@@ -120,7 +120,7 @@ self.addEventListener("fetch", (event) => {
   const onNetworkReject = async () => {
     if (isRequestOfType(request, "text/html")) {
       const cachedResponse = await readCaches(request);
-      return cachedResponse || readCaches("{{ "offline.html" | relURL }}");
+      return cachedResponse || readCaches('{{ "offline.html" | relURL }}');
     }
     if (isRequestOfType(request, "image")) {
       return new Response(`{{ $offlineImage }}`, { headers: { "content-type": "image/svg+xml" } });
