@@ -1,0 +1,41 @@
+name: Setup
+description: "Install required dependencies"
+
+inputs:
+  hugo-version:
+    description: "Hugo version"
+    required: true
+    default: "0.126.3"
+  node-version:
+    description: "Node version"
+    required: true
+    default: "20"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Hugo ${{ inputs.hugo-version }}
+      run: |
+        wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{ inputs.hugo-version }}/hugo_extended_${{ inputs.hugo-version }}_linux-amd64.deb
+        sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      shell: bash
+    - name: Enable Corepack
+      run: corepack enable
+      shell: bash
+    - name: Set up Node ${{ inputs.node-version }}
+      uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: "pnpm"
+    - name: Install dependencies
+      run: pnpm install
+      shell: bash
+    - name: Install Playwright browsers
+      run: pnpm playwright install --with-deps
+      shell: bash
+    - name: Install PostCSS globally
+      run: npm install -g postcss-cli
+      shell: bash
+    - name: Install Lighthouse globally
+      run: npm install -g @lhci/cli
+      shell: bash

@@ -1,8 +1,9 @@
 {
   "printWidth": 120,
+  "plugins": ["prettier-plugin-go-template", "prettier-plugin-tailwindcss"],
   "overrides": [
     {
-      "files": ["layouts/**/*.html"],
+      "files": ["*.html"],
       "options": {
         "parser": "go-template"
       }
