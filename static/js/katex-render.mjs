@@ -1,4 +1,4 @@
-import renderMathInElement from "./katex-v0.16.7/katex.min.mjs";
+import renderMathInElement from "./katex-v0.16.10/katex.min.mjs";
 
 renderMathInElement(document.body, {
   delimiters: [
