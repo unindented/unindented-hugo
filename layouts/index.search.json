@@ -1,6 +1,6 @@
 {{- $pages := site.RegularPages -}}
 {{- $index := slice -}}
-{{- range site.RegularPages -}}
+{{- range $pages -}}
   {{- $index = $index | append (dict
     "title" .Title
     "content" (.Summary | plainify | htmlUnescape)
