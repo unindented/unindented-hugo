@@ -25,7 +25,7 @@
     "cssnano": "7.0.3",
     "eslint": "9.6.0",
     "globals": "15.6.0",
-    "postcss": "8.4.38",
+    "postcss": "8.4.39",
     "prettier": "3.3.2",
     "prettier-plugin-go-template": "0.0.15",
     "prettier-plugin-tailwindcss": "0.6.5",
