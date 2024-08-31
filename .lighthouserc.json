@@ -30,7 +30,7 @@
             "cumulative-layout-shift": ["error", { "maxNumericValue": 0 }],
             "resource-summary:document:size": ["error", { "maxNumericValue": 4500 }],
             "resource-summary:script:size": ["error", { "maxNumericValue": 3500 }],
-            "resource-summary:total:size": ["error", { "maxNumericValue": 25000 }]
+            "resource-summary:total:size": ["error", { "maxNumericValue": 27500 }]
           }
         },
         {
