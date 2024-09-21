@@ -15,22 +15,22 @@
     "test:lhci": "lhci autorun"
   },
   "devDependencies": {
-    "@eslint/js": "9.10.0",
-    "@playwright/test": "1.47.1",
+    "@eslint/js": "9.11.0",
+    "@playwright/test": "1.47.2",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-terser": "0.4.4",
     "@tailwindcss/forms": "0.5.9",
     "@tailwindcss/typography": "0.5.15",
     "autoprefixer": "10.4.20",
     "cssnano": "7.0.6",
-    "eslint": "9.10.0",
+    "eslint": "9.11.0",
     "globals": "15.9.0",
     "postcss": "8.4.47",
     "prettier": "3.3.3",
     "prettier-plugin-go-template": "0.0.15",
     "prettier-plugin-tailwindcss": "0.6.6",
-    "rollup": "4.21.3",
+    "rollup": "4.22.2",
     "tailwindcss": "3.4.12"
   },
-  "packageManager": "pnpm@9.10.0"
+  "packageManager": "pnpm@9.11.0"
 }
