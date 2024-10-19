@@ -15,7 +15,7 @@
     "test:lhci": "lhci autorun"
   },
   "devDependencies": {
-    "@eslint/js": "9.12.0",
+    "@eslint/js": "9.13.0",
     "@playwright/test": "1.48.1",
     "@rollup/plugin-node-resolve": "15.3.0",
     "@rollup/plugin-terser": "0.4.4",
@@ -23,7 +23,7 @@
     "@tailwindcss/typography": "0.5.15",
     "autoprefixer": "10.4.20",
     "cssnano": "7.0.6",
-    "eslint": "9.12.0",
+    "eslint": "9.13.0",
     "globals": "15.11.0",
     "postcss": "8.4.47",
     "prettier": "3.3.3",
