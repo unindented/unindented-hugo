@@ -18,5 +18,11 @@
   "rebaseWhen": "conflicted",
   "git-submodules": {
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": ["tailwindcss"],
+      "allowedVersions": "<4.0.0"
+    }
+  ]
 }
