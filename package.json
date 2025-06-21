@@ -28,8 +28,8 @@
     "postcss": "8.5.6",
     "prettier": "3.5.3",
     "prettier-plugin-go-template": "0.0.15",
-    "prettier-plugin-tailwindcss": "0.6.12",
-    "rollup": "4.43.0",
+    "prettier-plugin-tailwindcss": "0.6.13",
+    "rollup": "4.44.0",
     "tailwindcss": "3.4.17"
   },
   "packageManager": "pnpm@10.12.1"
